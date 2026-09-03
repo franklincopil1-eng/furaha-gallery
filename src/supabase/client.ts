@@ -174,7 +174,7 @@ class SupabaseService {
         full_name: 'Esther Mutua',
         email: 'esther.m@example.com',
         phone: '+254 712 345678',
-        location: 'Nairobi, Kenya',
+        location: 'Kenya',
         interests: ['Tutoring & Educational Support', 'Youth Mentorship & Discipleship'],
         notes: 'Experienced high school mathematics teacher.',
         created_at: new Date(Date.now() - 3600000 * 20).toISOString(),

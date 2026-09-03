@@ -24,7 +24,6 @@ const videoMaterials = '/images/video_frame_materials.jpg';
 const videoConstruction = '/images/video_frame_construction.jpg';
 const videoCarpentry = '/images/video_frame_carpentry.jpg';
 const videoNewBathrooms = '/images/video_frame_new_bathrooms.jpg';
-const videoGratefulFaces = '/images/DSCF0856.jpg';
 
 interface Chapter {
   time: number;
@@ -79,10 +78,10 @@ const CHAPTERS: Chapter[] = [
   },
   {
     time: 14.5,
-    label: 'Grateful Faces',
+    label: 'Completed Facility',
     phase: '00:14',
-    description: 'School children in green uniforms smiling with restored dignity ("God Bless You All").',
-    image: videoGratefulFaces,
+    description: 'Permanent hygienic washrooms operating daily with clean water access.',
+    image: videoNewBathrooms,
   },
 ];
 
@@ -377,7 +376,7 @@ export const FieldJournalVideoExperience: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Window 3: Bottom-Center (Grateful Students & Completed Facility) */}
+              {/* Window 3: Bottom-Center (Completed Facility) */}
               <motion.div
                 style={{
                   y: win33YTransform(win3Y),
@@ -391,15 +390,15 @@ export const FieldJournalVideoExperience: React.FC = () => {
               >
                 <div className="relative w-full h-full overflow-hidden">
                   <img
-                    src={videoGratefulFaces}
-                    alt="Kenyan school students smiling outside new bathrooms"
+                    src={videoNewBathrooms}
+                    alt="Completed new sanitation washroom block"
                     className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                   <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] text-white font-mono tracking-wider flex items-center gap-1.5 border border-white/10">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#893d2d]" />
-                    <span>03 · RESTORED DIGNITY & HEALTH</span>
+                    <span>03 · COMPLETED SANITATION FACILITY</span>
                   </div>
 
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">

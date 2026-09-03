@@ -68,7 +68,7 @@ export const fieldStoriesData: FieldStory[] = [
     fullStory:
       'Furaha is rooted in Christian faith and love. Beyond material aid, we believe nurturing hope and spiritual resilience in Christ transforms lives. Discipleship gatherings provide a safe, joyful environment where children learn scripture, build character, and know they are deeply loved by God.',
     image: '/images/discipleship-kibera-church.jpg',
-    imageAlt: 'Children and youth gathered in Christian fellowship and discipleship at New CEA Pentecost Kibera Church in Kenya',
+    imageAlt: 'Children and youth gathered in Christian fellowship and discipleship at community church in Kenya',
     chips: ['Discipleship', 'Mentorship', 'Kenya'],
   },
 ];

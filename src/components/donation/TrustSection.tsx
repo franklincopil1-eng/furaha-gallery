@@ -48,7 +48,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({
               Kenya
             </h3>
             <p className="text-xs text-[#59524e] leading-relaxed">
-              Nairobi and surrounding underserved communities across East Africa.
+              Vulnerable children and underserved community programs in Kenya.
             </p>
           </div>
 

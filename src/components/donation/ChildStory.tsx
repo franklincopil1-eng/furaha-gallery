@@ -32,7 +32,7 @@ export const ChildStory: React.FC<ChildStoryProps> = ({ onSponsorClick }) => {
               <div className="relative rounded-2xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/5] max-w-xs mx-auto">
                 <img
                   src="/images/DSCF0817.jpg"
-                  alt="Student supported in community school program in Limuru, Kenya"
+                  alt="Student supported in community school program in Kenya"
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                 />
@@ -53,7 +53,7 @@ export const ChildStory: React.FC<ChildStoryProps> = ({ onSponsorClick }) => {
               </h2>
 
               <p className="text-sm sm:text-base text-[#59524e] leading-relaxed mb-4">
-                In many underserved communities in Nairobi, children are eager to learn but face interruptions whenever unpaid fees, missing textbooks, or lack of a daily meal arise.
+                In many underserved communities in Kenya, children are eager to learn but face interruptions whenever unpaid fees, missing textbooks, or lack of a daily meal arise.
               </p>
 
               {/* What helps a child stay connected to school? */}

@@ -144,8 +144,8 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
     tagColor: 'bg-[#0284c7] text-white',
     pinBgColor: '#0284c7',
     icon: School,
-    county: 'Kiambu / Limuru Sub-County',
-    region: 'Great Rift Valley Highland Ridge',
+    county: 'Central Kenya Region',
+    region: 'Highland Ridge',
     coordinates: {
       lat: -1.1128,
       lng: 36.6432,
@@ -155,9 +155,9 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
     image: '/images/Purity.jpg',
     imageAlt: 'West Hill community learners in classroom uniform in Kenya',
     summary:
-      'A community educational pillar in the cool highlands of Limuru, keeping vulnerable students enrolled in primary and junior secondary school.',
+      'A community educational pillar keeping vulnerable students enrolled in primary and junior secondary school in Kenya.',
     longDescription:
-      'In the agricultural tea-farming belt of Limuru, many smallholder farming families cannot afford the hidden costs of public schooling—including activity levies, required uniforms, desk fees, and government examination registrations. West Hill steps into this gap so no child is sent home or drops out due to poverty.',
+      'Many vulnerable families cannot afford the hidden costs of public schooling—including activity levies, required uniforms, desk fees, and government examination registrations. West Hill steps into this gap so no child is sent home or drops out due to poverty.',
     whoIsServed:
       'Over 120 primary and junior secondary learners living in impoverished peri-urban and tea-estate communities.',
     keyStats: [
@@ -334,8 +334,8 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
 
     // Add visual operating corridor connection polyline
     const corridorCoords: [number, number][] = [
-      [-1.1128, 36.6432], // West Hill (Limuru)
-      [-1.1442, 36.9817], // Amani (Kiambu / Ruiru)
+      [-1.1128, 36.6432], // West Hill
+      [-1.1442, 36.9817], // Amani
     ];
 
     L.polyline(corridorCoords, {
@@ -510,7 +510,7 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
             Where Furaha Ministries Operates in Kenya
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#59524e] font-normal leading-relaxed">
-            Real geographic map of Furaha&apos;s partner centers across Nairobi and Kiambu County. Pan, zoom, switch between high-resolution satellite imagery or street maps, and click any center to inspect daily rhythms, student enrollment, and field needs.
+            Real geographic map of Furaha&apos;s partner centers in Kenya. Pan, zoom, switch between high-resolution satellite imagery or street maps, and click any center to inspect daily rhythms, student enrollment, and field needs.
           </p>
         </div>
 
@@ -636,9 +636,9 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
                         ? 'bg-[#893d2d] text-white'
                         : 'text-[#59524e] hover:bg-[#faf8f5]'
                     }`}
-                    title="Frame the Central Kenya Operating Corridor (Limuru - Kiambu - Nairobi)"
+                    title="Frame the Operating Partner Centers in Kenya"
                   >
-                    Corridor
+                    Partner Centers
                   </button>
                   <button
                     onClick={() => handleViewScope('kenya')}
@@ -737,7 +737,7 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
             <div className="p-4 rounded-2xl bg-white border border-[#ebdcd0] text-xs text-[#59524e] leading-relaxed flex items-start gap-3">
               <Info className="w-4 h-4 text-[#893d2d] shrink-0 mt-0.5" />
               <div>
-                <strong className="text-[#201a18] font-bold">Why This Corridor?</strong> Furaha concentrates its partnerships within the Central Kenya Highland & Kiambu region. This contiguous operational corridor between Limuru (West Hill) and Kiambu (Amani) allows our local team to conduct weekly in-person site visits, deliver bulk foodstuffs efficiently, and monitor students without heavy administrative overhead.
+                <strong className="text-[#201a18] font-bold">Why These Communities?</strong> Furaha concentrates its partnerships with local community programs in Kenya. This allows our local team to conduct weekly in-person site visits, deliver bulk foodstuffs efficiently, and monitor students without heavy administrative overhead.
               </div>
             </div>
 

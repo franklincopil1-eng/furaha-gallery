@@ -79,7 +79,7 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       icon: Compass,
       imageWebp: '/images/discipleship-kibera-church.webp',
       image: '/images/discipleship-kibera-church.jpg',
-      imageAlt: 'Furaha outreach, Sunday school, and children gathered in Christian fellowship and discipleship at New CEA Pentecost Kibera Church in Kenya',
+      imageAlt: 'Furaha outreach, Sunday school, and children gathered in Christian fellowship and discipleship at community church in Kenya',
       description:
         'Furaha is rooted in Christian faith. We share the love of Jesus Christ through scripture engagement, prayer, and loving discipleship.',
       activities: [

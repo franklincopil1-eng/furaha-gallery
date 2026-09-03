@@ -61,13 +61,13 @@ export const DonationHero: React.FC<DonationHeroProps> = ({
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-stone-200/80 bg-stone-100 aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/5] max-h-[360px] lg:max-h-[400px]">
               <img
                 src="/images/volunteer-helping-with-donation-box1.jpeg"
-                alt="Kenyan children receiving education support and mentorship in Nairobi"
+                alt="Kenyan children receiving education support and mentorship"
                 className="w-full h-full object-cover object-center"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium leading-snug drop-shadow-sm">
-                <span>Furaha learning and community support center · Nairobi, Kenya</span>
+                <span>Furaha learning and community support center · Kenya</span>
               </div>
             </div>
           </div>

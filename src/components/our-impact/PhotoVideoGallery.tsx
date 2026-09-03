@@ -38,8 +38,8 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-4',
-    image: '/images/video_frame_blessing.jpg',
-    imageAlt: 'Completed community sanitation dedication and blessing at Amani Children’s Home',
+    image: '/images/video_frame_new_bathrooms.jpg',
+    imageAlt: 'Completed modern washroom and sanitation block at Amani Children’s Home',
     caption: 'Modern washroom and sanitation facility completion',
     location: "Amani Children's Home",
     date: 'Field Documentation',

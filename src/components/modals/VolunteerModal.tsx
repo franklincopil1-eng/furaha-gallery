@@ -148,7 +148,7 @@ export const VolunteerModal: React.FC<VolunteerModalProps> = ({
                     type="text"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    placeholder="e.g. Nairobi, Kenya or USA"
+                    placeholder="e.g. Kenya, USA, UK"
                     className="w-full bg-[#fdfbf9] border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-[#893d2d] focus:outline-none"
                   />
                 </div>

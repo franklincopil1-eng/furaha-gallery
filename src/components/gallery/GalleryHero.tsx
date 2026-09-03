@@ -1,26 +1,18 @@
 import React from 'react';
-import { GalleryItem, GALLERY_ITEMS } from './galleryData';
+import { Camera, MapPin, Sparkles } from 'lucide-react';
+import { GALLERY_ITEMS } from './galleryData';
 
 interface GalleryHeroProps {
-  onOpenLightbox?: (item: GalleryItem) => void;
   onScrollToGallery?: () => void;
 }
 
 export const GalleryHero: React.FC<GalleryHeroProps> = ({
-  onOpenLightbox,
   onScrollToGallery,
 }) => {
-  // Highlight 3 curated photographs with natural archival mounts
-  const heroFeaturedItems = [
-    GALLERY_ITEMS.find((i) => i.id === 'photo-students-holding-books') || GALLERY_ITEMS[3],
-    GALLERY_ITEMS.find((i) => i.id === 'photo-discipleship-church') || GALLERY_ITEMS[4],
-    GALLERY_ITEMS.find((i) => i.id === 'photo-purity-teacher') || GALLERY_ITEMS[8],
-  ].filter(Boolean) as GalleryItem[];
-
   return (
     <section
       aria-label="Gallery Hero"
-      className="relative w-full bg-[#240e08] text-white pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-[#ebdcd0]/15"
+      className="relative w-full bg-[#240e08] text-white pt-28 sm:pt-36 pb-14 sm:pb-18 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-[#ebdcd0]/15"
     >
       {/* Subtle Museum Ambient Lighting */}
       <div
@@ -33,72 +25,45 @@ export const GalleryHero: React.FC<GalleryHeroProps> = ({
       />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
-        {/* Harmonious Header Hierarchy & Centered Typography */}
         <div className="flex flex-col items-center">
-          <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-[#e5b382] mb-3 sm:mb-4 inline-block">
-            GALLERY
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-[#e5b382] mb-3 inline-flex items-center gap-2">
+            <Camera className="w-3.5 h-3.5" />
+            PHOTO GALLERY
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight max-w-2xl mx-auto">
-            Moments from the work.
+            Moments from the field.
           </h1>
 
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-white/75 max-w-xl mx-auto font-normal leading-relaxed">
-            Photos and videos from Furaha's work and the communities we serve in Kenya.
+          <p className="mt-3 text-sm sm:text-base text-white/80 max-w-lg mx-auto font-normal leading-relaxed">
+            Photographs from Furaha&apos;s education, nutrition, discipleship, and community programs in Kenya.
           </p>
-        </div>
 
-        {/* Gallery Exhibition Preview Row */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
-          {heroFeaturedItems.map((item, index) => {
-            // Subtle rotational rhythm for an art gallery display feel
-            const rotationClass =
-              index === 0
-                ? '-rotate-1 hover:rotate-0'
-                : index === 2
-                ? 'rotate-1 hover:rotate-0'
-                : 'hover:-translate-y-1';
-
-            return (
-              <div
-                key={item.id}
-                onClick={() => onOpenLightbox && onOpenLightbox(item)}
-                className={`group relative cursor-pointer transition-all duration-300 ${rotationClass}`}
-              >
-                <div className="p-2 sm:p-2.5 bg-white/95 rounded-2xl shadow-xl shadow-black/40 border border-white/30 text-left">
-                  <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#1f1513]">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="pt-2 px-1 flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-[#201a18] truncate mr-2">
-                      {item.title}
-                    </span>
-                    <span className="text-[10px] text-[#59524e] shrink-0">
-                      {item.subtitle}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Subtle quick-scroll affordance */}
-        {onScrollToGallery && (
-          <div className="mt-10 sm:mt-12 flex justify-center">
-            <button
-              onClick={onScrollToGallery}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-medium text-white/80 hover:text-white bg-white/10 hover:bg-white/15 border border-white/20 backdrop-blur-xs transition-colors cursor-pointer"
-            >
-              Explore all media
-              <span className="text-xs">↓</span>
-            </button>
+          {/* Program Badges */}
+          <div className="mt-5 flex flex-wrap justify-center items-center gap-2.5">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium border border-white/15">
+              <Sparkles className="w-3 h-3 text-[#e5b382]" />
+              {GALLERY_ITEMS.length} Photographs
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-medium border border-white/15">
+              <MapPin className="w-3 h-3 text-[#e5b382]" />
+              Kenya
+            </span>
           </div>
-        )}
+
+          {/* Quick scroll button */}
+          {onScrollToGallery && (
+            <div className="mt-8">
+              <button
+                onClick={onScrollToGallery}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#240e08] bg-[#e5b382] hover:bg-[#d69f6c] transition-all cursor-pointer shadow-lg shadow-black/30 hover:scale-102"
+              >
+                Explore Gallery
+                <span className="text-sm font-bold">↓</span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

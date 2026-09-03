@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { GalleryHero } from '../components/gallery/GalleryHero';
-import { FeaturedVideosSection } from '../components/gallery/FeaturedVideosSection';
 import { MediaGrid } from '../components/gallery/MediaGrid';
 import { GalleryLightboxModal } from '../components/gallery/GalleryLightboxModal';
 import { GALLERY_ITEMS, GalleryItem } from '../components/gallery/galleryData';
@@ -21,8 +20,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.title = 'Gallery | Furaha Ministries';
   }, []);
-
-  const videoItems = GALLERY_ITEMS.filter((item) => item.type === 'video');
 
   const handleSelectNext = () => {
     if (!selectedItem) return;
@@ -48,18 +45,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#201a18] flex flex-col font-sans selection:bg-[#893d2d] selection:text-white">
       {/* 1. Gallery Exhibition Hero */}
-      <GalleryHero
-        onOpenLightbox={(item) => setSelectedItem(item)}
-        onScrollToGallery={handleScrollToGallery}
-      />
+      <GalleryHero onScrollToGallery={handleScrollToGallery} />
 
-      {/* 2. Featured Video */}
-      <FeaturedVideosSection
-        videos={videoItems}
-        onOpenLightbox={(item) => setSelectedItem(item)}
-      />
-
-      {/* 3. Media Grid (All · Photos · Videos) */}
+      {/* 2. Media Grid - 31 100% Unique Curated Photographs */}
       <div id="gallery-collection">
         <MediaGrid
           items={GALLERY_ITEMS}
@@ -67,7 +55,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
         />
       </div>
 
-      {/* 4. Minimal Lightbox */}
+      {/* 3. Fullscreen Lightbox Modal */}
       <GalleryLightboxModal
         item={selectedItem}
         items={GALLERY_ITEMS}
