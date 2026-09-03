@@ -31,7 +31,7 @@ export const OurWorkFinalCTA: React.FC<OurWorkFinalCTAProps> = ({ onDonate, onCo
             className="flex-1 min-w-[140px] bg-[#893d2d] hover:bg-[#733123] text-white text-xs sm:text-sm font-bold py-2.5 px-5 rounded-full shadow-xs hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
           >
             <Heart className="w-3.5 h-3.5 fill-white" />
-            <span>Donate</span>
+            <span>Give to Furaha</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
 

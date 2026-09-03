@@ -67,7 +67,7 @@ export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
       {/* 3. The Human Reality (What children need to stay in school) */}
       <HumanReality />
 
-      {/* 4. Communities: Amani Children's Home, West Hill, Cry of a Young One */}
+      {/* 4. Communities: Amani Children's Home, West Hill */}
       <WhereWeServeCommunities
         onSupportCommunity={(communityName) => onNavigateToDonate(communityName)}
         onExploreWork={() => {

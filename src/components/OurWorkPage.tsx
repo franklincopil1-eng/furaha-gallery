@@ -71,7 +71,7 @@ export const OurWorkPage: React.FC<OurWorkPageProps> = ({
       {/* 4. Show the Work: Photographic Evidence on the ground */}
       <OnTheGroundGallery onNavigateToGallery={onNavigateToGallery} />
 
-      {/* 5. Connect the Work to Real Communities: Amani, West Hill, Huruma */}
+      {/* 5. Connect the Work to Real Communities: Amani, West Hill */}
       <ConnectCommunities
         onNavigateToWhoWeServe={onNavigateToWhoWeServe}
       />

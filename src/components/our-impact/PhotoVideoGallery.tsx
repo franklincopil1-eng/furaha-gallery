@@ -5,9 +5,9 @@ import { MediaItem, MediaLightboxModal } from './MediaLightboxModal';
 export const mediaItemsData: MediaItem[] = [
   {
     id: 'media-1',
-    image: '/video_frame_blessing.jpg',
-    imageAlt: 'Furaha team and community leaders gathered in prayer and Christian dedication in Kenya',
-    caption: 'Christian prayer, thanksgiving, and dedication gathering',
+    image: '/DSCF0856.jpg',
+    imageAlt: 'Furaha team and children gathered together in Christian fellowship and encouragement in Kenya',
+    caption: 'Christian fellowship, encouragement, and community gathering',
     location: 'Kenya',
     date: 'Field Documentation',
     category: 'Faith & Discipleship',
@@ -16,10 +16,10 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-2',
-    image: '/Education.jpg',
-    imageAlt: 'Classroom study and learning support in Kenya',
-    caption: 'Students engaged in classroom study and book review',
-    location: 'Amani Children’s Home',
+    image: '/DSCF0009.jpg',
+    imageAlt: "Students engaged in classroom study at Amani Children's Home in Kenya",
+    caption: 'Students engaged in classroom study and learning at Amani',
+    location: "Amani Children's Home",
     date: 'Field Documentation',
     category: 'Education Support',
     context:
@@ -38,14 +38,14 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-4',
-    image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-    imageAlt: 'Outreach and clothing distribution in Huruma',
-    caption: 'Community clothing organization and youth care packages',
-    location: 'Huruma · Nairobi',
+    image: '/video_frame_new_bathrooms.jpg',
+    imageAlt: 'Sanitation and modern washroom facility at Amani Children’s Home',
+    caption: 'Modern washroom and sanitation facility completion',
+    location: "Amani Children's Home",
     date: 'Field Documentation',
-    category: 'Care & Mentorship',
+    category: 'Facility Upgrades',
     context:
-      'Sorting and distributing essential apparel, footwear, and hygiene packs for vulnerable young people in Huruma settlement.',
+      'Completed sanitary washroom blocks, secure plumbing, and clean water access ensuring dignity and health for residential children.',
   },
 ];
 

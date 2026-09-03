@@ -229,7 +229,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
                           className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#893d2d] hover:bg-[#733123] text-[#faf2e6] font-semibold text-xs sm:text-xs md:text-sm transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center gap-1.5 active:scale-95 border border-[#893d2d]"
                         >
                           <Heart className="w-3.5 h-3.5 fill-[#faf2e6]" />
-                          <span>Donate</span>
+                          <span>Give to Furaha</span>
                         </button>
                       </div>
                     </div>

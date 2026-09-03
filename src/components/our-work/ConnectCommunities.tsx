@@ -17,11 +17,6 @@ export const ConnectCommunities: React.FC<ConnectCommunitiesProps> = ({ onNaviga
       role: 'Community learning support, study resources, and assistance for local students.',
       icon: School,
     },
-    {
-      name: 'Huruma Community',
-      role: 'Grassroots outreach, essentials, and encouragement for vulnerable youth and families.',
-      icon: HeartHandshake,
-    },
   ];
 
   return (
@@ -41,7 +36,7 @@ export const ConnectCommunities: React.FC<ConnectCommunitiesProps> = ({ onNaviga
         </p>
 
         {/* Compact Community Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 text-left max-w-2xl mx-auto">
           {partnerSummaries.map((partner, idx) => {
             const Icon = partner.icon;
             return (

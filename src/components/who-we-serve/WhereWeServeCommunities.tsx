@@ -15,8 +15,8 @@ export const WhereWeServeCommunities: React.FC<WhereWeServeCommunitiesProps> = (
       id: 'amani',
       name: "Amani Children's Home",
       location: 'Kenya',
-      image: '/volunteer-helping-with-donation-box1.jpeg',
-      imageAlt: "Children and staff at Amani Children's Home",
+      image: '/field-community-6.jpg',
+      imageAlt: "Children gathered in fellowship at Amani Children's Home",
       description: "A home in Kenya providing care, shelter, and a family-like environment for orphaned and vulnerable children.",
       whoWeServe: 'Children and young people in need of schooling stability, meals, and caring mentorship.',
       whatFurahaDoes: [
@@ -30,8 +30,8 @@ export const WhereWeServeCommunities: React.FC<WhereWeServeCommunitiesProps> = (
       id: 'west-hill',
       name: 'West Hill',
       location: 'Kenya',
-      image: '/Purity.jpg',
-      imageAlt: 'West Hill community learners in Kenya',
+      image: '/uniform.jpeg',
+      imageAlt: 'West Hill students wearing school uniforms in Kenya',
       description: 'A local learning and youth center supporting children who face financial barriers to attending school.',
       whoWeServe: 'Students and young learners in need of learning materials and school fee support.',
       whatFurahaDoes: [
@@ -40,21 +40,6 @@ export const WhereWeServeCommunities: React.FC<WhereWeServeCommunitiesProps> = (
         'Tutoring guidance and youth encouragement',
       ],
       ctaText: 'Support West Hill',
-    },
-    {
-      id: 'cry-of-a-young-one',
-      name: 'Cry of a Young One',
-      location: 'Huruma · Nairobi, Kenya',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      imageAlt: 'Cry of a Young One community outreach in Huruma',
-      description: 'A community initiative in Huruma serving children and youth in one of Nairobi’s densely populated neighborhoods.',
-      whoWeServe: 'Vulnerable children and youth who need assistance to stay enrolled in local schools.',
-      whatFurahaDoes: [
-        'Emergency food packages and daily nutrition',
-        'School re-entry support and learning supplies',
-        'Mentorship, hygiene essentials, and youth care',
-      ],
-      ctaText: 'Support Cry of a Young One',
     },
   ];
 

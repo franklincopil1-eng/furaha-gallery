@@ -14,9 +14,9 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Education & School Support',
       tagline: 'Supporting access to the classroom',
       icon: BookOpen,
-      imageWebp: '/Education.webp',
-      image: '/Education.jpg',
-      imageAlt: 'Students and community learning in Kenya',
+      imageWebp: '/field-learning-1.webp',
+      image: '/field-learning-1.jpg',
+      imageAlt: 'Students engaged in classroom learning and study in Kenya',
       description:
         'When families struggle with basic school expenses, children risk missing class. Furaha provides practical educational assistance so children can attend school and keep learning.',
       activities: [
@@ -56,9 +56,9 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Care, Mentorship & Development',
       tagline: 'Encouraging character and personal growth',
       icon: HeartHandshake,
-      imageWebp: '/volunteer-selecting-organizing-clothes-donations-charity.webp',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      imageAlt: 'Mentorship and care packages in Kenya',
+      imageWebp: '/field-community-5.webp',
+      image: '/field-community-5.jpg',
+      imageAlt: 'Community mentorship, fellowship, and care in Kenya',
       description:
         'Alongside education and meals, young people need positive guidance, character development, and everyday care to build confidence and resilience.',
       activities: [
@@ -77,9 +77,9 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Christian Faith & Discipleship',
       tagline: 'Sharing enduring hope in Jesus Christ',
       icon: Compass,
-      imageWebp: '/video_frame_blessing.webp',
-      image: '/video_frame_blessing.jpg',
-      imageAlt: 'Furaha team and community gathered in prayer and Christian thanksgiving in Kenya',
+      imageWebp: '/field-outreach-14.webp',
+      image: '/field-outreach-14.jpg',
+      imageAlt: 'Furaha outreach and children gathered in Christian fellowship and discipleship in Kenya',
       description:
         'Furaha is rooted in Christian faith. We share the love of Jesus Christ through scripture engagement, prayer, and loving discipleship.',
       activities: [

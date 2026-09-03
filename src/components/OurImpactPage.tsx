@@ -73,7 +73,7 @@ export const OurImpactPage: React.FC<OurImpactPageProps> = ({
         onNavigateToDonate={onNavigateToDonate}
       />
 
-      {/* 6. Real Places: Amani, West Hill, Huruma */}
+      {/* 6. Real Places: Amani, West Hill */}
       <RealPlaces
         onNavigateToWhoWeServe={onNavigateToWhoWeServe}
       />

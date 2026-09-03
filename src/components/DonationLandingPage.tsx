@@ -33,7 +33,7 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    document.title = 'Donate to Furaha Ministries | Support Children in Kenya';
+    document.title = 'Give to Furaha Ministries | Support Children in Kenya';
   }, []);
 
   useEffect(() => {

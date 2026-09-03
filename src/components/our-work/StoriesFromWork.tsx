@@ -10,13 +10,13 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
     {
       id: 1,
       title: 'School Attendance & Learning Supplies',
-      location: 'Kenya',
-      image: '/Education.jpg',
-      imageAlt: 'Students and community learning in Kenya',
+      location: 'West Hill · Kenya',
+      image: '/field-learning-2.jpg',
+      imageAlt: 'Students studying at desks with learning supplies in Kenya',
       icon: BookOpen,
       category: 'Education Support',
       description:
-        'Helping children stay in the classroom through school fee assistance, learning materials, and basic academic support in partner communities.',
+        'Helping children stay in the classroom through school fee assistance, textbooks, and basic academic supplies in partner communities.',
     },
     {
       id: 2,
@@ -31,14 +31,14 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
     },
     {
       id: 3,
-      title: 'Care Packages & Community Outreach',
-      location: 'Huruma · Nairobi',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      imageAlt: 'Outreach and supply sorting in Huruma',
+      title: 'Residential Care & Safe Sanctuary',
+      location: "Amani Children's Home · Kenya",
+      image: '/field-outreach-16.jpg',
+      imageAlt: 'Caregivers and children gathering in community fellowship at Amani',
       icon: Heart,
-      category: 'Outreach & Care',
+      category: 'Residential Care',
       description:
-        'Providing clothing, hygiene essentials, and personal guidance for vulnerable youth and families in the community.',
+        'Providing safe shelter, loving caregivers, nutrition, and personal guidance for vulnerable children at Amani Children’s Home.',
     },
   ];
 

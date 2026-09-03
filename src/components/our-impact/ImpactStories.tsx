@@ -11,11 +11,11 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
   const verifiedStories = [
     {
       id: 'story-amani',
-      name: 'Children at Amani Home',
+      name: "Children at Amani Home",
       community: "Amani Children's Home · Kenya",
       category: 'Education & Care',
-      image: '/Education.webp',
-      imageAlt: 'Children at Amani learning together in Kenya',
+      image: '/DSCF0817.jpg',
+      imageAlt: 'Students and community learning together in Kenya',
       whatWasHappening:
         'Children arriving at the home faced interrupted school careers due to extreme household poverty and missing fees.',
       whatFurahaDid:
@@ -38,18 +38,18 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
         'Students receive reliable daily nutrition and have essential learning books to prepare for class lessons.',
     },
     {
-      id: 'story-huruma',
-      name: 'Youth Outreach in Huruma',
-      community: 'Huruma Community · Nairobi',
-      category: 'Care & Mentorship',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      imageAlt: 'Volunteers and youth in Huruma community',
+      id: 'story-sanitation',
+      name: 'Sanitation & Living Dignity',
+      community: "Amani Children's Home · Kenya",
+      category: 'Infrastructure & Health',
+      image: '/video_frame_new_bathrooms.jpg',
+      imageAlt: 'Completed clean sanitation and washroom facility at Amani',
       whatWasHappening:
-        'Young people in high-density informal settlements lacked clean clothing, hygiene essentials, and positive mentorship.',
+        'Outdated washroom facilities and limited plumbing posed hygiene and health challenges for residential children.',
       whatFurahaDid:
-        'Organized sorted clothing drives, distributed hygiene packs, and connected youth with caring local mentors.',
+        'Funded construction and plumbing repairs for modern, hygienic washroom blocks with clean water access.',
       whatHappenedNext:
-        'Youth receive personal care essentials and participate in regular community mentorship and fellowship.',
+        'Children now have clean, dignified, private sanitation facilities that protect daily health and wellbeing.',
     },
   ];
 

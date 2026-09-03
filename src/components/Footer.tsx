@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Shield, Heart, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { Mail, Shield, Heart } from 'lucide-react';
 import { FurahaLogo } from './FurahaLogo';
 import { NewsletterSubscribe } from './NewsletterSubscribe';
 
@@ -16,32 +16,6 @@ interface FooterProps {
   onNavigateToHome?: () => void;
 }
 
-const SOCIAL_LINKS = [
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/meetfuraha/',
-    icon: Instagram,
-    label: 'Follow Furaha on Instagram',
-  },
-  {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/meetfuraha/',
-    icon: Facebook,
-    label: 'Connect with Furaha on Facebook',
-  },
-  {
-    name: 'YouTube',
-    href: 'https://www.youtube.com/@meetfuraha',
-    icon: Youtube,
-    label: 'Watch Furaha updates on YouTube',
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/furaha-ministries/',
-    icon: Linkedin,
-    label: 'Follow Furaha Ministries on LinkedIn',
-  },
-];
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenVolunteer,
@@ -96,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="mt-3.5 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-[#893d2d] font-bold text-xs shadow-xs hover:bg-[#faedd0] hover:scale-105 active:scale-95 transition-all cursor-pointer"
                 >
                   <Heart className="w-3.5 h-3.5 fill-[#893d2d]" />
-                  <span>Donate to Furaha</span>
+                  <span>Give to Furaha</span>
                 </button>
               )}
             </div>
@@ -227,32 +201,6 @@ export const Footer: React.FC<FooterProps> = ({
               <p className="text-white/80 text-xs sm:text-[13px] mt-2 leading-relaxed font-normal">
                 Kenya, East Africa • Global Partner Network
               </p>
-            </div>
-
-            {/* Social Media Links Section */}
-            <div className="mt-5 pt-4 border-t border-white/15">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-white/90 block mb-2.5">
-                Connect With Us
-              </span>
-              <div className="flex items-center gap-2.5">
-                {SOCIAL_LINKS.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      title={social.label}
-                      id={`footer-social-${social.name.toLowerCase()}`}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#893d2d] border border-white/20 hover:border-white flex items-center justify-center transition-all duration-200 ease-in-out hover:scale-110 hover:shadow-md active:scale-95 group cursor-pointer"
-                    >
-                      <Icon className="w-4 h-4 transition-transform duration-200 group-hover:scale-105" />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>

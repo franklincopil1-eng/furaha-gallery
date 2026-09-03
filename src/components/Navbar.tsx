@@ -268,7 +268,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }`}
               >
                 <Heart className="w-3.5 h-3.5 fill-white" />
-                <span>Donate</span>
+                <span>Give to Furaha</span>
               </button>
             </div>
 
@@ -301,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="inline-flex items-center justify-center gap-1 px-3.5 py-1.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-xs font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer ml-1.5"
               >
                 <Heart className="w-3 h-3 fill-white" />
-                <span>Donate</span>
+                <span>Give to Furaha</span>
               </button>
             </div>
 
@@ -312,7 +312,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="inline-flex items-center justify-center gap-1 px-3.5 py-1.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-xs font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer"
               >
                 <Heart className="w-3 h-3 fill-white" />
-                <span>Donate</span>
+                <span>Give to Furaha</span>
               </button>
               <button
                 className="p-2 text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100 rounded-lg transition-colors focus:outline-none cursor-pointer flex items-center justify-center"
@@ -360,7 +360,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-center font-semibold text-sm transition-all cursor-pointer shadow-sm"
                   >
                     <Heart className="w-4 h-4 fill-white" />
-                    <span>Go to Donation Page</span>
+                    <span>Give to Furaha</span>
                   </button>
                 </li>
               </ul>

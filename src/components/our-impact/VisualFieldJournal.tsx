@@ -19,8 +19,8 @@ export const fieldStoriesData: FieldStory[] = [
       'Educational supplies and classroom provisions were organized and delivered to the children at Amani to support ongoing school attendance.',
     fullStory:
       'When families face steep economic barriers, basic schooling needs like textbooks and term fees are often out of reach. At Amani Children’s Home, Furaha walks alongside local caregivers to ensure every child has access to essential study materials and classroom guidance.',
-    image: '/Education.jpg',
-    imageAlt: 'Children learning and participating in community study in Kenya',
+    image: '/DSCF0024.jpg',
+    imageAlt: "Children studying with books and educational supplies at Amani Children's Home in Kenya",
     chips: ['Education', 'Amani', 'Kenya'],
   },
   {
@@ -42,18 +42,18 @@ export const fieldStoriesData: FieldStory[] = [
   {
     id: 'field-3',
     date: 'June 2026',
-    location: 'Huruma · Nairobi',
+    location: "Amani Children's Home · Kenya",
     category: 'Care',
-    title: 'Clothing care packages and hygiene essentials for youth',
+    title: 'Sanitation facility construction and clean washroom upgrades',
     summary:
-      'Organizing clothing distributions, hygiene kits, and essential care packages alongside community mentorship for vulnerable youth.',
+      'Completed sanitary washroom blocks and clean water infrastructure to ensure dignified living conditions for residential children.',
     whatHappened:
-      'Outreach workers gathered with young people in Huruma to distribute sorted clothing, footwear, and personal hygiene packs.',
+      'Construction and plumbing repairs were finalized for modern, ventilated sanitation facilities at Amani Children’s Home.',
     fullStory:
-      'In high-density informal settlements like Huruma, relational dignity and practical care go hand in hand. Sorting and distributing essentials gives young people practical support while letting them know they are valued and supported.',
-    image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-    imageAlt: 'Sorting clothing items and care packages in Huruma community',
-    chips: ['Care & Mentorship', 'Huruma', 'Nairobi'],
+      'Clean sanitation and hygiene facilities are essential for child health and human dignity. Furaha funded the completion of dedicated washroom blocks, reliable plumbing, and hygienic handwashing areas.',
+    image: '/video_frame_new_bathrooms.jpg',
+    imageAlt: 'Completed sanitation and clean washroom facility at Amani Children’s Home',
+    chips: ['Sanitation', 'Amani', 'Infrastructure'],
   },
   {
     id: 'field-4',
@@ -67,8 +67,8 @@ export const fieldStoriesData: FieldStory[] = [
       'Youth leaders and caregivers hosted weekly Bible fellowship, prayed over children and their families, and shared devotional encouragement.',
     fullStory:
       'Furaha is rooted in Christian faith and love. Beyond material aid, we believe nurturing hope and spiritual resilience in Christ transforms lives. Discipleship gatherings provide a safe, joyful environment where children learn scripture, build character, and know they are deeply loved by God.',
-    image: '/video_frame_blessing.jpg',
-    imageAlt: 'Staff and community leaders gathered in prayer and Christian dedication in Kenya',
+    image: '/DSCF0856.jpg',
+    imageAlt: 'Children and caregivers gathered together in Christian fellowship and mentorship in Kenya',
     chips: ['Discipleship', 'Mentorship', 'Kenya'],
   },
 ];

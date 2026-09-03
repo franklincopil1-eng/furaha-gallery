@@ -66,7 +66,7 @@ export const Causes: React.FC<CausesProps> = ({ onOpenDonateForCause }) => {
         'Annual distribution of uniforms, leather shoes, and backpacks',
         'After-school literacy circles and computer literacy workshops'
       ],
-      imageUrl: '/DSCF0817.jpg',
+      imageUrl: '/field-learning-1.jpg',
       raisedPercent: 92
     },
     {
@@ -79,7 +79,7 @@ export const Causes: React.FC<CausesProps> = ({ onOpenDonateForCause }) => {
         'Trauma-informed Christian counseling and pastoral care',
         'Community service and peer-leadership development training'
       ],
-      imageUrl: '/video_frame_blessing.jpg',
+      imageUrl: '/field-outreach-13.jpg',
       raisedPercent: 85
     }
   ];

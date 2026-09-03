@@ -48,7 +48,7 @@ export const OurImpactFinalCTA: React.FC<OurImpactFinalCTAProps> = ({
             className="inline-flex items-center justify-center gap-2 bg-[#893d2d] hover:bg-[#733123] text-white font-medium text-sm sm:text-base px-7 py-4 rounded-full transition-all shadow-lg hover:shadow-xl cursor-pointer"
           >
             <Heart className="w-4 h-4 fill-white" />
-            <span>Help make the work possible</span>
+            <span>Give to Furaha</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 

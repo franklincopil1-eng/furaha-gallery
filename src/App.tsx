@@ -13,7 +13,6 @@ import { FounderSpotlight } from './components/FounderSpotlight';
 import { Causes } from './components/Causes';
 import { TestimonialSection } from './components/TestimonialSection';
 import { ImpactBanner } from './components/ImpactBanner';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { DonationLandingPage } from './components/DonationLandingPage';
 import { WhoWeServePage } from './components/WhoWeServePage';
@@ -377,16 +376,6 @@ export default function App() {
                 variants={sectionFadeVariants}
               >
                 <ImpactBanner onOpenDonate={() => handleNavigateToDonate()} />
-              </motion.div>
-
-              {/* 10. Get In Touch & Contact Form */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-60px' }}
-                variants={sectionFadeVariants}
-              >
-                <ContactSection />
               </motion.div>
             </div>
           </motion.main>

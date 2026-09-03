@@ -1,8 +1,45 @@
+export type GalleryCategory =
+  | 'classroom-desks'
+  | 'books-study'
+  | 'school-uniforms'
+  | 'sanitation-repairs';
+
+export interface GalleryCategoryMeta {
+  id: GalleryCategory;
+  label: string;
+  description: string;
+}
+
+export const GALLERY_CATEGORIES: GalleryCategoryMeta[] = [
+  {
+    id: 'classroom-desks',
+    label: 'Classroom & Desks',
+    description: 'Classroom blocks, learning desks, and dedicated student study spaces.',
+  },
+  {
+    id: 'books-study',
+    label: 'Books & Study Materials',
+    description: 'Textbooks, notebooks, revision materials, and learning supplies.',
+  },
+  {
+    id: 'school-uniforms',
+    label: 'School Uniforms',
+    description: 'Clean uniforms, school footwear, and student dignity on campus.',
+  },
+  {
+    id: 'sanitation-repairs',
+    label: 'Sanitation & Facility Repairs',
+    description: 'Clean washroom facilities, plumbing, and physical campus improvements.',
+  },
+];
+
 export interface GalleryItem {
   id: string;
   type: 'photo' | 'video';
   title: string;
   subtitle?: string;
+  category: GalleryCategory;
+  categoryLabel: string;
   src: string;
   poster?: string;
   location?: string;
@@ -17,6 +54,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     type: 'video',
     title: "Amani Children's Home",
     subtitle: 'Sanitation Project',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/amani-sanitation.mp4',
     poster: '/video_frame_new_bathrooms.jpg',
     location: 'Kenya',
@@ -26,7 +65,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'vid-westhill',
     type: 'video',
     title: 'West Hill',
-    subtitle: 'Learning Community',
+    subtitle: 'Learning Facility Construction',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/westhill_sanitation.mp4',
     poster: '/video_frame_construction.jpg',
     location: 'Limuru, Kenya',
@@ -35,21 +76,36 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'vid-furaha-work',
     type: 'video',
-    title: 'Furaha Ministries',
-    subtitle: 'Moments from the Work',
+    title: "Amani Children's Home",
+    subtitle: 'Joy & Community Life',
+    category: 'school-uniforms',
+    categoryLabel: 'School Uniforms',
     src: '/video.mp4',
-    poster: '/video_master_poster.jpg',
+    poster: '/DSCF0856.jpg',
     location: 'Kenya',
     duration: '2:15',
   },
 
-  // Photos
+  // Photos - Classroom & Desks
   {
-    id: 'photo-amani-students',
+    id: 'photo-amani-desks',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Students',
-    src: '/DSCF0817.jpg',
+    subtitle: 'Classroom & Learning Desks',
+    category: 'classroom-desks',
+    categoryLabel: 'Classroom & Desks',
+    src: '/DSCF0007.jpg',
+    location: 'Kenya',
+    objectPosition: 'object-center',
+  },
+  {
+    id: 'photo-amani-study',
+    type: 'photo',
+    title: "Amani Children's Home",
+    subtitle: 'Desk Study & Tutoring',
+    category: 'classroom-desks',
+    categoryLabel: 'Classroom & Desks',
+    src: '/DSCF0009.jpg',
     location: 'Kenya',
     objectPosition: 'object-center',
   },
@@ -57,121 +113,120 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'photo-purity-teacher',
     type: 'photo',
     title: 'West Hill',
-    subtitle: 'Teacher Purity & Students',
+    subtitle: 'Teacher Purity & Classroom Desks',
+    category: 'classroom-desks',
+    categoryLabel: 'Classroom & Desks',
     src: '/Purity.jpg',
     location: 'Limuru, Kenya',
     objectPosition: 'object-top',
   },
+
+  // Photos - Books & Study Materials
   {
-    id: 'photo-fellowship',
+    id: 'photo-study-books',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Joyful Gathering',
-    src: '/video_frame_grateful_faces.jpg',
+    subtitle: 'Textbooks & Revision Materials',
+    category: 'books-study',
+    categoryLabel: 'Books & Study Materials',
+    src: '/DSCF0024.jpg',
     location: 'Kenya',
+    objectPosition: 'object-center',
   },
   {
-    id: 'photo-discipleship',
+    id: 'photo-learning-packs',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Dedication & Prayer',
-    src: '/video_frame_blessing.jpg',
-    location: 'Kenya',
-  },
-  {
-    id: 'photo-westhill-class',
-    type: 'photo',
-    title: 'West Hill',
-    subtitle: 'Classroom',
-    src: '/Education.jpg',
-    location: 'Limuru, Kenya',
-  },
-  {
-    id: 'photo-westhill-food',
-    type: 'photo',
-    title: 'West Hill',
-    subtitle: 'Food Supplies',
-    src: '/Nutrition.png',
-    location: 'Limuru, Kenya',
-  },
-  {
-    id: 'photo-huruma-clothes',
-    type: 'photo',
-    title: 'Huruma',
-    subtitle: 'Community Outreach',
-    src: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-    location: 'Nairobi, Kenya',
-  },
-  {
-    id: 'photo-community-food-box',
-    type: 'photo',
-    title: 'Community Support',
-    subtitle: 'Food Distribution',
+    subtitle: 'Study Supplies & Material Packs',
+    category: 'books-study',
+    categoryLabel: 'Books & Study Materials',
     src: '/volunteer-helping-with-donation-box1.jpeg',
     location: 'Kenya',
   },
   {
-    id: 'photo-volunteers',
+    id: 'photo-supplies-dist',
     type: 'photo',
-    title: 'Community Support',
-    subtitle: 'Volunteers',
+    title: "Amani Children's Home",
+    subtitle: 'Core Learning Distribution',
+    category: 'books-study',
+    categoryLabel: 'Books & Study Materials',
     src: '/group-people-volunteering-foodbank-poor-people.jpg',
     location: 'Kenya',
   },
+
+  // Photos - School Uniforms
   {
-    id: 'photo-maggie',
+    id: 'photo-westhill-uniforms',
     type: 'photo',
-    title: 'Furaha Team',
-    subtitle: 'Maggie',
+    title: 'West Hill',
+    subtitle: 'Students in School Uniforms',
+    category: 'school-uniforms',
+    categoryLabel: 'School Uniforms',
+    src: '/DSCF0817.jpg',
+    location: 'Limuru, Kenya',
+    objectPosition: 'object-center',
+  },
+  {
+    id: 'photo-amani-fellowship',
+    type: 'photo',
+    title: "Amani Children's Home",
+    subtitle: 'Community Gathering & Fellowship',
+    category: 'school-uniforms',
+    categoryLabel: 'School Uniforms',
+    src: '/DSCF0856.jpg',
+    location: 'Kenya',
+    objectPosition: 'object-center',
+  },
+  {
+    id: 'photo-maggie-care',
+    type: 'photo',
+    title: "Amani Children's Home",
+    subtitle: 'On-Ground Care & Mentorship',
+    category: 'school-uniforms',
+    categoryLabel: 'School Uniforms',
     src: '/maggienew2.jpg',
     location: 'Kenya',
     objectPosition: 'object-top',
   },
+
+  // Photos - Sanitation & Facility Repairs
   {
     id: 'photo-new-bathrooms',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'New Washrooms',
+    subtitle: 'New Washrooms Facility',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/video_frame_new_bathrooms.jpg',
     location: 'Kenya',
   },
   {
-    id: 'photo-construction',
+    id: 'photo-facility-construction',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Construction Work',
+    subtitle: 'Facility Construction in Progress',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/video_frame_construction.jpg',
     location: 'Kenya',
   },
   {
-    id: 'photo-materials',
+    id: 'photo-building-materials',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Building Materials',
+    subtitle: 'Building Supplies & Plumbing',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/video_frame_materials.jpg',
     location: 'Kenya',
   },
   {
-    id: 'photo-grateful-faces',
+    id: 'photo-before-repairs',
     type: 'photo',
     title: "Amani Children's Home",
-    subtitle: 'Children at Amani',
-    src: '/video_frame_grateful_faces.jpg',
-    location: 'Kenya',
-  },
-  {
-    id: 'photo-blessing',
-    type: 'photo',
-    title: "Amani Children's Home",
-    subtitle: 'Community Blessing',
-    src: '/video_frame_blessing.jpg',
-    location: 'Kenya',
-  },
-  {
-    id: 'photo-before-project',
-    type: 'photo',
-    title: "Amani Children's Home",
-    subtitle: 'Before the Project',
+    subtitle: 'Facility Prior to Repairs',
+    category: 'sanitation-repairs',
+    categoryLabel: 'Sanitation & Facility Repairs',
     src: '/video_frame_old_bathrooms.jpg',
     location: 'Kenya',
   },

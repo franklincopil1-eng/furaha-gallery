@@ -2,44 +2,62 @@ import React, { useState } from 'react';
 import { MapPin } from 'lucide-react';
 
 export const VisualProofGallery: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'amani' | 'westhill' | 'huruma'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'amani' | 'westhill'>('all');
 
   const galleryItems = [
     {
       id: 1,
-      title: 'Learning & Community Gathering',
+      title: 'West Hill School Uniforms & Study',
       category: 'westhill',
       categoryLabel: 'West Hill',
-      location: 'Kenya',
-      image: '/Purity.jpg',
-      caption: 'Students and volunteers gathering during community learning and food support activities in Kenya.',
+      location: 'Limuru, Kenya',
+      image: '/uniform.jpeg',
+      caption: 'West Hill students equipped with clean school uniforms, stationery, and learning dignity.',
     },
     {
       id: 2,
-      title: 'Essential Supplies & Care',
-      category: 'huruma',
-      categoryLabel: 'Huruma',
-      location: 'Huruma · Nairobi',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      caption: 'Organizing school supplies, clothing, and essential food care packages for children in Huruma.',
-    },
-    {
-      id: 3,
-      title: 'Educational Materials & Care',
+      title: 'Amani Study Sessions & Reading',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/volunteer-helping-with-donation-box1.jpeg',
-      caption: 'Providing books, school supplies, and food support directly to children and caregivers.',
+      image: '/field-learning-1.jpg',
+      caption: 'Children and caregivers gathered for focused reading and tutoring at Amani.',
+    },
+    {
+      id: 3,
+      title: 'Student Activities & Group Learning',
+      category: 'westhill',
+      categoryLabel: 'West Hill',
+      location: 'Limuru, Kenya',
+      image: '/field-activity-3.jpg',
+      caption: 'Interactive group lessons and educational exercises with dedicated local teachers.',
     },
     {
       id: 4,
-      title: 'On-Ground Leadership',
+      title: 'Care, Fellowship & Warm Meals',
       category: 'amani',
-      categoryLabel: 'Kenya',
-      location: 'Nairobi, Kenya',
-      image: '/maggienew2.jpg',
-      caption: 'Maggie Mburu on the ground in Kenya, meeting with local caregivers and children.',
+      categoryLabel: "Amani Children's Home",
+      location: 'Kenya',
+      image: '/field-community-5.jpg',
+      caption: 'Community life, warm nourishment, and devotional fellowship for residential children.',
+    },
+    {
+      id: 5,
+      title: 'Dedicated Classroom Environments',
+      category: 'westhill',
+      categoryLabel: 'West Hill',
+      location: 'Limuru, Kenya',
+      image: '/field-classroom-4.jpg',
+      caption: 'Classroom settings with proper desks and revision books for students preparing for exams.',
+    },
+    {
+      id: 6,
+      title: 'Campus Life & Safe Grounds',
+      category: 'amani',
+      categoryLabel: "Amani Children's Home",
+      location: 'Kenya',
+      image: '/field-campus-7.jpg',
+      caption: 'Safe campus grounds, dormitory cottages, and caring supervision at Amani Children\'s Home.',
     },
   ];
 
@@ -94,16 +112,6 @@ export const VisualProofGallery: React.FC = () => {
               }`}
             >
               West Hill
-            </button>
-            <button
-              onClick={() => setActiveFilter('huruma')}
-              className={`text-xs font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
-                activeFilter === 'huruma'
-                  ? 'bg-[#893d2d] text-white shadow-xs'
-                  : 'bg-[#faf8f5] text-[#59524e] hover:bg-[#ebdcd0]'
-              }`}
-            >
-              Cry of a Young One (Huruma)
             </button>
           </div>
         </div>

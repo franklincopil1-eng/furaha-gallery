@@ -88,8 +88,8 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
       formatted: "1°08'39.1\"S, 36°58'54.1\"E",
       elevation: '1,530m above sea level',
     },
-    image: '/volunteer-helping-with-donation-box1.jpeg',
-    imageAlt: "Children and staff gathered at Amani Children's Home in Kenya",
+    image: '/DSCF0007.jpg',
+    imageAlt: "Study classrooms and desks at Amani Children's Home in Kenya",
     summary:
       "A permanent, loving home in Kiambu providing shelter, education, balanced nutrition, and holistic care for orphaned and vulnerable children.",
     longDescription:
@@ -197,70 +197,6 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
       'Midday Lunch Pavilion',
       'Sanitation Block',
       'Playground Area',
-    ],
-  },
-  {
-    id: 'cry-of-a-young-one',
-    name: 'Cry of a Young One (Huruma)',
-    alternateName: 'COAYO Grassroots Community Center',
-    category: 'community',
-    categoryLabel: 'Grassroots Urban Slum Center',
-    tagColor: 'bg-[#d97706] text-white',
-    pinBgColor: '#d97706',
-    icon: HeartHandshake,
-    county: 'Nairobi County',
-    region: 'Huruma / Mathare Valley Settlement',
-    coordinates: {
-      lat: -1.2612,
-      lng: 36.8624,
-      formatted: "1°15'40.3\"S, 36°51'44.6\"E",
-      elevation: '1,630m above sea level',
-    },
-    image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-    imageAlt: 'Cry of a Young One community volunteers and youth organizing supplies in Huruma',
-    summary:
-      'A vital frontline refuge in one of Nairobi’s most densely populated informal settlements, protecting youth and re-enrolling dropouts.',
-    longDescription:
-      'Huruma is a dense informal settlement on the edge of the Mathare Valley where families face extreme urban overcrowding, informal labor instability, and lack of basic services. Cry of a Young One is a community-embedded center that serves as a safe haven from street dangers, provides emergency food baskets to single mothers, and gets out-of-school children back into the classroom.',
-    whoIsServed:
-      '350+ children and teenagers, along with vulnerable single-parent households and elderly guardian families in Huruma.',
-    keyStats: [
-      { label: 'Youth Reached', value: '350+', sublabel: 'Weekly programs & outreach' },
-      { label: 'Food Packages', value: '400+', sublabel: 'Monthly emergency rations' },
-      { label: 'Re-enrolled Dropouts', value: '65', sublabel: 'Returned to formal school' },
-      { label: 'Drop-In Days', value: '6 days', sublabel: 'Safe sanctuary open weekly' },
-    ],
-    whatFurahaProvides: [
-      'Street-to-school re-enrollment support and school fee intervention',
-      'Emergency food relief packages: maize meal, sugar, cooking fat, and porridge',
-      'After-school safe drop-in center for homework, solar lighting, and reading',
-      'Life skills training, anti-drug mentorship, hygiene packs, and spiritual guidance',
-    ],
-    dailySchedule: [
-      { time: '09:00 AM', activity: 'Community food pantry check-in & emergency family assistance' },
-      { time: '11:00 AM', activity: 'Early childhood literacy & drop-in safe play circle' },
-      { time: '02:00 PM', activity: 'Home visits to check on out-of-school or sick children' },
-      { time: '04:00 PM', activity: 'After-school study hall (safe lighting & desk space)' },
-      { time: '05:30 PM', activity: 'Youth mentorship, sports, singing & discipleship fellowship' },
-      { time: '06:30 PM', activity: 'Evening nutrition snack distribution & safe escort home' },
-    ],
-    urgentNeeds: [
-      'Emergency food ration bundles for 60 single-parent homes ($25/bundle)',
-      'School shoe and uniform replacement kits for primary students',
-      'Solar lighting battery backup for the evening homework hall',
-    ],
-    quote: {
-      text: "When parents cannot find daily casual work, food disappears first, followed immediately by school fees. Cry of a Young One makes sure these children stay fed, safe, and learning.",
-      author: 'Community Outreach Liaison',
-      role: 'Huruma Youth Coordinator',
-    },
-    donationCause: 'Cry of a Young One',
-    facilities: [
-      'Multipurpose Sanctuary Hall',
-      'Safe Study & Homework Center',
-      'Food Pantry Depot',
-      'Mentorship Room',
-      'Community Outreach Office',
     ],
   },
 ];
@@ -400,7 +336,6 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
     const corridorCoords: [number, number][] = [
       [-1.1128, 36.6432], // West Hill (Limuru)
       [-1.1442, 36.9817], // Amani (Kiambu / Ruiru)
-      [-1.2612, 36.8624], // Cry of a Young One (Huruma / Nairobi)
     ];
 
     L.polyline(corridorCoords, {
@@ -802,7 +737,7 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
             <div className="p-4 rounded-2xl bg-white border border-[#ebdcd0] text-xs text-[#59524e] leading-relaxed flex items-start gap-3">
               <Info className="w-4 h-4 text-[#893d2d] shrink-0 mt-0.5" />
               <div>
-                <strong className="text-[#201a18] font-bold">Why This Corridor?</strong> Furaha concentrates its partnerships within the Central Kenya Highland & Nairobi Urban Basin. This contiguous operational radius (~45 km between Limuru, Kiambu, and Huruma) allows our local staff to conduct weekly in-person site visits, deliver bulk foodstuffs efficiently, and monitor scholarship students without heavy administrative overhead.
+                <strong className="text-[#201a18] font-bold">Why This Corridor?</strong> Furaha concentrates its partnerships within the Central Kenya Highland & Kiambu region. This contiguous operational corridor between Limuru (West Hill) and Kiambu (Amani) allows our local team to conduct weekly in-person site visits, deliver bulk foodstuffs efficiently, and monitor students without heavy administrative overhead.
               </div>
             </div>
 

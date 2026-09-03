@@ -13,8 +13,8 @@ export const GalleryHero: React.FC<GalleryHeroProps> = ({
   // Highlight 3 curated photographs with natural archival mounts
   const heroFeaturedItems = [
     GALLERY_ITEMS.find((i) => i.id === 'photo-amani-students') || GALLERY_ITEMS[3],
-    GALLERY_ITEMS.find((i) => i.id === 'photo-fellowship') || GALLERY_ITEMS[5],
-    GALLERY_ITEMS.find((i) => i.id === 'photo-purity-teacher') || GALLERY_ITEMS[4],
+    GALLERY_ITEMS.find((i) => i.id === 'photo-amani-joy') || GALLERY_ITEMS[4],
+    GALLERY_ITEMS.find((i) => i.id === 'photo-purity-teacher') || GALLERY_ITEMS[8],
   ].filter(Boolean) as GalleryItem[];
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Play, Search, X } from 'lucide-react';
-import { GalleryItem } from './galleryData';
+import { GalleryItem, GALLERY_CATEGORIES, GalleryCategory } from './galleryData';
 
 interface MediaGridProps {
   items: GalleryItem[];
@@ -11,6 +11,7 @@ type FilterType = 'all' | 'photos' | 'videos';
 
 export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) => {
   const [filter, setFilter] = useState<FilterType>('all');
+  const [categoryFilter, setCategoryFilter] = useState<'all' | GalleryCategory>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const filteredItems = useMemo(() => {
@@ -19,91 +20,128 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
       if (filter === 'photos' && item.type !== 'photo') return false;
       if (filter === 'videos' && item.type !== 'video') return false;
 
+      // Thematic category filter
+      if (categoryFilter !== 'all' && item.category !== categoryFilter) return false;
+
       // Search filter
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matchesTitle = item.title.toLowerCase().includes(q);
         const matchesSubtitle = item.subtitle?.toLowerCase().includes(q);
         const matchesLocation = item.location?.toLowerCase().includes(q);
-        return matchesTitle || matchesSubtitle || matchesLocation;
+        const matchesCategory = item.categoryLabel?.toLowerCase().includes(q);
+        return matchesTitle || matchesSubtitle || matchesLocation || matchesCategory;
       }
 
       return true;
     });
-  }, [items, filter, searchQuery]);
+  }, [items, filter, categoryFilter, searchQuery]);
 
   return (
     <section aria-label="Media Collection" className="py-12 sm:py-16 bg-[#faf8f5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Filter and Instant Search Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 sm:mb-12">
-          {/* Simple Filter Bar: All · Photos · Videos */}
-          <div className="flex items-center gap-2">
+        
+        {/* Category & Filter Navigation */}
+        <div className="space-y-4 mb-10 sm:mb-12">
+          {/* Thematic Categories Bar */}
+          <div className="flex flex-wrap items-center gap-2">
             <button
-              onClick={() => setFilter('all')}
-              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
-                filter === 'all'
-                  ? 'bg-[#893d2d] text-white'
+              onClick={() => setCategoryFilter('all')}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                categoryFilter === 'all'
+                  ? 'bg-[#893d2d] text-white shadow-xs'
                   : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
               }`}
             >
-              All
+              All Categories
             </button>
-            <button
-              onClick={() => setFilter('photos')}
-              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
-                filter === 'photos'
-                  ? 'bg-[#893d2d] text-white'
-                  : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
-              }`}
-            >
-              Photos
-            </button>
-            <button
-              onClick={() => setFilter('videos')}
-              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
-                filter === 'videos'
-                  ? 'bg-[#893d2d] text-white'
-                  : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
-              }`}
-            >
-              Videos
-            </button>
+            {GALLERY_CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setCategoryFilter(cat.id)}
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                  categoryFilter === cat.id
+                    ? 'bg-[#893d2d] text-white shadow-xs'
+                    : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </div>
 
-          {/* Minimal Quick Search */}
-          <div className="relative w-full sm:w-64">
-            <Search className="w-3.5 h-3.5 text-[#59524e]/70 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-8 py-1.5 text-xs sm:text-sm bg-white border border-[#ebdcd0] rounded-full text-[#201a18] placeholder:text-[#59524e]/50 focus:outline-none focus:border-[#893d2d] transition-colors"
-            />
-            {searchQuery && (
+          {/* Sub-bar: Type toggles and Search */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-[#ebdcd0]/60">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium text-[#59524e] mr-1">Format:</span>
               <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#59524e] hover:text-[#201a18] p-0.5 cursor-pointer"
+                onClick={() => setFilter('all')}
+                className={`px-3 py-1 rounded-md text-xs font-semibold transition-colors cursor-pointer ${
+                  filter === 'all'
+                    ? 'bg-[#201a18] text-white'
+                    : 'bg-stone-100 text-[#59524e] hover:bg-stone-200'
+                }`}
               >
-                <X className="w-3.5 h-3.5" />
+                All
               </button>
-            )}
+              <button
+                onClick={() => setFilter('photos')}
+                className={`px-3 py-1 rounded-md text-xs font-semibold transition-colors cursor-pointer ${
+                  filter === 'photos'
+                    ? 'bg-[#201a18] text-white'
+                    : 'bg-stone-100 text-[#59524e] hover:bg-stone-200'
+                }`}
+              >
+                Photos
+              </button>
+              <button
+                onClick={() => setFilter('videos')}
+                className={`px-3 py-1 rounded-md text-xs font-semibold transition-colors cursor-pointer ${
+                  filter === 'videos'
+                    ? 'bg-[#201a18] text-white'
+                    : 'bg-stone-100 text-[#59524e] hover:bg-stone-200'
+                }`}
+              >
+                Videos
+              </button>
+            </div>
+
+            {/* Quick Search */}
+            <div className="relative w-full sm:w-64">
+              <Search className="w-3.5 h-3.5 text-[#59524e]/70 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                type="text"
+                placeholder="Search gallery..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-8 py-1.5 text-xs sm:text-sm bg-white border border-[#ebdcd0] rounded-full text-[#201a18] placeholder:text-[#59524e]/50 focus:outline-none focus:border-[#893d2d] transition-colors"
+              >
+              </input>
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#59524e] hover:text-[#201a18] p-0.5 cursor-pointer"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Clean, Visually Calm Grid */}
         {filteredItems.length === 0 ? (
           <div className="text-center py-16 text-[#59524e] text-sm">
-            <p>No results found for "{searchQuery}".</p>
+            <p>No items found matching your filters.</p>
             <button
               onClick={() => {
                 setFilter('all');
+                setCategoryFilter('all');
                 setSearchQuery('');
               }}
               className="mt-3 text-xs font-semibold text-[#893d2d] hover:underline cursor-pointer"
             >
-              Reset filter
+              Reset filters
             </button>
           </div>
         ) : (
@@ -128,6 +166,11 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
                       loading="lazy"
                     />
 
+                    {/* Category Badge */}
+                    <div className="absolute top-2.5 left-2.5 bg-black/65 backdrop-blur-xs text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
+                      {item.categoryLabel}
+                    </div>
+
                     {/* Video Center Play Icon */}
                     {isVideo && (
                       <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
@@ -145,7 +188,7 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
                     )}
                   </div>
 
-                  {/* Minimal Card Details */}
+                  {/* Card Details */}
                   <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#893d2d] block mb-1">

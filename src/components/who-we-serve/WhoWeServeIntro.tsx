@@ -79,9 +79,9 @@ export const WhoWeServeIntro: React.FC<WhoWeServeIntroProps> = ({
             <div className="relative rounded-2xl sm:rounded-3xl p-2 bg-[#fbf8f4] border border-[#ebdcd0] shadow-xs">
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] bg-stone-100">
                 <picture>
-                  <source srcSet="/DSCF0817.webp" type="image/webp" />
+                  <source srcSet="/field-classroom-4.webp" type="image/webp" />
                   <img
-                    src="/DSCF0817.jpg"
+                    src="/field-classroom-4.jpg"
                     alt="Community mentors and children in Kenya"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"

@@ -155,7 +155,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
                         : 'bg-white text-gray-700 border-gray-200 hover:border-[#893d2d]/50'
                     }`}
                   >
-                    Donate Once
+                    Give Once
                   </button>
                   <button
                     type="button"
@@ -166,7 +166,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
                         : 'bg-white text-gray-700 border-gray-200 hover:border-[#893d2d]/50'
                     }`}
                   >
-                    <span>Donate Monthly</span>
+                    <span>Give Monthly</span>
                     <span className="absolute -top-2 right-2 bg-[#f4b83e] text-[#2d1e16] text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-xs">
                       Best Impact
                     </span>
@@ -249,7 +249,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
                 >
                   <Heart className="w-4 h-4 fill-white" />
                   <span>
-                    Donate ${currentAmountValue || 0} {frequency === 'monthly' ? '/ Month' : 'Now'} via GiveButter
+                    Give ${currentAmountValue || 0} {frequency === 'monthly' ? '/ Month' : 'Now'} via GiveButter
                   </span>
                   <ExternalLink className="w-4 h-4" />
                 </button>

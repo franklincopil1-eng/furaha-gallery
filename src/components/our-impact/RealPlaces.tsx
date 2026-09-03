@@ -13,8 +13,8 @@ export const RealPlaces: React.FC<RealPlacesProps> = ({
       id: 'amani',
       name: "Amani Children's Home",
       role: 'Residential care, education support, and daily meals for children.',
-      image: '/group-people-volunteering-foodbank-poor-people.jpg',
-      imageAlt: "Children at Amani Children's Home in Kenya",
+      image: '/DSCF0856.jpg',
+      imageAlt: "Children at Amani Children's Home smiling and learning together in Kenya",
       icon: Home,
       tag: 'Residential Partner',
     },
@@ -26,15 +26,6 @@ export const RealPlaces: React.FC<RealPlacesProps> = ({
       imageAlt: 'West Hill community center in Kenya',
       icon: School,
       tag: 'Learning Community',
-    },
-    {
-      id: 'huruma',
-      name: 'Cry of a Young One · Huruma',
-      role: 'Grassroots outreach, clothing, and mentorship in the Huruma community.',
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
-      imageAlt: 'Huruma community outreach in Nairobi',
-      icon: HeartHandshake,
-      tag: 'Community Outreach',
     },
   ];
 
@@ -65,8 +56,8 @@ export const RealPlaces: React.FC<RealPlacesProps> = ({
           </button>
         </div>
 
-        {/* 3 Real Places Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {/* Real Places Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {verifiedLocations.map((loc) => {
             const Icon = loc.icon;
             return (

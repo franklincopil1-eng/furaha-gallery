@@ -17,14 +17,14 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 
-const videoPosterFrame = '/video_master_poster.jpg';
+const videoPosterFrame = '/DSCF0817.jpg';
 const videoOldLatrines = '/video_frame_old_bathrooms.jpg';
 const videoNeed = '/video_frame_need.jpg';
 const videoMaterials = '/video_frame_materials.jpg';
 const videoConstruction = '/video_frame_construction.jpg';
 const videoCarpentry = '/video_frame_carpentry.jpg';
 const videoNewBathrooms = '/video_frame_new_bathrooms.jpg';
-const videoGratefulFaces = '/video_frame_grateful_faces.jpg';
+const videoGratefulFaces = '/DSCF0856.jpg';
 
 interface Chapter {
   time: number;
