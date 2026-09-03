@@ -1,0 +1,8 @@
+{
+  "name": "Give a Child the Chance to Stay in School | Furaha Ministries",
+  "description": "Support vulnerable children and youth in Kenya through education, nutrition, care, and discipleship with Furaha Ministries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
