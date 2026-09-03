@@ -88,7 +88,7 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
       formatted: "1°08'39.1\"S, 36°58'54.1\"E",
       elevation: '1,530m above sea level',
     },
-    image: '/DSCF0007.jpg',
+    image: '/images/DSCF0007.jpg',
     imageAlt: "Study classrooms and desks at Amani Children's Home in Kenya",
     summary:
       "A permanent, loving home in Kiambu providing shelter, education, balanced nutrition, and holistic care for orphaned and vulnerable children.",
@@ -152,7 +152,7 @@ export const KENYA_OPERATING_CENTERS: LocationCenter[] = [
       formatted: "1°06'46.1\"S, 36°38'35.5\"E",
       elevation: '2,270m above sea level',
     },
-    image: '/Purity.jpg',
+    image: '/images/Purity.jpg',
     imageAlt: 'West Hill community learners in classroom uniform in Kenya',
     summary:
       'A community educational pillar in the cool highlands of Limuru, keeping vulnerable students enrolled in primary and junior secondary school.',

@@ -16,9 +16,9 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onLearnMore }) =
           <div className="lg:col-span-5 flex justify-center">
             <div className="w-[260px] sm:w-[300px] h-[320px] sm:h-[360px] rounded-[20px] overflow-hidden shadow-xl border border-gray-100 group relative bg-[#f0eae1]">
               <picture>
-                <source srcSet="/maggienew2.webp" type="image/webp" />
+                <source srcSet="/images/maggienew2.webp" type="image/webp" />
                 <img
-                  src="/maggienew2.jpg"
+                  src="/images/maggienew2.jpg"
                   alt="Maggie Mburu - Founder of Furaha Ministries"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"

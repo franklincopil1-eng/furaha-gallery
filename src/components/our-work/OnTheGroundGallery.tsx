@@ -14,7 +14,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       title: 'Classroom & Learning Support',
       category: 'Education',
       location: 'West Hill · Kenya',
-      image: '/field-classroom-4.jpg',
+      image: '/images/field-classroom-4.jpg',
       caption: 'Educational support, textbooks, study materials, and classroom provisions for students in Kenya.',
     },
     {
@@ -22,7 +22,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       title: 'Food & Nutrition Support',
       category: 'Nutrition',
       location: 'Kenya',
-      image: '/group-people-volunteering-foodbank-poor-people.jpg',
+      image: '/images/group-people-volunteering-foodbank-poor-people.jpg',
       caption: 'Organizing and distributing essential food supplies and meals for partner centers and families.',
     },
     {
@@ -30,7 +30,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       title: 'Facility & Sanitation Infrastructure',
       category: 'Facilities',
       location: "Amani Children's Home · Kenya",
-      image: '/video_frame_new_bathrooms.jpg',
+      image: '/images/video_frame_new_bathrooms.jpg',
       caption: 'Completed washroom facilities, clean water infrastructure, and living environment improvements.',
     },
     {
@@ -38,7 +38,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       title: 'Christian Discipleship & Prayer',
       category: 'Ministry & Faith',
       location: 'Kenya',
-      image: '/field-outreach-15.jpg',
+      image: '/images/field-outreach-15.jpg',
       caption: 'Staff and community leaders gathered together in fellowship, prayer, and thanksgiving for children in Kenya.',
     },
   ];

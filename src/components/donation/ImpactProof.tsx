@@ -5,17 +5,17 @@ export const ImpactProof: React.FC = () => {
     {
       title: 'Classroom Admission & Learning',
       caption: 'Children seated in class with required syllabus exercise books, uniforms, and learning materials.',
-      img: '/Education.webp',
+      img: '/images/Education.webp',
     },
     {
       title: 'Nutritious Daily School Meals',
       caption: 'Providing hot meals to ensure students have the energy to concentrate and stay nourished.',
-      img: '/Nutrition.webp',
+      img: '/images/Nutrition.webp',
     },
     {
       title: 'Uniforms & Dignity Support',
       caption: 'Essential supplies and tailored uniforms ensuring every child belongs and feels valued.',
-      img: '/volunteer-helping-with-donation-box1.jpeg',
+      img: '/images/volunteer-helping-with-donation-box1.jpeg',
     },
   ];
 

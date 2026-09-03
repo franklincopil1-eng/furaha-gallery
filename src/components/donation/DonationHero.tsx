@@ -60,7 +60,7 @@ export const DonationHero: React.FC<DonationHeroProps> = ({
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-stone-200/80 bg-stone-100 aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/5] max-h-[360px] lg:max-h-[400px]">
               <img
-                src="/volunteer-helping-with-donation-box1.jpeg"
+                src="/images/volunteer-helping-with-donation-box1.jpeg"
                 alt="Kenyan children receiving education support and mentorship in Nairobi"
                 className="w-full h-full object-cover object-center"
                 loading="eager"

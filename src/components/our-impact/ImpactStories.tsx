@@ -14,8 +14,8 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
       name: "Children at Amani Home",
       community: "Amani Children's Home · Kenya",
       category: 'Education & Care',
-      image: '/DSCF0817.jpg',
-      imageAlt: 'Students and community learning together in Kenya',
+      image: '/images/field-students-10.jpg',
+      imageAlt: "Children at Amani Children's Home equipped with educational care and school support in Kenya",
       whatWasHappening:
         'Children arriving at the home faced interrupted school careers due to extreme household poverty and missing fees.',
       whatFurahaDid:
@@ -28,8 +28,8 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
       name: 'Students in West Hill',
       community: 'West Hill Community · Kenya',
       category: 'Nutrition & Learning',
-      image: '/volunteer-helping-with-donation-box1.jpeg',
-      imageAlt: 'Food care supplies and students in Kenya',
+      image: '/images/field-outreach-15.jpg',
+      imageAlt: 'Food care supplies and students in West Hill community Kenya',
       whatWasHappening:
         'Food shortages and lack of learning supplies made consistent daily study difficult for vulnerable learners.',
       whatFurahaDid:
@@ -42,8 +42,8 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
       name: 'Sanitation & Living Dignity',
       community: "Amani Children's Home · Kenya",
       category: 'Infrastructure & Health',
-      image: '/video_frame_new_bathrooms.jpg',
-      imageAlt: 'Completed clean sanitation and washroom facility at Amani',
+      image: '/images/video_frame_materials.jpg',
+      imageAlt: 'Plumbing materials and infrastructure fixtures delivered to Amani Children’s Home',
       whatWasHappening:
         'Outdated washroom facilities and limited plumbing posed hygiene and health challenges for residential children.',
       whatFurahaDid:

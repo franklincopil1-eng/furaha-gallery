@@ -14,9 +14,9 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Education & School Support',
       tagline: 'Supporting access to the classroom',
       icon: BookOpen,
-      imageWebp: '/field-learning-1.webp',
-      image: '/field-learning-1.jpg',
-      imageAlt: 'Students engaged in classroom learning and study in Kenya',
+      imageWebp: '/images/education-books-students.webp',
+      image: '/images/education-books-students.jpg',
+      imageAlt: 'Students engaged in classroom learning and holding study textbooks in Kenya',
       description:
         'When families struggle with basic school expenses, children risk missing class. Furaha provides practical educational assistance so children can attend school and keep learning.',
       activities: [
@@ -35,8 +35,8 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Nutrition & Food Support',
       tagline: 'Providing consistent daily nourishment',
       icon: Utensils,
-      imageWebp: '/Nutrition.webp',
-      image: '/Nutrition.png',
+      imageWebp: '/images/Nutrition.webp',
+      image: '/images/Nutrition.png',
       imageAlt: 'Food care, nutrition, and meal distribution in Kenya',
       description:
         'Consistent nourishment is essential for children to stay healthy and focus in school. Furaha helps supply staple foods and daily meals through partner centers and community programs.',
@@ -56,8 +56,8 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Care, Mentorship & Development',
       tagline: 'Encouraging character and personal growth',
       icon: HeartHandshake,
-      imageWebp: '/field-community-5.webp',
-      image: '/field-community-5.jpg',
+      imageWebp: '/images/field-community-5.webp',
+      image: '/images/field-community-5.jpg',
       imageAlt: 'Community mentorship, fellowship, and care in Kenya',
       description:
         'Alongside education and meals, young people need positive guidance, character development, and everyday care to build confidence and resilience.',
@@ -77,9 +77,9 @@ export const FourWorkAreas: React.FC<FourWorkAreasProps> = ({ onSupportArea }) =
       title: 'Christian Faith & Discipleship',
       tagline: 'Sharing enduring hope in Jesus Christ',
       icon: Compass,
-      imageWebp: '/field-outreach-14.webp',
-      image: '/field-outreach-14.jpg',
-      imageAlt: 'Furaha outreach and children gathered in Christian fellowship and discipleship in Kenya',
+      imageWebp: '/images/discipleship-kibera-church.webp',
+      image: '/images/discipleship-kibera-church.jpg',
+      imageAlt: 'Furaha outreach, Sunday school, and children gathered in Christian fellowship and discipleship at New CEA Pentecost Kibera Church in Kenya',
       description:
         'Furaha is rooted in Christian faith. We share the love of Jesus Christ through scripture engagement, prayer, and loving discipleship.',
       activities: [

@@ -11,7 +11,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Limuru, Kenya',
-      image: '/uniform.jpeg',
+      image: '/images/uniform.jpeg',
       caption: 'West Hill students equipped with clean school uniforms, stationery, and learning dignity.',
     },
     {
@@ -20,7 +20,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/field-learning-1.jpg',
+      image: '/images/field-learning-1.jpg',
       caption: 'Children and caregivers gathered for focused reading and tutoring at Amani.',
     },
     {
@@ -29,7 +29,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Limuru, Kenya',
-      image: '/field-activity-3.jpg',
+      image: '/images/field-activity-3.jpg',
       caption: 'Interactive group lessons and educational exercises with dedicated local teachers.',
     },
     {
@@ -38,7 +38,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/field-community-5.jpg',
+      image: '/images/field-community-5.jpg',
       caption: 'Community life, warm nourishment, and devotional fellowship for residential children.',
     },
     {
@@ -47,7 +47,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Limuru, Kenya',
-      image: '/field-classroom-4.jpg',
+      image: '/images/field-classroom-4.jpg',
       caption: 'Classroom settings with proper desks and revision books for students preparing for exams.',
     },
     {
@@ -56,7 +56,7 @@ export const VisualProofGallery: React.FC = () => {
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/field-campus-7.jpg',
+      image: '/images/field-campus-7.jpg',
       caption: 'Safe campus grounds, dormitory cottages, and caring supervision at Amani Children\'s Home.',
     },
   ];

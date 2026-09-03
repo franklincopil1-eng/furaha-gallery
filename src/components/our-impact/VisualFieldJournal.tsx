@@ -19,7 +19,7 @@ export const fieldStoriesData: FieldStory[] = [
       'Educational supplies and classroom provisions were organized and delivered to the children at Amani to support ongoing school attendance.',
     fullStory:
       'When families face steep economic barriers, basic schooling needs like textbooks and term fees are often out of reach. At Amani Children’s Home, Furaha walks alongside local caregivers to ensure every child has access to essential study materials and classroom guidance.',
-    image: '/DSCF0024.jpg',
+    image: '/images/DSCF0024.jpg',
     imageAlt: "Children studying with books and educational supplies at Amani Children's Home in Kenya",
     chips: ['Education', 'Amani', 'Kenya'],
   },
@@ -35,7 +35,7 @@ export const fieldStoriesData: FieldStory[] = [
       'Bulk nutrition provisions were coordinated with community leaders to replenish the food storage pantry for daily meal distribution.',
     fullStory:
       'Children cannot concentrate in class when their stomachs are empty. Furaha collaborates directly with community partners to supply core staples that support balanced daily meals for developing minds and bodies.',
-    image: '/Nutrition.png',
+    image: '/images/Nutrition.png',
     imageAlt: 'Volunteers and caregivers organizing food boxes, nutritious meals and dry staples in Kenya',
     chips: ['Nutrition', 'West Hill', 'Kenya'],
   },
@@ -51,7 +51,7 @@ export const fieldStoriesData: FieldStory[] = [
       'Construction and plumbing repairs were finalized for modern, ventilated sanitation facilities at Amani Children’s Home.',
     fullStory:
       'Clean sanitation and hygiene facilities are essential for child health and human dignity. Furaha funded the completion of dedicated washroom blocks, reliable plumbing, and hygienic handwashing areas.',
-    image: '/video_frame_new_bathrooms.jpg',
+    image: '/images/video_frame_new_bathrooms.jpg',
     imageAlt: 'Completed sanitation and clean washroom facility at Amani Children’s Home',
     chips: ['Sanitation', 'Amani', 'Infrastructure'],
   },
@@ -67,8 +67,8 @@ export const fieldStoriesData: FieldStory[] = [
       'Youth leaders and caregivers hosted weekly Bible fellowship, prayed over children and their families, and shared devotional encouragement.',
     fullStory:
       'Furaha is rooted in Christian faith and love. Beyond material aid, we believe nurturing hope and spiritual resilience in Christ transforms lives. Discipleship gatherings provide a safe, joyful environment where children learn scripture, build character, and know they are deeply loved by God.',
-    image: '/DSCF0856.jpg',
-    imageAlt: 'Children and caregivers gathered together in Christian fellowship and mentorship in Kenya',
+    image: '/images/discipleship-kibera-church.jpg',
+    imageAlt: 'Children and youth gathered in Christian fellowship and discipleship at New CEA Pentecost Kibera Church in Kenya',
     chips: ['Discipleship', 'Mentorship', 'Kenya'],
   },
 ];

@@ -9,7 +9,7 @@ export const FollowOneGift: React.FC = () => {
       description:
         'Local caregivers, teachers, or community partners notice a child facing school interruption, lack of textbooks, or meal scarcity.',
       icon: Search,
-      image: '/Education.webp',
+      image: '/images/Education.webp',
       imageAlt: 'Students and caregivers in a Kenyan classroom identifying learning needs',
     },
     {
@@ -18,7 +18,7 @@ export const FollowOneGift: React.FC = () => {
       description:
         'Furaha coordinates with trusted on-ground leaders to assess real requirements and determine practical assistance.',
       icon: Users,
-      image: '/maggienew2.jpg',
+      image: '/images/maggienew2.jpg',
       imageAlt: 'Furaha team coordinating with local partners in Kenya',
     },
     {
@@ -27,7 +27,7 @@ export const FollowOneGift: React.FC = () => {
       description:
         'School tuition is paid, essential learning materials and textbooks are supplied, and food stores are replenished.',
       icon: Gift,
-      image: '/volunteer-helping-with-donation-box1.jpeg',
+      image: '/images/volunteer-helping-with-donation-box1.jpeg',
       imageAlt: 'Providing food and essential supplies in Kenya',
     },
     {
@@ -36,7 +36,7 @@ export const FollowOneGift: React.FC = () => {
       description:
         'The child remains consistently in class, receives steady nourishment, and is mentored with dignity in Christian faith.',
       icon: TrendingUp,
-      image: '/volunteer-selecting-organizing-clothes-donations-charity.jpg',
+      image: '/images/volunteer-selecting-organizing-clothes-donations-charity.jpg',
       imageAlt: 'Youth care and mentorship in community outreach in Kenya',
     },
   ];

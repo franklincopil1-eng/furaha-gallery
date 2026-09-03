@@ -5,7 +5,7 @@ import { MediaItem, MediaLightboxModal } from './MediaLightboxModal';
 export const mediaItemsData: MediaItem[] = [
   {
     id: 'media-1',
-    image: '/DSCF0856.jpg',
+    image: '/images/field-outreach-18.jpg',
     imageAlt: 'Furaha team and children gathered together in Christian fellowship and encouragement in Kenya',
     caption: 'Christian fellowship, encouragement, and community gathering',
     location: 'Kenya',
@@ -16,7 +16,7 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-2',
-    image: '/DSCF0009.jpg',
+    image: '/images/field-classroom-4.jpg',
     imageAlt: "Students engaged in classroom study at Amani Children's Home in Kenya",
     caption: 'Students engaged in classroom study and learning at Amani',
     location: "Amani Children's Home",
@@ -27,7 +27,7 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-3',
-    image: '/Nutrition.png',
+    image: '/images/field-community-5.jpg',
     imageAlt: 'Food care, nutrition, and meal distribution in Kenya',
     caption: 'Staple grain supplies and food pantry distribution',
     location: 'West Hill Community',
@@ -38,8 +38,8 @@ export const mediaItemsData: MediaItem[] = [
   },
   {
     id: 'media-4',
-    image: '/video_frame_new_bathrooms.jpg',
-    imageAlt: 'Sanitation and modern washroom facility at Amani Children’s Home',
+    image: '/images/video_frame_blessing.jpg',
+    imageAlt: 'Completed community sanitation dedication and blessing at Amani Children’s Home',
     caption: 'Modern washroom and sanitation facility completion',
     location: "Amani Children's Home",
     date: 'Field Documentation',

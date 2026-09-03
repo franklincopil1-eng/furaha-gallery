@@ -22,8 +22,8 @@ const archiveItems: FieldStory[] = [
       'Organized and delivered core learning supplies to students at Amani Children’s Home.',
     fullStory:
       'Educational backing forms the foundation of sustainable development. Furaha provides practical school tuition support and learning supplies so children stay in class consistently.',
-    image: '/DSCF0024.jpg',
-    imageAlt: 'Textbooks, notebooks, and learning materials on study desks in Kenya',
+    image: '/images/field-learning-2.jpg',
+    imageAlt: 'Students with study books and learning materials in Kenya',
     chips: ['Education', 'Tuition', 'Kenya'],
   },
   {
@@ -38,8 +38,8 @@ const archiveItems: FieldStory[] = [
       'Food supplies were delivered directly to local pantry stores to support daily meal preparation.',
     fullStory:
       'Consistent nourishment supports physical health and school readiness. Furaha coordinates staple food relief with trusted local caregivers.',
-    image: '/Nutrition.png',
-    imageAlt: 'Food care packages, meals and nutrition in Kenya',
+    image: '/images/field-community-6.jpg',
+    imageAlt: 'Community members receiving staple food aid and nutrition care in Kenya',
     chips: ['Nutrition', 'Staple Food', 'West Hill'],
   },
   {
@@ -54,8 +54,8 @@ const archiveItems: FieldStory[] = [
       'Contractors and staff completed new ventilated washrooms and sanitary facilities at Amani Children’s Home.',
     fullStory:
       'Clean water and hygienic sanitation are foundational to child safety, health, and dignity in residential care.',
-    image: '/video_frame_new_bathrooms.jpg',
-    imageAlt: 'Sanitation and clean washroom facilities at Amani Children’s Home',
+    image: '/images/video_frame_construction.jpg',
+    imageAlt: 'Sanitation facility construction and foundation progress at Amani Children’s Home',
     chips: ['Facilities', 'Sanitation', 'Amani'],
   },
   {
@@ -70,8 +70,8 @@ const archiveItems: FieldStory[] = [
       'Ministry partners and local mentors held prayer, Bible reading, and discipleship fellowship with children in Kenya.',
     fullStory:
       'Our Christian foundation reminds every child that they are deeply loved and created with purpose by God.',
-    image: '/DSCF0856.jpg',
-    imageAlt: 'Community and children gathered in Christian fellowship and mentorship in Kenya',
+    image: '/images/field-outreach-16.jpg',
+    imageAlt: 'Furaha outreach, discipleship fellowship and ministry mentorship in Kenya',
     chips: ['Faith', 'Discipleship', 'Kenya'],
   },
 ];

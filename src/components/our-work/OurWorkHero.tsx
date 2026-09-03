@@ -77,9 +77,9 @@ export const OurWorkHero: React.FC<OurWorkHeroProps> = ({
           className="absolute -top-[160px] -left-[6%] -right-[6%] w-[112%] h-[calc(100%+320px)] will-change-transform"
         >
           <picture className="w-full h-full block">
-            <source srcSet="/Purity.webp" type="image/webp" />
+            <source srcSet="/images/Purity.webp" type="image/webp" />
             <img
-              src="/Purity.jpg"
+              src="/images/Purity.jpg"
               alt="Teacher Purity and students in Kenya supported by Furaha Ministries"
               className="w-full h-full object-cover object-[center_30%] scale-[1.03] filter blur-[1px] sm:blur-[1.5px]"
               loading="eager"

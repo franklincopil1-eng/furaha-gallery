@@ -47,27 +47,40 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setCategoryFilter('all')}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 categoryFilter === 'all'
                   ? 'bg-[#893d2d] text-white shadow-xs'
                   : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
               }`}
             >
-              All Categories
+              <span>All Categories</span>
+              <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                categoryFilter === 'all' ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
+              }`}>
+                {items.length}
+              </span>
             </button>
-            {GALLERY_CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setCategoryFilter(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                  categoryFilter === cat.id
-                    ? 'bg-[#893d2d] text-white shadow-xs'
-                    : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+            {GALLERY_CATEGORIES.map((cat) => {
+              const catCount = items.filter((i) => i.category === cat.id).length;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setCategoryFilter(cat.id)}
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                    categoryFilter === cat.id
+                      ? 'bg-[#893d2d] text-white shadow-xs'
+                      : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                    categoryFilter === cat.id ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
+                  }`}>
+                    {catCount}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
           {/* Sub-bar: Type toggles and Search */}

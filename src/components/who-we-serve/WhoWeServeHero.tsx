@@ -66,9 +66,9 @@ export const WhoWeServeHero: React.FC<WhoWeServeHeroProps> = ({
           className="absolute -top-[160px] -left-[6%] -right-[6%] w-[112%] h-[calc(100%+320px)] will-change-transform"
         >
           <picture className="w-full h-full block">
-            <source srcSet="/field-students-10.webp" type="image/webp" />
+            <source srcSet="/images/field-students-10.webp" type="image/webp" />
             <img
-              src="/field-students-10.jpg"
+              src="/images/field-students-10.jpg"
               alt="Community children and students in Kenya supported by Furaha Ministries"
               className="w-full h-full object-cover object-[center_32%] scale-[1.03] filter blur-[1px] sm:blur-[1.5px]"
               loading="eager"

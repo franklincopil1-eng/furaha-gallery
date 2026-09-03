@@ -31,7 +31,7 @@ export const ChildStory: React.FC<ChildStoryProps> = ({ onSponsorClick }) => {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/5] max-w-xs mx-auto">
                 <img
-                  src="/DSCF0817.jpg"
+                  src="/images/DSCF0817.jpg"
                   alt="Student supported in community school program in Limuru, Kenya"
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
