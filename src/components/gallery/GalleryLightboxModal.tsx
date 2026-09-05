@@ -178,21 +178,21 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
 
         {/* Minimal Caption Footer */}
         <div className="mt-5 text-center text-white max-w-xl px-4 flex flex-col items-center">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] block mb-1">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#893d2d] text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
             {item.categoryLabel}
           </span>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-normal text-white">
+          <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white tracking-[-1px] leading-snug">
             {item.title}
           </h3>
           {item.subtitle && (
-            <p className="text-xs sm:text-sm text-white/80 mt-1.5 font-normal leading-relaxed">
+            <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-1.5 max-w-xl">
               {item.subtitle}
             </p>
           )}
 
           {item.location && (
-            <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-[#e5b382]/90">
-              <MapPin className="w-3.5 h-3.5 shrink-0" />
+            <div className="mt-2.5 inline-flex items-center gap-1.5 text-[14px] font-light text-[#f7e4b7]">
+              <MapPin className="w-3.5 h-3.5 text-[#e5b382] shrink-0" />
               <span>{item.location}</span>
             </div>
           )}

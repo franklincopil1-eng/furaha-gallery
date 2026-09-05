@@ -46,12 +46,12 @@ export const Causes: React.FC<CausesProps> = ({ onOpenDonateForCause }) => {
     {
       id: 'nutrition',
       title: 'Nutrition',
-      shortDesc: 'Providing nutritious meals and clean drinking water to combat malnutrition and ensure children have the physical strength to learn and thrive.',
-      fullDesc: 'Proper nutrition is the cornerstone of healthy childhood development. Without consistent daily food, children struggle to focus in school and face severe immune vulnerabilities. Furaha Ministries partners with local schools and community feeding centers to provide balanced, nutrient-dense meals every single day.',
+      shortDesc: 'Providing nutritious meals and clean drinking water to ensure children have the physical nourishment to learn and grow.',
+      fullDesc: 'Proper nutrition is essential for childhood development and health. Without consistent daily food, children struggle to focus in school. Furaha Ministries partners with local schools and community feeding centers in Kenya to provide balanced, hot meals during the school day.',
       impactMetrics: [
-        'Over 1,200 nutritious hot meals served monthly',
-        'Direct partnerships with primary school feeding centers',
-        'Clean water filtration and vitamin supplementation programs'
+        'Hot lunchtime meals prepared for students during school days',
+        'Direct partnerships with primary school feeding programs',
+        'Clean drinking water and staple grains supplied to partner centers'
       ],
       imageUrl: '/images/Nutrition.png',
       raisedPercent: 78
@@ -59,12 +59,12 @@ export const Causes: React.FC<CausesProps> = ({ onOpenDonateForCause }) => {
     {
       id: 'education',
       title: 'Education',
-      shortDesc: 'Breaking cycles of poverty through tuition support, tailored scholarships, essential school supplies, backpacks, and dignity-affirming uniforms.',
-      fullDesc: 'Education is the most reliable ladder out of intergenerational poverty. However, thousands of overlooked children in Kenya are turned away from schools due to lack of uniforms, shoes, or basic tuition fees. We equip students with full learning kits, enroll them in vetted schools, and provide academic tutoring.',
+      shortDesc: 'Supporting education through school fees, learning materials, textbooks, backpacks, and required uniforms.',
+      fullDesc: 'Education provides children with lifelong opportunities. In Kenya, children are often turned away from schools due to lack of uniforms, shoes, or term fee arrears. We equip students with textbooks, stationery supplies, and uniforms so they can attend class regularly.',
       impactMetrics: [
-        '100% comprehensive scholarship sponsorship for vetted orphans',
-        'Annual distribution of uniforms, leather shoes, and backpacks',
-        'After-school literacy circles and computer literacy workshops'
+        'Tuition support and school term fee assistance',
+        'Distribution of tailored uniforms, sweaters, and school shoes',
+        'Course textbooks, exercise books, and study supplies'
       ],
       imageUrl: '/images/education-books-students.jpg',
       raisedPercent: 92
@@ -72,12 +72,12 @@ export const Causes: React.FC<CausesProps> = ({ onOpenDonateForCause }) => {
     {
       id: 'discipleship',
       title: 'Discipleship',
-      shortDesc: 'Nurturing spiritual resilience, character formation, and emotional healing through Christ-centered mentorship and community fellowship.',
-      fullDesc: 'Material relief alone does not heal a wounded spirit. Many abandoned and orphaned children carry trauma and feelings of worthlessness. Through weekly Bible study clubs, compassionate youth mentorship, and local church partnerships, Furaha Ministries instills deep faith, purpose, and lasting joy.',
+      shortDesc: 'Nurturing faith, character, and encouragement through Christ-centered mentorship and community fellowship.',
+      fullDesc: 'Children facing poverty also need encouragement, emotional care, and a loving community. Through weekly Bible study, youth mentorship, and local church partnerships, Furaha Ministries provides spiritual guidance and caring companionship.',
       impactMetrics: [
-        'Weekly youth fellowship and Bible discovery groups',
-        'Trauma-informed Christian counseling and pastoral care',
-        'Community service and peer-leadership development training'
+        'Weekly youth fellowship and Sunday school gatherings',
+        'Mentorship and pastoral care with community leaders',
+        'Youth activities and community service projects'
       ],
       imageUrl: '/images/discipleship-kibera-church.jpg',
       raisedPercent: 85

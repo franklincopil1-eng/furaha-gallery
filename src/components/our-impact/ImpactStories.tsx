@@ -60,13 +60,13 @@ export const ImpactStories: React.FC<ImpactStoriesProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-2">
-            Human Impact
+            Community Stories
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#201a18] tracking-tight mb-3">
             Stories from the people we walk alongside.
           </h2>
           <p className="text-sm sm:text-base text-[#59524e] font-normal leading-relaxed">
-            Dignified, verified accounts of practical assistance and community companionship in Kenya.
+            Everyday accounts of practical assistance, education support, and community companionship in Kenya.
           </p>
         </div>
 

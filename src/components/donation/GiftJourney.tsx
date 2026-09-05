@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Lock, HeartHandshake, Sparkles, MailCheck } from 'lucide-react';
+import { Lock, HeartHandshake, BookOpen, MailCheck } from 'lucide-react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 
 export const GiftJourney: React.FC = () => {
@@ -22,20 +22,20 @@ export const GiftJourney: React.FC = () => {
     },
     {
       num: '02',
-      title: 'Furaha puts your generosity to work',
-      desc: 'Funds go directly to verified school fees, nutrition, and care in Kenya.',
+      title: 'Furaha directs your support',
+      desc: 'Funds go directly toward school fees, meals, and student care in Kenya.',
       icon: HeartHandshake,
     },
     {
       num: '03',
-      title: 'A child keeps moving forward',
+      title: 'A child stays in school',
       desc: 'Your support ensures learning continuity and stability for students.',
-      icon: Sparkles,
+      icon: BookOpen,
     },
     {
       num: '04',
       title: 'You stay connected',
-      desc: 'Receive transparent updates on the ongoing work and community impact.',
+      desc: 'Receive transparent updates on the ongoing work and community progress.',
       icon: MailCheck,
     },
   ];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Sparkles, Heart } from 'lucide-react';
+import { Check, ArrowRight, Heart } from 'lucide-react';
 import { getGivebutterCheckoutUrl, GIVEBUTTER_CAMPAIGN_URL } from '../../lib/givebutter';
 
 export interface GivingTierData {

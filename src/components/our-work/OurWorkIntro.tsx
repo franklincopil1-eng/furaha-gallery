@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Utensils, HeartHandshake, Compass, ArrowDown, Sparkles } from 'lucide-react';
+import { BookOpen, Utensils, HeartHandshake, Compass, ArrowDown, PackageCheck } from 'lucide-react';
 
 interface OurWorkIntroProps {
   onSelectPillar?: (pillarId: string) => void;
@@ -134,8 +134,8 @@ export const OurWorkIntro: React.FC<OurWorkIntroProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
                 
                 <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#893d2d] text-xs font-semibold px-3 py-1 rounded-full shadow-2xs border border-[#ebdcd0] flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#893d2d]" />
-                  <span>Comprehensive Direct Delivery</span>
+                  <PackageCheck className="w-3.5 h-3.5 text-[#893d2d]" />
+                  <span>Direct Support & Supplies</span>
                 </div>
 
                 <div className="absolute bottom-3 left-3 right-3 text-white text-[11px] font-medium leading-tight drop-shadow-xs">

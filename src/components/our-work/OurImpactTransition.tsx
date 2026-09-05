@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, TrendingUp, FileCheck } from 'lucide-react';
+import { ArrowRight, TrendingUp, FileCheck } from 'lucide-react';
 
 interface OurImpactTransitionProps {
   onExploreImpact: () => void;

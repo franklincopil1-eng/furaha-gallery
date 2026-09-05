@@ -16,7 +16,6 @@ import {
   CheckCircle2,
   Users,
   Calendar,
-  Sparkles,
   ExternalLink,
   ShieldCheck,
   Globe2,
@@ -767,8 +766,8 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
                 </span>
 
                 <span className="text-[11px] font-semibold bg-white/90 backdrop-blur-xs text-[#201a18] px-2.5 py-1 rounded-full flex items-center gap-1 shadow-2xs">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Verified Partner</span>
+                  <HeartHandshake className="w-3.5 h-3.5 text-[#893d2d]" />
+                  <span>Community Partner</span>
                 </span>
               </div>
 
@@ -1013,7 +1012,7 @@ export const KenyaInteractiveLocationsMap: React.FC<KenyaInteractiveLocationsMap
                               key={i}
                               className="p-3 bg-[#faf8f5] rounded-xl border border-[#ebdcd0] flex items-start gap-2.5"
                             >
-                              <Sparkles className="w-4 h-4 text-[#893d2d] shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-4 h-4 text-[#893d2d] shrink-0 mt-0.5" />
                               <span className="text-xs sm:text-sm text-[#201a18] font-medium">
                                 {need}
                               </span>

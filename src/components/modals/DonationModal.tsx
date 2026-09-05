@@ -266,7 +266,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
               {/* Trust Badge */}
               <div className="flex items-center justify-center gap-2 text-[11px] text-gray-500 pt-2">
                 <Lock className="w-3.5 h-3.5 text-neutral-600" />
-                <span>Secure 256-bit encrypted donation • Givebutter verified</span>
+                <span>Secure processing powered by Givebutter</span>
               </div>
             </>
           )}

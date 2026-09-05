@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, CheckCircle2, AlertCircle, Loader2, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, CheckCircle2, AlertCircle, Loader2, ArrowRight, Lock } from 'lucide-react';
 import { subscribeToNewsletter } from '../../services/newsletterService';
 
 interface NewsletterSubscribeProps {
@@ -157,7 +157,7 @@ export const NewsletterSubscribe: React.FC<NewsletterSubscribeProps> = ({
 
               {/* Trust disclaimer */}
               <p className="text-[11px] text-white/75 m-0 flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-[#f7e4b7]" />
+                <Lock className="w-3 h-3 text-[#f7e4b7]" />
                 <span>We respect your privacy. Unsubscribe anytime.</span>
               </p>
             </form>

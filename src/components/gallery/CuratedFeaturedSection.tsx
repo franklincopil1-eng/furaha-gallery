@@ -27,13 +27,16 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mb-10 sm:mb-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#893d2d] mb-2">
-            CURATED MOMENTS / 02
-          </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-[#201a18] tracking-tight">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#893d2d]/10 text-[#893d2d] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+            <span>Featured Stories</span>
+          </div>
+          <h2 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold text-[#893d2d] tracking-[-2px] mb-2 leading-tight">
             Stories from the Ground
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#59524e] font-normal leading-relaxed">
+          <h5 className="text-[16px] min-[360px]:text-[18px] sm:text-[22px] lg:text-[24px] font-semibold text-[#893d2d] mb-3 sm:mb-4 tracking-[-0.5px] sm:tracking-[-1px] leading-snug">
+            Curated Moments Across Kenya
+          </h5>
+          <p className="text-[#717275] text-[16px] leading-[1.65] font-light max-w-2xl">
             A deliberate selection of moments capturing the spirit, dignity, and daily life across Furaha&apos;s community.
           </p>
         </div>
@@ -58,14 +61,14 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
 
                 {/* Minimal Overlay Content */}
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-white">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] mb-1.5 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1.5 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {mainFeature.categoryLabel}
                   </span>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-normal text-white leading-tight">
+                  <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white tracking-[-1px] leading-tight">
                     {mainFeature.title}
                   </h3>
                   {mainFeature.subtitle && (
-                    <p className="text-xs sm:text-sm text-white/80 mt-1 font-normal line-clamp-2 max-w-lg">
+                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-1 line-clamp-2 max-w-lg">
                       {mainFeature.subtitle}
                     </p>
                   )}
@@ -90,14 +93,14 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {sideTop.categoryLabel}
                   </span>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-normal text-white leading-snug">
+                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
                     {sideTop.title}
                   </h3>
                   {sideTop.subtitle && (
-                    <p className="text-xs text-white/80 mt-0.5 font-normal line-clamp-1">
+                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
                       {sideTop.subtitle}
                     </p>
                   )}
@@ -122,14 +125,14 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {sideBottom.categoryLabel}
                   </span>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-normal text-white leading-snug">
+                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
                     {sideBottom.title}
                   </h3>
                   {sideBottom.subtitle && (
-                    <p className="text-xs text-white/80 mt-0.5 font-normal line-clamp-1">
+                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
                       {sideBottom.subtitle}
                     </p>
                   )}
@@ -154,14 +157,14 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {bottomRowLeft.categoryLabel}
                   </span>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-normal text-white leading-snug">
+                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
                     {bottomRowLeft.title}
                   </h3>
                   {bottomRowLeft.subtitle && (
-                    <p className="text-xs text-white/80 mt-0.5 font-normal line-clamp-1">
+                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
                       {bottomRowLeft.subtitle}
                     </p>
                   )}
@@ -186,14 +189,14 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {bottomRowRight.categoryLabel}
                   </span>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-normal text-white leading-snug">
+                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
                     {bottomRowRight.title}
                   </h3>
                   {bottomRowRight.subtitle && (
-                    <p className="text-xs text-white/80 mt-0.5 font-normal line-clamp-1">
+                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
                       {bottomRowRight.subtitle}
                     </p>
                   )}

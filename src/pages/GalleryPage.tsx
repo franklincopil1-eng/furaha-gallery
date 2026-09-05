@@ -52,7 +52,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#201a18] flex flex-col font-sans selection:bg-[#893d2d] selection:text-white">
+    <div className="min-h-screen bg-[#faf8f5] text-[#717275] flex flex-col font-sans selection:bg-[#893d2d] selection:text-white">
       {/* SECTION 1 — Immersive Introduction */}
       <GalleryHero onScrollToGallery={handleScrollToGallery} />
 

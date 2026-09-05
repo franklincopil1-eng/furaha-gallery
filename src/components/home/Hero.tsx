@@ -13,8 +13,6 @@ interface SlideData {
   alt: string;
   title: string;
   subtitle: string;
-  stat?: string;
-  statLabel?: string;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
@@ -28,8 +26,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
       alt: 'Volunteers selecting and organizing clothes and essential donation supplies',
       title: 'Every Child Deserves the Chance to Thrive.',
       subtitle: 'Too many children grow up without the support, opportunity, and care they need. Furaha exists to help change that.',
-      stat: '10,000+',
-      statLabel: 'Care Packages Delivered'
     },
     {
       url: '/images/volunteer-helping-with-donation-box1.jpeg',
@@ -38,8 +34,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
       alt: 'Volunteers helping with donation boxes and community care across Kenya',
       title: 'Faith in Action',
       subtitle: 'Through education, nutrition, discipleship, and practical care, we walk alongside overlooked children and communities in Kenya.',
-      stat: '5,000+',
-      statLabel: 'Lives Impacted'
     }
   ];
 

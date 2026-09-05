@@ -11,7 +11,6 @@ import {
   MapPin, 
   Clock, 
   CheckCircle2, 
-  Sparkles,
   Layers,
   Film,
   Image as ImageIcon
@@ -546,7 +545,7 @@ export const FieldJournalVideoExperience: React.FC = () => {
 
                 {/* Center: Current Chapter Description (Hidden on smallest screens) */}
                 <div className="hidden md:flex items-center gap-1.5 text-xs text-[#f7e4b7] font-medium">
-                  <Sparkles className="w-3.5 h-3.5 text-[#ef802e]" />
+                  <Film className="w-3.5 h-3.5 text-[#ef802e]" />
                   <span>{CHAPTERS[activeChapterIndex]?.description}</span>
                 </div>
 

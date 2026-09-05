@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, Heart, CheckCircle2, X, BookOpen, Award, Sparkles } from 'lucide-react';
+import { GraduationCap, Heart, CheckCircle2, X, BookOpen, Award } from 'lucide-react';
 import { supabaseDb } from '../../supabase/client';
 
 interface ScholarshipModalProps {

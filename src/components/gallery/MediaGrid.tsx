@@ -36,32 +36,35 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
         {/* SECTION 3 — EXPLORE BY IMPACT HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#893d2d] mb-2">
-              COLLECTION ARCHIVE / 03
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-[#201a18] tracking-tight uppercase">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#893d2d]/10 text-[#893d2d] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+              <span>Field Collection</span>
+            </div>
+            <h2 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold text-[#893d2d] tracking-[-2px] mb-2 leading-tight">
               Explore the Work
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-[#59524e] font-normal leading-relaxed">
+            <h5 className="text-[16px] min-[360px]:text-[18px] sm:text-[22px] lg:text-[24px] font-semibold text-[#893d2d] mb-3 sm:mb-4 tracking-[-0.5px] sm:tracking-[-1px] leading-snug">
+              Everyday Impact Across Programs
+            </h5>
+            <p className="text-[#717275] text-[16px] leading-[1.65] font-light max-w-2xl">
               Explore the moments and programs shaping everyday life across Furaha&apos;s communities.
             </p>
           </div>
 
           {/* Quick Search */}
           <div className="relative w-full md:w-72">
-            <Search className="w-3.5 h-3.5 text-[#59524e]/70 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-[#717275]/70 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               placeholder="Filter by keyword..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-white border border-[#ebdcd0] rounded-full text-[#201a18] placeholder:text-[#59524e]/60 focus:outline-none focus:border-[#893d2d] transition-colors shadow-2xs"
+              className="w-full pl-9 pr-8 py-2.5 text-[15px] font-light bg-white border border-[#ebdcd0] rounded-full text-[#717275] placeholder:text-[#717275]/70 focus:outline-none focus:border-[#893d2d] transition-colors shadow-2xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
                 aria-label="Clear search"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#59524e] hover:text-[#201a18] p-0.5 cursor-pointer"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#717275] hover:text-[#893d2d] p-0.5 cursor-pointer"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -77,7 +80,7 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
               className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                 categoryFilter === 'all'
                   ? 'bg-[#893d2d] text-white shadow-xs'
-                  : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
+                  : 'bg-white text-[#717275] hover:text-[#893d2d] border border-[#ebdcd0]'
               }`}
             >
               <span>All Stories</span>
@@ -99,7 +102,7 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
                   className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                     categoryFilter === cat.id
                       ? 'bg-[#893d2d] text-white shadow-xs'
-                      : 'bg-white text-[#59524e] hover:text-[#201a18] border border-[#ebdcd0]'
+                      : 'bg-white text-[#717275] hover:text-[#893d2d] border border-[#ebdcd0]'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -118,15 +121,19 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
 
         {/* SECTION 4 — FULL CURATED ARCHIVE GRID */}
         {filteredItems.length === 0 ? (
-          <div className="text-center py-16 text-[#59524e] text-sm bg-white rounded-2xl border border-[#ebdcd0] p-8 max-w-md mx-auto">
-            <p className="font-medium text-[#201a18]">No photographs found matching your criteria.</p>
-            <p className="text-xs text-[#59524e] mt-1">Try clearing your keyword or selecting another category.</p>
+          <div className="text-center py-16 bg-white rounded-2xl border border-[#ebdcd0] p-8 max-w-md mx-auto">
+            <h5 className="text-[20px] font-semibold text-[#893d2d] tracking-[-1px] mb-2">
+              No photographs found
+            </h5>
+            <p className="text-[#717275] text-[16px] font-light leading-relaxed mb-4">
+              Try clearing your keyword or selecting another category.
+            </p>
             <button
               onClick={() => {
                 setCategoryFilter('all');
                 setSearchQuery('');
               }}
-              className="mt-4 inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-[#893d2d] text-white hover:bg-[#723224] transition-colors cursor-pointer"
+              className="inline-flex items-center px-6 py-2.5 rounded-full text-[15px] font-semibold bg-[#893d2d] text-white hover:bg-[#733123] transition-colors cursor-pointer"
             >
               Reset filters
             </button>
@@ -164,27 +171,27 @@ export const MediaGrid: React.FC<MediaGridProps> = ({ items, onOpenLightbox }) =
                     />
                     
                     {/* Minimal Category Tag Over Photo */}
-                    <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-medium tracking-wider uppercase px-2.5 py-0.5 rounded-full">
+                    <div className="absolute top-3 left-3 bg-[#893d2d] text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-xs">
                       {item.categoryLabel}
                     </div>
                   </div>
 
-                  {/* Clean Editorial Card Details — Minimal, Image-First */}
+                  {/* Clean Card Details — Formatted with Section 2 styles */}
                   <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-base font-serif font-normal text-[#201a18] leading-snug group-hover:text-[#893d2d] transition-colors">
+                      <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-[#893d2d] tracking-[-1px] leading-snug group-hover:text-[#733123] transition-colors mb-1">
                         {item.title}
                       </h3>
                       {item.subtitle && (
-                        <p className="text-xs text-[#59524e] mt-1 font-normal leading-relaxed line-clamp-2">
+                        <p className="text-[#717275] text-[16px] font-light leading-[1.65] line-clamp-2">
                           {item.subtitle}
                         </p>
                       )}
                     </div>
 
                     {item.location && (
-                      <div className="flex items-center gap-1.5 mt-3 pt-2.5 border-t border-[#ebdcd0]/60 text-[11px] text-[#8c827a]">
-                        <MapPin className="w-3 h-3 text-[#893d2d] shrink-0" />
+                      <div className="flex items-center gap-1.5 mt-3 pt-2.5 border-t border-[#ebdcd0]/60 text-[14px] text-[#717275] font-light">
+                        <MapPin className="w-3.5 h-3.5 text-[#893d2d] shrink-0" />
                         <span>{item.location}</span>
                       </div>
                     )}

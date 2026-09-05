@@ -1,31 +1,31 @@
 import React from 'react';
-import { ShieldCheck, MapPin, Sparkles, HeartHandshake } from 'lucide-react';
+import { Camera, MapPin, HeartHandshake, BookOpen } from 'lucide-react';
 
 export const ImpactAtAGlance: React.FC = () => {
-  const verifiedStats = [
+  const stats = [
     {
-      title: 'Real Work',
-      subtitle: 'Documented from the field',
-      icon: Sparkles,
-      tag: 'Verified',
+      title: 'Field Journal',
+      subtitle: 'Documented directly from community partners',
+      icon: Camera,
+      tag: 'Field Notes',
     },
     {
       title: 'Kenya',
-      subtitle: 'Grounded in local communities',
+      subtitle: 'Grounded in partner schools and local communities',
       icon: MapPin,
-      tag: 'On-the-ground',
+      tag: 'Locations',
     },
     {
       title: 'Four Areas',
       subtitle: 'Education · Nutrition · Care · Faith',
       icon: HeartHandshake,
-      tag: 'Holistic',
+      tag: 'Pillars',
     },
     {
-      title: 'Active Support',
-      subtitle: 'Tuition, meals & basic essentials',
-      icon: ShieldCheck,
-      tag: 'Direct Action',
+      title: 'Direct Support',
+      subtitle: 'School fees, meals, uniforms & essentials',
+      icon: BookOpen,
+      tag: 'Practical Care',
     },
   ];
 
@@ -37,20 +37,20 @@ export const ImpactAtAGlance: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
           <div>
             <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-1">
-              Credibility & Scope
+              Field Documentation
             </span>
             <h2 className="text-xl sm:text-2xl font-bold text-[#201a18] tracking-tight">
-              Impact at a glance
+              Work across our partners
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#717275] max-w-md font-normal">
-            Ground-level initiatives centered on verified community needs across partner locations in Kenya.
+            Ground-level initiatives meeting everyday needs across partner schools and homes in Kenya.
           </p>
         </div>
 
         {/* 4 Grounded Metric/Truth Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {verifiedStats.map((item, idx) => {
+          {stats.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
@@ -61,7 +61,7 @@ export const ImpactAtAGlance: React.FC = () => {
                   <div className="w-10 h-10 rounded-xl bg-[#893d2d]/10 text-[#893d2d] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#893d2d] bg-[#893d2d]/10 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-[#893d2d] bg-[#893d2d]/10 px-2 py-0.5 rounded-full">
                     {item.tag}
                   </span>
                 </div>
