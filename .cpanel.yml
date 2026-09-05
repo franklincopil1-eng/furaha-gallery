@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/himzwncs/public_html/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp dist/.htaccess $DEPLOYPATH 2>/dev/null || :

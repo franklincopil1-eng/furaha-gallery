@@ -20,27 +20,25 @@ export const FurahaLogo: React.FC<FurahaLogoProps> = ({
   // Dynamic responsive sizing based on size prop and screen breakpoint
   const imageSizeClasses =
     size === 'sm'
-      ? 'h-6.5 min-[340px]:h-7.5 min-[380px]:h-8 sm:h-8.5 md:h-9 lg:h-10 max-h-10'
+      ? 'h-6.5 min-[340px]:h-7 min-[380px]:h-7.5 sm:h-8.5 md:h-9 lg:h-10 max-h-10'
       : size === 'lg' || size === 'xl'
       ? 'h-8 min-[340px]:h-9 min-[380px]:h-10 sm:h-11 md:h-12 lg:h-14 max-h-14'
-      : 'h-7.5 min-[340px]:h-8.5 min-[380px]:h-9 sm:h-10 md:h-11 lg:h-12 max-h-12';
+      : 'h-7 min-[340px]:h-8 min-[380px]:h-8.5 sm:h-9.5 md:h-10 lg:h-11 max-h-11';
 
   const titleSizeClasses =
     size === 'sm'
-      ? 'text-[11px] min-[340px]:text-[12px] min-[380px]:text-[13px] min-[440px]:text-[14.5px] sm:text-[16px] md:text-[17px] lg:text-[18px]'
-      : 'text-[12px] min-[340px]:text-[13px] min-[380px]:text-[15px] min-[440px]:text-[16.5px] sm:text-[18px] md:text-[19.5px] lg:text-[20.5px] xl:text-[21.5px]';
+      ? 'text-[10.5px] min-[340px]:text-[11.5px] min-[380px]:text-[12.5px] min-[440px]:text-[14px] sm:text-[15.5px] md:text-[17px] lg:text-[18px] xl:text-[19px]'
+      : 'text-[11.5px] min-[340px]:text-[12.5px] min-[380px]:text-[14px] min-[440px]:text-[15.5px] sm:text-[17px] md:text-[18.5px] lg:text-[19.5px] xl:text-[20.5px]';
 
   const subSizeClasses =
     size === 'sm'
-      ? 'text-[6px] min-[340px]:text-[6.5px] min-[380px]:text-[7px] min-[440px]:text-[7.5px] sm:text-[8.5px] md:text-[9px]'
-      : 'text-[7px] min-[340px]:text-[7.5px] min-[380px]:text-[8px] min-[440px]:text-[8.5px] sm:text-[9.5px] md:text-[10px]';
+      ? 'text-[6px] min-[340px]:text-[6.5px] min-[380px]:text-[7px] min-[440px]:text-[7.5px] sm:text-[8px] md:text-[8.5px] lg:text-[9px]'
+      : 'text-[6.5px] min-[340px]:text-[7px] min-[380px]:text-[7.5px] min-[440px]:text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px]';
 
   return (
     <div
       id="furaha-logo-brand"
-      className={`navbar-brand select-none flex items-center ${
-        size === 'sm' ? 'gap-1.5 min-[360px]:gap-2 sm:gap-2.5' : 'gap-2 sm:gap-2.5 md:gap-3'
-      } shrink-0 ${className}`}
+      className={`navbar-brand select-none flex items-center gap-1.5 min-[360px]:gap-2 sm:gap-2.5 md:gap-3 shrink-0 ${className}`}
     >
       {/* Official Logo with Vector Fallback */}
       {!imgError ? (
@@ -65,13 +63,13 @@ export const FurahaLogo: React.FC<FurahaLogoProps> = ({
           >
             FURAHA MINISTRIES
           </span>
-          <small
+          <span
             className={`${subSizeClasses} uppercase tracking-wider font-semibold whitespace-nowrap leading-tight transition-all ${
               isWhite ? 'text-white/80' : 'text-neutral-500'
             }`}
           >
             Non-profit Organization
-          </small>
+          </span>
         </div>
       )}
     </div>

@@ -143,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
       aria-label="Hero Carousel"
     >
       {/* Pinned / Sticky Carousel Viewport */}
-      <div className="sticky top-14 sm:top-20 h-[calc(88vh-56px)] min-h-[464px] max-h-[624px] sm:h-[calc(100vh-80px)] sm:min-h-0 sm:max-h-none w-full overflow-hidden z-0">
+      <div className="sticky top-14 sm:top-16 h-[calc(88vh-56px)] min-h-[464px] max-h-[624px] sm:h-[calc(100vh-64px)] sm:min-h-0 sm:max-h-none w-full overflow-hidden z-0">
         <div id="hero-slide" className="relative w-full h-full min-h-full overflow-hidden">
           {slides.map((slide, idx) => {
             const isActive = idx === currentSlide;
@@ -217,7 +217,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                         <button
                           onClick={scrollToStory}
-                          className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#e2d5c3]/50 bg-black/40 hover:bg-black/60 hover:border-[#faf2e6] text-[#faf2e6] font-semibold text-xs sm:text-xs md:text-sm transition-all cursor-pointer inline-flex items-center gap-1.5 shadow-md active:scale-95"
+                          className="px-3 min-[360px]:px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#e2d5c3]/50 bg-black/40 hover:bg-black/60 hover:border-[#faf2e6] text-[#faf2e6] font-semibold text-[11px] min-[360px]:text-xs md:text-sm transition-all cursor-pointer inline-flex items-center gap-1.5 shadow-md active:scale-95"
                         >
                           <span>Our Story</span>
                           <ArrowRight className="w-3.5 h-3.5 text-[#e2d5c3]" />
@@ -226,7 +226,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
                           onClick={onOpenDonateModal}
                           data-givebutter="button"
                           id={`hero-donate-btn-${idx}`}
-                          className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#893d2d] hover:bg-[#733123] text-[#faf2e6] font-semibold text-xs sm:text-xs md:text-sm transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center gap-1.5 active:scale-95 border border-[#893d2d]"
+                          className="px-3.5 min-[360px]:px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#893d2d] hover:bg-[#733123] text-[#faf2e6] font-semibold text-[11px] min-[360px]:text-xs md:text-sm transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center gap-1.5 active:scale-95 border border-[#893d2d]"
                         >
                           <Heart className="w-3.5 h-3.5 fill-[#faf2e6]" />
                           <span>Give to Furaha</span>

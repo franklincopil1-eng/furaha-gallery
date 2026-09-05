@@ -192,15 +192,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
-      {/* 1. Top email strip - compact and proportional */}
+      {/* 1. Top email strip */}
       <header id="top" className="site-header w-full bg-[#893d2d] text-white z-40 relative">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center min-h-[26px] sm:min-h-[28px] py-1">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center min-h-[26px] py-1">
           <p className="flex items-center m-0 leading-none">
-            <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1.5 sm:mr-2 shrink-0 text-white" />
+            <Mail className="w-3 h-3 min-[380px]:w-3.5 min-[380px]:h-3.5 mr-1.5 shrink-0 text-white" />
             <a
               href="mailto:info@meetfuraha.org"
               id="top-bar-email"
-              className="text-white hover:text-white/80 transition-colors leading-none text-[10.5px] sm:text-xs font-medium"
+              className="text-white hover:text-white/80 transition-colors leading-none text-[11px] min-[380px]:text-xs font-medium"
             >
               info@meetfuraha.org
             </a>
@@ -208,28 +208,18 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </header>
 
-      {/* 2. Main Navigation Bar with Dynamic Shrink & Visual Balance */}
+      {/* 2. Main Navigation Bar */}
       <div
-        className={`sticky top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out ${
+        className={`sticky top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ease-in-out ${
           navVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isScrolled ? 'shadow-md bg-white/98 backdrop-blur-md' : 'shadow-xs bg-white/95 backdrop-blur-sm'}`}
+        } ${isScrolled ? 'shadow-md bg-white/98' : 'shadow-xs bg-white/95'}`}
       >
-        <nav className="navbar navbar-expand-lg border-b border-neutral-100/90 w-full">
-          <div
-            className={`max-w-7xl mx-auto px-2.5 min-[360px]:px-3 sm:px-6 lg:px-8 flex items-center justify-between w-full transition-all duration-300 ease-in-out ${
-              isScrolled
-                ? 'h-12 min-[360px]:h-13 sm:h-14 lg:h-15'
-                : 'h-13.5 min-[360px]:h-14 sm:h-16 lg:h-17'
-            }`}
-          >
-            {/* Left: Brand block (scales subtly when scrolled) */}
-            <div
-              className={`flex items-center justify-start shrink-0 lg:flex-1 transition-transform duration-300 origin-left ${
-                isScrolled ? 'scale-95' : 'scale-100'
-              }`}
-            >
+        <nav className="navbar navbar-expand-lg backdrop-blur-md border-b border-neutral-100/90 w-full">
+          <div className="max-w-7xl mx-auto px-2.5 min-[360px]:px-3 sm:px-6 lg:px-8 flex items-center justify-between w-full h-14 sm:h-16 lg:h-16">
+            {/* Left: Brand block (flex-1 on lg to symmetrically counterbalance right action) */}
+            <div className="flex items-center justify-start shrink-0 lg:flex-1 min-w-0">
               <a
-                className="inline-flex items-center py-0.5 cursor-pointer"
+                className="inline-flex items-center py-1 cursor-pointer min-w-0"
                 href="#top"
                 onClick={handleLogoClick}
                 aria-label="Furaha Ministries Home"
@@ -238,20 +228,20 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             </div>
 
-            {/* Center: Desktop Nav Items - Centered with balanced typography */}
+            {/* Center: Desktop Nav Items - Perfectly centered on big screen for optimal visual balance */}
             <nav
               className="hidden lg:flex items-center justify-center shrink-0"
               id="navbarNav"
               aria-label="Main Navigation"
             >
-              <ul className="navbar-nav flex items-center justify-center gap-1 xl:gap-2 m-0 p-0 list-none">
+              <ul className="navbar-nav flex items-center justify-center gap-0.5 xl:gap-1.5 m-0 p-0 list-none">
                 {navLinks.map((link) => {
                   const isActive = isLinkActive(link);
 
                   return (
                     <li key={link.name} className="nav-item">
                       <a
-                        className={`px-2.5 xl:px-3.5 py-1 xl:py-1.5 rounded-full text-[12.5px] xl:text-[13.5px] whitespace-nowrap transition-all cursor-pointer ${
+                        className={`px-2.5 xl:px-3 py-1.5 rounded-full text-[12.5px] xl:text-[13.5px] whitespace-nowrap transition-all cursor-pointer ${
                           isActive
                             ? 'bg-[#893d2d] text-white font-semibold shadow-xs'
                             : 'text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100/80 font-medium'
@@ -267,18 +257,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </ul>
             </nav>
 
-            {/* Right: Desktop Donate Button - Dynamically shrinks on scroll for visual balance */}
+            {/* Right: Desktop Donate Button (flex-1 on lg to counterbalance left brand) */}
             <div className="hidden lg:flex items-center justify-end lg:flex-1 shrink-0">
               <button
                 onClick={handleDonateClick}
-                className={`inline-flex items-center justify-center gap-1.5 rounded-full font-semibold shadow-xs transition-all duration-300 cursor-pointer ${
-                  isScrolled
-                    ? 'px-3.5 xl:px-4 py-1.5 text-xs xl:text-[13px]'
-                    : 'px-4 xl:px-5 py-1.5 xl:py-2 text-[13px] xl:text-sm'
-                } ${
+                className={`inline-flex items-center justify-center gap-1.5 px-3.5 xl:px-4.5 py-1.5 xl:py-2 rounded-full font-semibold text-xs xl:text-sm shadow-xs transition-all cursor-pointer ${
                   currentPage === 'donate'
                     ? 'bg-[#733123] text-white ring-2 ring-[#893d2d]/40 shadow-md'
-                    : 'bg-[#893d2d] hover:bg-[#733123] text-white hover:shadow-md hover:scale-[1.02] active:scale-95'
+                    : 'bg-[#893d2d] hover:bg-[#733123] text-white hover:shadow-md hover:scale-105 active:scale-95'
                 }`}
               >
                 <Heart className="w-3.5 h-3.5 fill-white" />
@@ -286,8 +272,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            {/* Tablet Nav Items (md to lg, 768px - 1023px) - Sleek and non-crowded */}
-            <div className="hidden md:flex lg:hidden items-center gap-1 ms-auto">
+            {/* Tablet Nav Items (md to lg, 768px - 1023px) */}
+            <div className="hidden md:flex lg:hidden items-center gap-1 ms-auto shrink-0">
               <ul className="navbar-nav flex items-center gap-0.5 m-0 p-0 list-none">
                 {navLinks.map((link) => {
                   const isActive = isLinkActive(link);
@@ -295,7 +281,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   return (
                     <li key={link.name} className="nav-item">
                       <a
-                        className={`px-2 py-1 rounded-full text-[11.5px] font-medium transition-all whitespace-nowrap cursor-pointer ${
+                        className={`px-2 min-[880px]:px-2.5 py-1 rounded-full text-[11px] min-[880px]:text-[11.5px] font-medium transition-all whitespace-nowrap cursor-pointer ${
                           isActive
                             ? 'bg-[#893d2d] text-white font-semibold shadow-xs'
                             : 'text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100/80'
@@ -312,43 +298,33 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <button
                 onClick={handleDonateClick}
-                className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-xs font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer ml-1"
+                className="inline-flex items-center justify-center gap-1 px-2.5 min-[880px]:px-3 py-1 min-[880px]:py-1.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-[11px] min-[880px]:text-xs font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer ml-1 shrink-0"
               >
-                <Heart className="w-3 h-3 fill-white" />
-                <span>Give to Furaha</span>
+                <Heart className="w-3 h-3 fill-white shrink-0" />
+                <span className="hidden min-[880px]:inline">Give to Furaha</span>
+                <span className="min-[880px]:hidden inline">Give</span>
               </button>
             </div>
 
-            {/* Mobile Navigation Header (screens < 768px) - Shrinks gracefully on small devices */}
-            <div className="flex items-center gap-1.5 min-[360px]:gap-2 md:hidden">
+            {/* Mobile Navigation Header (screens < 768px) */}
+            <div className="flex items-center gap-1.5 min-[380px]:gap-2 md:hidden shrink-0">
               <button
                 onClick={handleDonateClick}
-                className={`inline-flex items-center justify-center gap-1 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer shrink-0 ${
-                  isScrolled
-                    ? 'px-2.5 py-1 min-[360px]:px-3 min-[360px]:py-1 text-[11px] min-[360px]:text-xs'
-                    : 'px-2.5 py-1.5 min-[360px]:px-3.5 min-[360px]:py-1.5 text-[11px] min-[360px]:text-xs'
-                }`}
-                aria-label="Give to Furaha"
+                className="inline-flex items-center justify-center gap-1 px-2.5 min-[360px]:px-3 min-[420px]:px-3.5 py-1 min-[380px]:py-1.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-[11px] min-[380px]:text-xs font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer shrink-0"
               >
                 <Heart className="w-2.5 h-2.5 min-[360px]:w-3 min-[360px]:h-3 fill-white shrink-0" />
-                {/* Dynamically shorten on compact mobile screens (<390px) to prevent cramping */}
-                <span className="inline min-[390px]:hidden">Give</span>
-                <span className="hidden min-[390px]:inline">Give to Furaha</span>
+                <span className="hidden min-[400px]:inline">Give to Furaha</span>
+                <span className="min-[400px]:hidden inline">Give</span>
               </button>
-
               <button
-                className="w-8 h-8 min-[360px]:w-8.5 min-[360px]:h-8.5 p-1 min-[360px]:p-1.5 text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100 rounded-lg transition-colors focus:outline-none cursor-pointer flex items-center justify-center shrink-0"
+                className="p-1.5 min-[380px]:p-2 text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100 rounded-lg transition-colors focus:outline-none cursor-pointer flex items-center justify-center shrink-0"
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-controls="navbarNav"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation"
               >
-                {mobileMenuOpen ? (
-                  <X className="w-4.5 h-4.5 min-[360px]:w-5 min-[360px]:h-5" />
-                ) : (
-                  <Menu className="w-4.5 h-4.5 min-[360px]:w-5 min-[360px]:h-5" />
-                )}
+                {mobileMenuOpen ? <X className="w-4.5 h-4.5 min-[380px]:w-5 min-[380px]:h-5" /> : <Menu className="w-4.5 h-4.5 min-[380px]:w-5 min-[380px]:h-5" />}
               </button>
             </div>
           </div>
@@ -357,16 +333,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           {mobileMenuOpen && (
             <div
               id="mobileNavMenu"
-              className="md:hidden bg-white/98 backdrop-blur-md border-t border-neutral-100 px-4 py-3 shadow-xl transition-all w-full animate-in fade-in slide-in-from-top-2 duration-200"
+              className="md:hidden bg-white border-t border-neutral-100 px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl transition-all w-full animate-in fade-in slide-in-from-top-2 duration-200"
             >
-              <ul className="navbar-nav flex flex-col space-y-0.5 m-0 p-0 list-none">
+              <ul className="navbar-nav flex flex-col space-y-0.5 sm:space-y-1 m-0 p-0 list-none">
                 {navLinks.map((link) => {
                   const isActive = isLinkActive(link);
 
                   return (
                     <li key={link.name} className="nav-item">
                       <a
-                        className={`block px-3 py-2 rounded-lg text-xs min-[360px]:text-sm transition-all cursor-pointer ${
+                        className={`block px-3 py-2 rounded-xl text-[13px] sm:text-sm transition-all cursor-pointer ${
                           isActive
                             ? 'bg-[#893d2d] text-white font-semibold shadow-xs flex items-center justify-between'
                             : 'text-neutral-700 hover:bg-neutral-100 hover:text-[#893d2d] font-medium'
@@ -375,15 +351,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                         onClick={(e) => handleNavClick(e, link)}
                       >
                         <span>{link.name}</span>
-                        {isActive && <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded-full">Current</span>}
+                        {isActive && <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">Current</span>}
                       </a>
                     </li>
                   );
                 })}
-                <li className="nav-item pt-2">
+                <li className="nav-item pt-1.5">
                   <button
                     onClick={handleDonateClick}
-                    className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-center font-semibold text-xs min-[360px]:text-sm transition-all cursor-pointer shadow-xs active:scale-98"
+                    className="inline-flex items-center justify-center gap-1.5 w-full py-2 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white text-center font-semibold text-xs sm:text-sm transition-all cursor-pointer shadow-sm"
                   >
                     <Heart className="w-3.5 h-3.5 fill-white" />
                     <span>Give to Furaha</span>
