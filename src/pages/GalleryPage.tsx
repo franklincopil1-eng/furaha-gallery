@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { GalleryHero } from '../components/gallery/GalleryHero';
+import { CuratedFeaturedSection } from '../components/gallery/CuratedFeaturedSection';
 import { MediaGrid } from '../components/gallery/MediaGrid';
+import { GalleryClosingCTA } from '../components/gallery/GalleryClosingCTA';
 import { GalleryLightboxModal } from '../components/gallery/GalleryLightboxModal';
-import { GALLERY_ITEMS, GalleryItem } from '../components/gallery/galleryData';
+import {
+  GALLERY_ITEMS,
+  FEATURED_GALLERY_ITEMS,
+  GalleryItem,
+} from '../components/gallery/galleryData';
 
 interface GalleryPageProps {
   onNavigateToDonate?: (cause?: string) => void;
@@ -13,7 +19,10 @@ interface GalleryPageProps {
   onNavigateToSection?: (sectionId: string) => void;
 }
 
-export const GalleryPage: React.FC<GalleryPageProps> = () => {
+export const GalleryPage: React.FC<GalleryPageProps> = ({
+  onNavigateToDonate,
+  onNavigateToOurWork,
+}) => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   useEffect(() => {
@@ -36,7 +45,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
   };
 
   const handleScrollToGallery = () => {
-    const el = document.getElementById('gallery-collection');
+    const el = document.getElementById('gallery-featured');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -44,10 +53,18 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#201a18] flex flex-col font-sans selection:bg-[#893d2d] selection:text-white">
-      {/* 1. Gallery Exhibition Hero */}
+      {/* SECTION 1 — Immersive Introduction */}
       <GalleryHero onScrollToGallery={handleScrollToGallery} />
 
-      {/* 2. Media Grid - 31 100% Unique Curated Photographs */}
+      {/* SECTION 2 — Curated Featured Moments */}
+      <div id="gallery-featured">
+        <CuratedFeaturedSection
+          featuredItems={FEATURED_GALLERY_ITEMS}
+          onOpenLightbox={(item) => setSelectedItem(item)}
+        />
+      </div>
+
+      {/* SECTION 3 & 4 — Explore by Impact & Full Curated Archive */}
       <div id="gallery-collection">
         <MediaGrid
           items={GALLERY_ITEMS}
@@ -55,7 +72,13 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
         />
       </div>
 
-      {/* 3. Fullscreen Lightbox Modal */}
+      {/* SECTION 6 — Closing Call to Action */}
+      <GalleryClosingCTA
+        onNavigateToDonate={onNavigateToDonate}
+        onNavigateToOurWork={onNavigateToOurWork}
+      />
+
+      {/* SECTION 5 — Lightbox / Fullscreen Image Viewer */}
       <GalleryLightboxModal
         item={selectedItem}
         items={GALLERY_ITEMS}

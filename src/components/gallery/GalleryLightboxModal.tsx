@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut, MapPin } from 'lucide-react';
 import { GalleryItem } from './galleryData';
 
 interface GalleryLightboxModalProps {
@@ -177,15 +177,24 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
         </div>
 
         {/* Minimal Caption Footer */}
-        <div className="mt-4 text-center text-white select-none">
-          <h3 className="text-base sm:text-lg font-bold text-white">
+        <div className="mt-5 text-center text-white max-w-xl px-4 flex flex-col items-center">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e5b382] block mb-1">
+            {item.categoryLabel}
+          </span>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-normal text-white">
             {item.title}
           </h3>
           {item.subtitle && (
-            <p className="text-xs sm:text-sm text-white/75 mt-0.5 font-normal">
+            <p className="text-xs sm:text-sm text-white/80 mt-1.5 font-normal leading-relaxed">
               {item.subtitle}
-              {item.location ? ` · ${item.location}` : ''}
             </p>
+          )}
+
+          {item.location && (
+            <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-[#e5b382]/90">
+              <MapPin className="w-3.5 h-3.5 shrink-0" />
+              <span>{item.location}</span>
+            </div>
           )}
         </div>
       </div>
