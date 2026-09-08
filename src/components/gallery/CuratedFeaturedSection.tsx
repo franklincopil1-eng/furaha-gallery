@@ -1,4 +1,5 @@
 import React from 'react';
+import { Play } from 'lucide-react';
 import { GalleryItem } from './galleryData';
 
 interface CuratedFeaturedSectionProps {
@@ -18,6 +19,26 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
   const sideBottom = featuredItems[2];
   const bottomRowLeft = featuredItems[3];
   const bottomRowRight = featuredItems[4];
+
+  const renderPlayOverlay = (item: GalleryItem, isLarge = false) => {
+    if (item.type !== 'video') return null;
+    return (
+      <>
+        {/* Top right video duration pill */}
+        <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-10 bg-black/75 backdrop-blur-md text-[#f7e4b7] text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-md border border-white/15">
+          <Play className="w-3 h-3 fill-current text-[#ef802e]" />
+          <span>{item.duration || '0:27'}</span>
+        </div>
+
+        {/* Center play button */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+          <div className={`${isLarge ? 'w-16 h-16 sm:w-20 sm:h-20' : 'w-12 h-12 sm:w-14 sm:h-14'} rounded-full bg-[#893d2d]/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-[#893d2d] transition-transform duration-300 backdrop-blur-xs pl-1`}>
+            <Play className={`${isLarge ? 'w-7 h-7 sm:w-8 sm:h-8' : 'w-5 h-5 sm:w-6 sm:h-6'} fill-current`} />
+          </div>
+        </div>
+      </>
+    );
+  };
 
   return (
     <section
@@ -51,16 +72,17 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
             >
               <div className="relative w-full h-full min-h-[320px] sm:min-h-[420px] lg:min-h-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto overflow-hidden">
                 <img
-                  src={mainFeature.src}
+                  src={mainFeature.poster || mainFeature.src}
                   alt={mainFeature.title}
                   loading="lazy"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
+                {renderPlayOverlay(mainFeature, true)}
                 {/* Subtle Gradient Scrim for Legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-300 group-hover:from-black/85" />
 
                 {/* Minimal Overlay Content */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-white">
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-white z-10">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1.5 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {mainFeature.categoryLabel}
                   </span>
@@ -85,14 +107,15 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
             >
               <div className="relative aspect-[4/3] sm:aspect-[4/3] lg:aspect-[16/10] overflow-hidden">
                 <img
-                  src={sideTop.src}
+                  src={sideTop.poster || sideTop.src}
                   alt={sideTop.title}
                   loading="lazy"
                   className={`w-full h-full object-cover ${sideTop.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
+                {renderPlayOverlay(sideTop)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {sideTop.categoryLabel}
                   </span>
@@ -117,14 +140,15 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
             >
               <div className="relative aspect-[4/3] sm:aspect-[4/3] lg:aspect-[16/10] overflow-hidden">
                 <img
-                  src={sideBottom.src}
+                  src={sideBottom.poster || sideBottom.src}
                   alt={sideBottom.title}
                   loading="lazy"
                   className={`w-full h-full object-cover ${sideBottom.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
+                {renderPlayOverlay(sideBottom)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {sideBottom.categoryLabel}
                   </span>
@@ -149,14 +173,15 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
             >
               <div className="relative aspect-[4/3] sm:aspect-[4/3] lg:aspect-[16/10] overflow-hidden">
                 <img
-                  src={bottomRowLeft.src}
+                  src={bottomRowLeft.poster || bottomRowLeft.src}
                   alt={bottomRowLeft.title}
                   loading="lazy"
                   className={`w-full h-full object-cover ${bottomRowLeft.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
+                {renderPlayOverlay(bottomRowLeft)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {bottomRowLeft.categoryLabel}
                   </span>
@@ -181,14 +206,15 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
             >
               <div className="relative aspect-[4/3] sm:aspect-[4/3] lg:aspect-[16/10] overflow-hidden">
                 <img
-                  src={bottomRowRight.src}
+                  src={bottomRowRight.poster || bottomRowRight.src}
                   alt={bottomRowRight.title}
                   loading="lazy"
                   className={`w-full h-full object-cover ${bottomRowRight.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
+                {renderPlayOverlay(bottomRowRight)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
                     {bottomRowRight.categoryLabel}
                   </span>

@@ -14,10 +14,23 @@ import {
   Code2,
   X,
   RefreshCw,
+  Image as ImageIcon,
+  Copy,
+  Check,
+  Search,
+  Sparkles,
+  AlertTriangle,
+  FolderOpen,
 } from 'lucide-react';
 import { supabaseDb, DbDonation, DbContact, DbVolunteer, DbScholarshipApp } from '../../supabase/client';
 import { processGivebutterWebhook, GIVEBUTTER_CAMPAIGN_URL } from '../../lib/givebutter';
 import { sanityConfig, GROQ_QUERIES } from '../../sanity/client';
+import {
+  GALLERY_ITEMS,
+  GALLERY_CATEGORIES,
+  GalleryCategory,
+  GalleryItem,
+} from '../gallery/galleryData';
 
 interface TechStackInspectorProps {
   isOpen: boolean;
@@ -25,12 +38,26 @@ interface TechStackInspectorProps {
 }
 
 export const TechStackInspector: React.FC<TechStackInspectorProps> = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'architecture' | 'supabase' | 'givebutter' | 'sanity'>('architecture');
+  const [activeTab, setActiveTab] = useState<'architecture' | 'supabase' | 'givebutter' | 'sanity' | 'gallery'>('architecture');
   const [donations, setDonations] = useState<DbDonation[]>([]);
   const [contacts, setContacts] = useState<DbContact[]>([]);
   const [volunteers, setVolunteers] = useState<DbVolunteer[]>([]);
   const [scholarships, setScholarships] = useState<DbScholarshipApp[]>([]);
   const [webhookStatus, setWebhookStatus] = useState<string | null>(null);
+
+  // Gallery Inventory state
+  const [gallerySearch, setGallerySearch] = useState('');
+  const [galleryCategoryFilter, setGalleryCategoryFilter] = useState<string>('all');
+  const [copiedSnippet, setCopiedSnippet] = useState(false);
+
+  // Snippet Generator form
+  const [genFilename, setGenFilename] = useState('');
+  const [genTitle, setGenTitle] = useState('');
+  const [genSubtitle, setGenSubtitle] = useState('');
+  const [genCategory, setGenCategory] = useState<GalleryCategory>('classroom-desks');
+  const [genLayout, setGenLayout] = useState<'standard' | 'wide' | 'portrait'>('wide');
+  const [genLocation, setGenLocation] = useState('Kenya');
+  const [genIsFeatured, setGenIsFeatured] = useState(false);
 
   // Sync with Supabase reactive store
   useEffect(() => {
@@ -159,6 +186,18 @@ export const TechStackInspector: React.FC<TechStackInspectorProps> = ({ isOpen, 
           >
             <FileCode className="w-4 h-4" />
             <span>Sanity CMS</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('gallery')}
+            className={`py-3.5 px-4 text-xs sm:text-sm font-bold border-b-2 flex items-center gap-2 whitespace-nowrap transition-colors ${
+              activeTab === 'gallery'
+                ? 'border-[#893d2d] text-[#faedd0]'
+                : 'border-transparent text-white/60 hover:text-white'
+            }`}
+          >
+            <ImageIcon className="w-4 h-4" />
+            <span>Gallery & Photo Inventory ({GALLERY_ITEMS.length})</span>
           </button>
         </div>
 
@@ -455,6 +494,292 @@ export async function getFurahaStory() {
   return await sanityClient.fetch(\`${GROQ_QUERIES.getStory}\`);
 }`}
                 </pre>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 5: GALLERY & PHOTO INVENTORY */}
+          {activeTab === 'gallery' && (
+            <div className="space-y-6">
+              {/* Stat Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="bg-[#282220] p-4 rounded-2xl border border-white/10">
+                  <p className="text-white/60 text-xs">Total Storage Assets</p>
+                  <p className="text-2xl font-black text-white font-display mt-1">42</p>
+                  <p className="text-[11px] text-white/40 mt-1">In /public/images/</p>
+                </div>
+                <div className="bg-[#282220] p-4 rounded-2xl border border-emerald-500/20">
+                  <p className="text-emerald-400 text-xs">Active in Gallery</p>
+                  <p className="text-2xl font-black text-emerald-400 font-display mt-1">{GALLERY_ITEMS.length}</p>
+                  <p className="text-[11px] text-emerald-500/70 mt-1">100% Live on Site</p>
+                </div>
+                <div className="bg-[#282220] p-4 rounded-2xl border border-white/10">
+                  <p className="text-white/60 text-xs">Unmapped Photos</p>
+                  <p className="text-2xl font-black text-white font-display mt-1">0</p>
+                  <p className="text-[11px] text-emerald-400 mt-1">Fully Synchronized</p>
+                </div>
+                <div className="bg-[#282220] p-4 rounded-2xl border border-white/10">
+                  <p className="text-white/60 text-xs">WebP Optimization</p>
+                  <p className="text-2xl font-black text-amber-300 font-display mt-1">100%</p>
+                  <p className="text-[11px] text-amber-400/70 mt-1">Sharp pipeline active</p>
+                </div>
+              </div>
+
+              {/* Developer Instructions Guide */}
+              <div className="bg-[#241e1c] p-5 rounded-2xl border border-[#893d2d]/30">
+                <div className="flex items-center gap-2 mb-3">
+                  <FolderOpen className="w-5 h-5 text-[#893d2d]" />
+                  <h4 className="font-bold text-sm text-[#faedd0]">
+                    Developer Workflow: How to Upload & Display New Photos
+                  </h4>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-white/80">
+                  <div className="p-3 bg-black/30 rounded-xl border border-white/5 space-y-1">
+                    <div className="font-bold text-white flex items-center gap-1.5">
+                      <span className="w-5 h-5 rounded-full bg-[#893d2d] text-white flex items-center justify-center text-[10px]">1</span>
+                      Add Image File
+                    </div>
+                    <p className="text-white/60 text-[11px]">
+                      Drop your new <code className="text-[#faedd0]">.jpg</code> or <code className="text-[#faedd0]">.png</code> photo into <code className="text-[#faedd0]">/public/images/</code>.
+                    </p>
+                  </div>
+
+                  <div className="p-3 bg-black/30 rounded-xl border border-white/5 space-y-1">
+                    <div className="font-bold text-white flex items-center gap-1.5">
+                      <span className="w-5 h-5 rounded-full bg-[#893d2d] text-white flex items-center justify-center text-[10px]">2</span>
+                      Run Audit & Sync
+                    </div>
+                    <p className="text-white/60 text-[11px]">
+                      Run <code className="text-emerald-400 bg-black/40 px-1 py-0.5 rounded">npm run gallery:sync</code>. It checks for unmapped photos & auto-generates optimized <code className="text-[#faedd0]">.webp</code> siblings.
+                    </p>
+                  </div>
+
+                  <div className="p-3 bg-black/30 rounded-xl border border-white/5 space-y-1">
+                    <div className="font-bold text-white flex items-center gap-1.5">
+                      <span className="w-5 h-5 rounded-full bg-[#893d2d] text-white flex items-center justify-center text-[10px]">3</span>
+                      Register in Gallery Data
+                    </div>
+                    <p className="text-white/60 text-[11px]">
+                      Use the generator below to copy the TypeScript snippet and paste into <code className="text-[#faedd0]">galleryData.ts</code>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Photo Snippet Generator */}
+              <div className="bg-[#282220] p-5 rounded-2xl border border-white/10 space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-amber-400" />
+                    <h4 className="font-bold text-sm text-[#faedd0]">
+                      Photo Registration Snippet Generator
+                    </h4>
+                  </div>
+                  <span className="text-[11px] text-white/50">Generates ready-to-paste TypeScript</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-[11px] text-white/60 mb-1">Image Filename (in /public/images/)</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. DSCF0999.jpg"
+                      value={genFilename}
+                      onChange={(e) => setGenFilename(e.target.value)}
+                      className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:border-[#893d2d] outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] text-white/60 mb-1">Photo Title</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Primary School Math Class"
+                      value={genTitle}
+                      onChange={(e) => setGenTitle(e.target.value)}
+                      className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:border-[#893d2d] outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] text-white/60 mb-1">Category</label>
+                    <select
+                      value={genCategory}
+                      onChange={(e) => setGenCategory(e.target.value as GalleryCategory)}
+                      className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white focus:border-[#893d2d] outline-none"
+                    >
+                      {GALLERY_CATEGORIES.map((c) => (
+                        <option key={c.id} value={c.id} className="bg-[#1e1a18]">
+                          {c.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <label className="block text-[11px] text-white/60 mb-1">Subtitle / Impact Description</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Students solving exercises during interactive morning study in Kenya."
+                      value={genSubtitle}
+                      onChange={(e) => setGenSubtitle(e.target.value)}
+                      className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:border-[#893d2d] outline-none"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="block text-[11px] text-white/60 mb-1">Grid Layout</label>
+                      <select
+                        value={genLayout}
+                        onChange={(e) => setGenLayout(e.target.value as any)}
+                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white focus:border-[#893d2d] outline-none"
+                      >
+                        <option value="wide" className="bg-[#1e1a18]">Wide (Landscape)</option>
+                        <option value="standard" className="bg-[#1e1a18]">Standard</option>
+                        <option value="portrait" className="bg-[#1e1a18]">Portrait (Tall)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] text-white/60 mb-1">Location</label>
+                      <input
+                        type="text"
+                        placeholder="Kenya"
+                        value={genLocation}
+                        onChange={(e) => setGenLocation(e.target.value)}
+                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:border-[#893d2d] outline-none"
+                      >
+                      </input>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Generated Snippet Output */}
+                <div className="relative">
+                  <pre className="p-4 bg-black/60 rounded-xl text-[11px] font-mono text-amber-200 overflow-x-auto border border-white/10">
+{`  {
+    id: '${genFilename ? 'photo-' + genFilename.toLowerCase().replace(/[^a-z0-9]/g, '-') : 'photo-custom-id'}',
+    type: 'photo',
+    title: '${genTitle || 'Photo Title'}',
+    subtitle: '${genSubtitle || 'Documenting ongoing programs and student support in Kenya.'}',
+    category: '${genCategory}',
+    categoryLabel: '${GALLERY_CATEGORIES.find((c) => c.id === genCategory)?.label || 'Classrooms & Campus'}',
+    src: '/images/${genFilename || 'photo.jpg'}',
+    location: '${genLocation || 'Kenya'}',
+    objectPosition: 'object-center',
+    layout: '${genLayout}',
+    isFeatured: ${genIsFeatured},
+  },`}
+                  </pre>
+                  <button
+                    onClick={() => {
+                      const snippet = `  {
+    id: '${genFilename ? 'photo-' + genFilename.toLowerCase().replace(/[^a-z0-9]/g, '-') : 'photo-custom-id'}',
+    type: 'photo',
+    title: '${genTitle || 'Photo Title'}',
+    subtitle: '${genSubtitle || 'Documenting ongoing programs and student support in Kenya.'}',
+    category: '${genCategory}',
+    categoryLabel: '${GALLERY_CATEGORIES.find((c) => c.id === genCategory)?.label || 'Classrooms & Campus'}',
+    src: '/images/${genFilename || 'photo.jpg'}',
+    location: '${genLocation || 'Kenya'}',
+    objectPosition: 'object-center',
+    layout: '${genLayout}',
+    isFeatured: ${genIsFeatured},
+  },`;
+                      navigator.clipboard.writeText(snippet);
+                      setCopiedSnippet(true);
+                      setTimeout(() => setCopiedSnippet(false), 2500);
+                    }}
+                    className="absolute top-3 right-3 px-3 py-1.5 bg-[#893d2d] hover:bg-[#a64835] text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-colors shadow-md"
+                  >
+                    {copiedSnippet ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-300" />
+                        <span>Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy Snippet</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              {/* Active Gallery Inventory Catalog */}
+              <div className="space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <h4 className="font-bold text-sm text-[#faedd0]">
+                    Active Gallery Catalog ({GALLERY_ITEMS.length} Photos)
+                  </h4>
+                  <div className="flex items-center gap-2">
+                    <div className="relative">
+                      <Search className="w-3.5 h-3.5 text-white/40 absolute left-2.5 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        placeholder="Search photos..."
+                        value={gallerySearch}
+                        onChange={(e) => setGallerySearch(e.target.value)}
+                        className="pl-8 pr-3 py-1.5 bg-black/40 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:border-[#893d2d] outline-none w-44 sm:w-56"
+                      />
+                    </div>
+                    <select
+                      value={galleryCategoryFilter}
+                      onChange={(e) => setGalleryCategoryFilter(e.target.value)}
+                      className="px-2.5 py-1.5 bg-black/40 border border-white/10 rounded-xl text-xs text-white focus:border-[#893d2d] outline-none"
+                    >
+                      <option value="all" className="bg-[#1e1a18]">All Categories</option>
+                      {GALLERY_CATEGORIES.map((c) => (
+                        <option key={c.id} value={c.id} className="bg-[#1e1a18]">
+                          {c.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-[400px] overflow-y-auto pr-1">
+                  {GALLERY_ITEMS.filter((item) => {
+                    const matchesSearch =
+                      !gallerySearch ||
+                      item.title.toLowerCase().includes(gallerySearch.toLowerCase()) ||
+                      item.src.toLowerCase().includes(gallerySearch.toLowerCase()) ||
+                      (item.subtitle && item.subtitle.toLowerCase().includes(gallerySearch.toLowerCase()));
+                    const matchesCategory =
+                      galleryCategoryFilter === 'all' || item.category === galleryCategoryFilter;
+                    return matchesSearch && matchesCategory;
+                  }).map((item) => (
+                    <div
+                      key={item.id}
+                      className="bg-[#282220] rounded-xl overflow-hidden border border-white/10 group hover:border-[#893d2d]/50 transition-colors flex flex-col"
+                    >
+                      <div className="aspect-[4/3] bg-black/40 overflow-hidden relative">
+                        <img
+                          src={item.src}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                        <span className="absolute top-1.5 right-1.5 bg-black/70 backdrop-blur-sm text-white/80 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">
+                          {item.layout}
+                        </span>
+                      </div>
+                      <div className="p-2.5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <p className="font-bold text-xs text-white line-clamp-1">{item.title}</p>
+                          <p className="text-[10px] text-white/50 font-mono truncate mt-0.5">{item.src}</p>
+                        </div>
+                        <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/5">
+                          <span className="text-[9px] font-medium text-[#faedd0] bg-[#893d2d]/30 px-1.5 py-0.5 rounded truncate max-w-[110px]">
+                            {item.categoryLabel}
+                          </span>
+                          <span className="w-2 h-2 rounded-full bg-emerald-400" title="Active on Website"></span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}

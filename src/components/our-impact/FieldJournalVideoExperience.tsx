@@ -86,6 +86,7 @@ const CHAPTERS: Chapter[] = [
 
 // Direct uploaded video file sources
 const LOCAL_VIDEO_SOURCES = [
+  '/videos/community-washroom-transformation.mp4',
   '/westhill_sanitation.mp4',
   '/amani-sanitation.mp4',
   '/video.mp4',

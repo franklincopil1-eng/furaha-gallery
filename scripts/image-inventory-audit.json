@@ -1,531 +1,464 @@
 {
   "DSCF0007.jpg": {
     "filename": "DSCF0007.jpg",
+    "src": "/images/DSCF0007.jpg",
+    "mapped": true,
     "width": 2000,
     "height": 1333,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "626602B",
-    "visible_description": "A narrow alleyway or corridor situated between corrugated metal walls on the left and a rough stone block wall on the right.",
-    "setting": "dirt alleyway in settlement",
-    "people": {
-      "present": false,
-      "count_approx": 0,
-      "group_type": "none",
-      "identifiable_faces": false,
-      "visible_clothing": "none"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": false,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "settlement walkway",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "acceptable",
-    "privacy_sensitivity": "low",
-    "suitable_placements": [
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 626602,
+    "hasWebp": true
   },
   "DSCF0009.jpg": {
     "filename": "DSCF0009.jpg",
+    "src": "/images/DSCF0009.jpg",
+    "mapped": true,
     "width": 2000,
     "height": 1333,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "396813B",
-    "visible_description": "A narrow dirt alleyway flanked by weathered corrugated metal shacks and fences under daylight.",
-    "setting": "dirt alleyway in settlement",
-    "people": {
-      "present": false,
-      "count_approx": 0,
-      "group_type": "none",
-      "identifiable_faces": false,
-      "visible_clothing": "none"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": false,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "settlement walkway",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "acceptable",
-    "privacy_sensitivity": "low",
-    "suitable_placements": [
-      "supporting",
-      "gallery"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 396813,
+    "hasWebp": true
   },
   "DSCF0024.jpg": {
     "filename": "DSCF0024.jpg",
+    "src": "/images/DSCF0024.jpg",
+    "mapped": true,
     "width": 2000,
     "height": 1333,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "452680B",
-    "visible_description": "A metal wood-burning stove with a cooking pan on top is set against corrugated metal walls in an outdoor or semi-outdoor cooking space.",
-    "setting": "outdoor cooking fire/stove",
-    "people": {
-      "present": false,
-      "count_approx": 0,
-      "group_type": "none",
-      "identifiable_faces": false,
-      "visible_clothing": ""
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": false,
-      "food_or_kitchen": true,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "kitchen facility or outdoor cooking setup",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "acceptable",
-    "privacy_sensitivity": "low",
-    "suitable_placements": [
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 452680,
+    "hasWebp": true
   },
   "DSCF0817.jpg": {
     "filename": "DSCF0817.jpg",
+    "src": "/images/DSCF0817.jpg",
+    "mapped": true,
     "width": 6240,
     "height": 4160,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "2.5288MB",
-    "visible_description": "A crowded classroom inside a corrugated metal structure with two male instructors, children seated at desks wearing green uniforms, and chalkboards on the walls.",
-    "setting": "classroom interior",
-    "people": {
-      "present": true,
-      "count_approx": 35,
-      "group_type": "mixed",
-      "identifiable_faces": true,
-      "visible_clothing": "green school uniforms and sweaters, casual adult clothing"
-    },
-    "key_elements": {
-      "classroom": true,
-      "church": false,
-      "books_or_learning": true,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": false
-    },
-    "visible_text": "pattern, 21/7/2023, X X X X, ENVIRONMENTAL, DIFFERENT PARTS OF A PLANT, Importance of Waste disposal in the classroom, It prevents accidents in the classroom, A dirty classroom is uncomfortable to sit, We supposed to collect and dispose waste in the classroom",
-    "apparent_project_context": "school classroom reading",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "hero",
-      "card",
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 2528795,
+    "hasWebp": true
   },
   "DSCF0856.jpg": {
     "filename": "DSCF0856.jpg",
+    "src": "/images/DSCF0856.jpg",
+    "mapped": true,
     "width": 2000,
     "height": 1333,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "574892B",
-    "visible_description": "An aerial view showing an adult man interacting with a line of children in school uniforms walking through a narrow dirt alleyway between corrugated metal structures in an informal settlement.",
-    "setting": "dirt alleyway in settlement",
-    "people": {
-      "present": true,
-      "count_approx": 25,
-      "group_type": "mixed",
-      "identifiable_faces": true,
-      "visible_clothing": "green school sweaters and light blue shirts"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "settlement walkway",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 574892,
+    "hasWebp": true
+  },
+  "Education.jpg": {
+    "filename": "Education.jpg",
+    "src": "/images/Education.jpg",
+    "mapped": true,
+    "width": 6240,
+    "height": 4160,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 2528795,
+    "hasWebp": true
   },
   "Nutrition.png": {
     "filename": "Nutrition.png",
+    "src": "/images/Nutrition.png",
+    "mapped": true,
     "width": 1024,
     "height": 578,
     "aspectRatio": "1.77",
-    "format": "PNG",
-    "size": "349189B",
-    "visible_description": "Several children are seated around an outdoor table eating meals, with many plastic chairs arranged on a grassy lawn.",
-    "setting": "school courtyard",
-    "people": {
-      "present": true,
-      "count_approx": 15,
-      "group_type": "children",
-      "identifiable_faces": true,
-      "visible_clothing": "casual clothing including t-shirts and dresses"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": false,
-      "food_or_kitchen": true,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "outdoor children's feeding program or meal gathering",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "gallery",
-      "card",
-      "supporting"
-    ]
+    "format": "png",
+    "sizeBytes": 349189,
+    "hasWebp": true
   },
   "Purity.jpg": {
     "filename": "Purity.jpg",
+    "src": "/images/Purity.jpg",
+    "mapped": true,
     "width": 1600,
     "height": 1280,
     "aspectRatio": "1.25",
-    "format": "JPEG",
-    "size": "341209B",
-    "visible_description": "A collage showing a young girl in a school uniform in various settings, including being measured with a tape, wearing a green sweater outdoors, a side profile with a backpack, and standing in a narrow settlement pathway.",
-    "setting": "settlement walkway",
-    "people": {
-      "present": true,
-      "count_approx": 2,
-      "group_type": "mixed",
-      "identifiable_faces": true,
-      "visible_clothing": "school uniform, blue sweater, plaid skirt, green sweater"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": true
-    },
-    "visible_text": "",
-    "apparent_project_context": "settlement walkway",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "hero",
-      "card",
-      "gallery"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 341209,
+    "hasWebp": true
   },
-  "education-books-students.jpg": {
-    "filename": "education-books-students.jpg",
+  "WhatsApp Image 2026-09-03 at 10.53.23 PM3.jpeg": {
+    "filename": "WhatsApp Image 2026-09-03 at 10.53.23 PM3.jpeg",
+    "src": "/images/WhatsApp Image 2026-09-03 at 10.53.23 PM3.jpeg",
+    "mapped": true,
     "width": 1280,
     "height": 720,
     "aspectRatio": "1.78",
-    "format": "JPEG",
-    "size": "126350B",
-    "visible_description": "A group of students in uniforms line up outdoors holding open textbooks in front of a corrugated metal wall.",
-    "setting": "school courtyard",
-    "people": {
-      "present": true,
-      "count_approx": 15,
-      "group_type": "students",
-      "identifiable_faces": true,
-      "visible_clothing": "school uniforms, plaid skirts, blue shirts, green sweaters"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": true,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "Spotlight Science and Technology",
-    "apparent_project_context": "school classroom reading",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "hero",
-      "card",
-      "gallery"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 126350,
+    "hasWebp": true
   },
-  "discipleship-kibera-church.jpg": {
-    "filename": "discipleship-kibera-church.jpg",
+  "WhatsApp Image 2026-09-03 at 11.10.21 PM.jpeg": {
+    "filename": "WhatsApp Image 2026-09-03 at 11.10.21 PM.jpeg",
+    "src": "/images/WhatsApp Image 2026-09-03 at 11.10.21 PM.jpeg",
+    "mapped": true,
     "width": 1600,
     "height": 1067,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "288555B",
-    "visible_description": "A group of children in school uniforms seated at wooden benches inside a corrugated iron structure, with two adults standing and observing them. A banner on the back wall reads 'NEW CEA PENTECOST KIBERA CHURCH...'.",
-    "setting": "church sanctuary",
-    "people": {
-      "present": true,
-      "count_approx": 20,
-      "group_type": "mixed",
-      "identifiable_faces": true,
-      "visible_clothing": "Green school sweaters, skirts, trousers, and casual adult clothing"
-    },
-    "key_elements": {
-      "classroom": true,
-      "church": true,
-      "books_or_learning": true,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": false
-    },
-    "visible_text": "NEW CEA PENTECOST KIBERA CHURCH BRA NAIROBI DIOCESE",
-    "apparent_project_context": "Kibera church fellowship and educational gathering",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "gallery",
-      "card",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 288555,
+    "hasWebp": true
+  },
+  "discipleship-kibera-church.jpg": {
+    "filename": "discipleship-kibera-church.jpg",
+    "src": "/images/discipleship-kibera-church.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 288555,
+    "hasWebp": true
+  },
+  "education-books-students.jpg": {
+    "filename": "education-books-students.jpg",
+    "src": "/images/education-books-students.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 126350,
+    "hasWebp": true
   },
   "field-activity-3.jpg": {
     "filename": "field-activity-3.jpg",
+    "src": "/images/field-activity-3.jpg",
+    "mapped": true,
     "width": 1280,
     "height": 720,
     "aspectRatio": "1.78",
-    "format": "JPEG",
-    "size": "149131B",
-    "visible_description": "A split-screen 'before' and 'after' image showing the transformation of an outdoor cooking and living structure with corrugated metal and log walls in a settlement alleyway.",
-    "setting": "outdoor cooking fire/stove",
-    "people": {
-      "present": true,
-      "count_approx": 3,
-      "group_type": "mixed",
-      "identifiable_faces": false,
-      "visible_clothing": "casual clothing"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": false,
-      "food_or_kitchen": true,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": true,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "BEFORE AFTER",
-    "apparent_project_context": "settlement structure upgrade and construction",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "low",
-    "suitable_placements": [
-      "card",
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 149131,
+    "hasWebp": true
   },
   "field-campus-7.jpg": {
     "filename": "field-campus-7.jpg",
+    "src": "/images/field-campus-7.jpg",
+    "mapped": true,
     "width": 1280,
     "height": 720,
     "aspectRatio": "1.78",
-    "format": "JPEG",
-    "size": "140585B",
-    "visible_description": "A group of school children stand in an outdoor courtyard holding up various school textbooks.",
-    "setting": "school courtyard",
-    "people": {
-      "present": true,
-      "count_approx": 13,
-      "group_type": "students",
-      "identifiable_faces": true,
-      "visible_clothing": "school uniforms including plaid skirts, light blue shirts, and green sweaters"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": true,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "Spotlight Agriculture, Spotlight Social Studies, Spotlight Creative Arts, MORAN, DISTINCTION",
-    "apparent_project_context": "school classroom reading",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "card",
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 140585,
+    "hasWebp": true
+  },
+  "field-campus-8.jpg": {
+    "filename": "field-campus-8.jpg",
+    "src": "/images/field-campus-8.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 126350,
+    "hasWebp": true
   },
   "field-campus-9.jpg": {
     "filename": "field-campus-9.jpg",
+    "src": "/images/field-campus-9.jpg",
+    "mapped": true,
     "width": 1280,
     "height": 720,
     "aspectRatio": "1.78",
-    "format": "JPEG",
-    "size": "125686B",
-    "visible_description": "A group of school children lined up outdoors, holding open textbooks and showing them to the camera.",
-    "setting": "school courtyard",
-    "people": {
-      "present": true,
-      "count_approx": 15,
-      "group_type": "students",
-      "identifiable_faces": true,
-      "visible_clothing": "school uniforms, skirts, sweaters"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": true,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": false
-    },
-    "visible_text": "",
-    "apparent_project_context": "school classroom reading",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "gallery",
-      "card"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 125686,
+    "hasWebp": true
   },
   "field-classroom-4.jpg": {
     "filename": "field-classroom-4.jpg",
+    "src": "/images/field-classroom-4.jpg",
+    "mapped": true,
     "width": 1280,
     "height": 853,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "148620B",
-    "visible_description": "Two female students in matching blue sweaters and plaid skirts stand side-by-side in a narrow corridor bordered by corrugated metal walls.",
-    "setting": "dirt alleyway in settlement",
-    "people": {
-      "present": true,
-      "count_approx": 2,
-      "group_type": "students",
-      "identifiable_faces": true,
-      "visible_clothing": "dark blue V-neck sweaters with light blue collared shirts underneath, and plaid pleated skirts"
-    },
-    "key_elements": {
-      "classroom": false,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": true,
-      "portrait": true
-    },
-    "visible_text": "",
-    "apparent_project_context": "settlement walkway",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "low",
-    "suitable_placements": [
-      "hero",
-      "card",
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 148620,
+    "hasWebp": true
   },
   "field-community-5.jpg": {
     "filename": "field-community-5.jpg",
+    "src": "/images/field-community-5.jpg",
+    "mapped": true,
     "width": 1280,
     "height": 853,
     "aspectRatio": "1.50",
-    "format": "JPEG",
-    "size": "438406B",
-    "visible_description": "Four school children in uniforms and one adult woman stand together posing in front of a stacked stone wall inside a building.",
-    "setting": "school classroom interior",
-    "people": {
-      "present": true,
-      "count_approx": 5,
-      "group_type": "mixed",
-      "identifiable_faces": true,
-      "visible_clothing": "school sweaters, skirts, and patterned blouse with jeans for the adult"
-    },
-    "key_elements": {
-      "classroom": true,
-      "church": false,
-      "books_or_learning": false,
-      "uniforms": true,
-      "food_or_kitchen": false,
-      "sanitation_or_toilets": false,
-      "construction_or_repairs": false,
-      "outdoor_activity": false,
-      "portrait": true
-    },
-    "visible_text": "",
-    "apparent_project_context": "school group portrait",
-    "image_character": "authentic_field_photo",
-    "visual_strength": "strong",
-    "privacy_sensitivity": "medium",
-    "suitable_placements": [
-      "card",
-      "gallery",
-      "supporting"
-    ]
+    "format": "jpeg",
+    "sizeBytes": 438406,
+    "hasWebp": true
+  },
+  "field-community-6.jpg": {
+    "filename": "field-community-6.jpg",
+    "src": "/images/field-community-6.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 853,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 449388,
+    "hasWebp": true
+  },
+  "field-learning-1.jpg": {
+    "filename": "field-learning-1.jpg",
+    "src": "/images/field-learning-1.jpg",
+    "mapped": true,
+    "width": 1080,
+    "height": 1080,
+    "aspectRatio": "1.00",
+    "format": "jpeg",
+    "sizeBytes": 237083,
+    "hasWebp": true
+  },
+  "field-learning-2.jpg": {
+    "filename": "field-learning-2.jpg",
+    "src": "/images/field-learning-2.jpg",
+    "mapped": true,
+    "width": 1080,
+    "height": 1080,
+    "aspectRatio": "1.00",
+    "format": "jpeg",
+    "sizeBytes": 262798,
+    "hasWebp": true
+  },
+  "field-outreach-13.jpg": {
+    "filename": "field-outreach-13.jpg",
+    "src": "/images/field-outreach-13.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 287638,
+    "hasWebp": true
+  },
+  "field-outreach-14.jpg": {
+    "filename": "field-outreach-14.jpg",
+    "src": "/images/field-outreach-14.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1066,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 299615,
+    "hasWebp": true
+  },
+  "field-outreach-15.jpg": {
+    "filename": "field-outreach-15.jpg",
+    "src": "/images/field-outreach-15.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 290794,
+    "hasWebp": true
+  },
+  "field-outreach-16.jpg": {
+    "filename": "field-outreach-16.jpg",
+    "src": "/images/field-outreach-16.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 298490,
+    "hasWebp": true
+  },
+  "field-outreach-17.jpg": {
+    "filename": "field-outreach-17.jpg",
+    "src": "/images/field-outreach-17.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 288555,
+    "hasWebp": true
+  },
+  "field-outreach-18.jpg": {
+    "filename": "field-outreach-18.jpg",
+    "src": "/images/field-outreach-18.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 235567,
+    "hasWebp": true
+  },
+  "field-portrait-12.jpg": {
+    "filename": "field-portrait-12.jpg",
+    "src": "/images/field-portrait-12.jpg",
+    "mapped": true,
+    "width": 720,
+    "height": 1280,
+    "aspectRatio": "0.56",
+    "format": "jpeg",
+    "sizeBytes": 85151,
+    "hasWebp": true
+  },
+  "field-students-10.jpg": {
+    "filename": "field-students-10.jpg",
+    "src": "/images/field-students-10.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 853,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 526587,
+    "hasWebp": true
+  },
+  "field-students-11.jpg": {
+    "filename": "field-students-11.jpg",
+    "src": "/images/field-students-11.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 119152,
+    "hasWebp": true
+  },
+  "group-people-volunteering-foodbank-poor-people.jpg": {
+    "filename": "group-people-volunteering-foodbank-poor-people.jpg",
+    "src": "/images/group-people-volunteering-foodbank-poor-people.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 2400,
+    "aspectRatio": "0.67",
+    "format": "jpeg",
+    "sizeBytes": 434096,
+    "hasWebp": true
+  },
+  "maggienew2.jpg": {
+    "filename": "maggienew2.jpg",
+    "src": "/images/maggienew2.jpg",
+    "mapped": true,
+    "width": 413,
+    "height": 572,
+    "aspectRatio": "0.72",
+    "format": "jpeg",
+    "sizeBytes": 19418,
+    "hasWebp": true
+  },
+  "uniform.jpeg": {
+    "filename": "uniform.jpeg",
+    "src": "/images/uniform.jpeg",
+    "mapped": true,
+    "width": 1280,
+    "height": 853,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 226732,
+    "hasWebp": true
+  },
+  "video_frame_carpentry.jpg": {
+    "filename": "video_frame_carpentry.jpg",
+    "src": "/images/video_frame_carpentry.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 145418,
+    "hasWebp": true
+  },
+  "video_frame_construction.jpg": {
+    "filename": "video_frame_construction.jpg",
+    "src": "/images/video_frame_construction.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 212412,
+    "hasWebp": true
+  },
+  "video_frame_materials.jpg": {
+    "filename": "video_frame_materials.jpg",
+    "src": "/images/video_frame_materials.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 173058,
+    "hasWebp": true
+  },
+  "video_frame_need.jpg": {
+    "filename": "video_frame_need.jpg",
+    "src": "/images/video_frame_need.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 210608,
+    "hasWebp": true
+  },
+  "video_frame_new_bathrooms.jpg": {
+    "filename": "video_frame_new_bathrooms.jpg",
+    "src": "/images/video_frame_new_bathrooms.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 163305,
+    "hasWebp": true
+  },
+  "video_frame_old_bathrooms.jpg": {
+    "filename": "video_frame_old_bathrooms.jpg",
+    "src": "/images/video_frame_old_bathrooms.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 191793,
+    "hasWebp": true
+  },
+  "video_master_poster.jpg": {
+    "filename": "video_master_poster.jpg",
+    "src": "/images/video_master_poster.jpg",
+    "mapped": true,
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "1.78",
+    "format": "jpeg",
+    "sizeBytes": 37471,
+    "hasWebp": true
+  },
+  "volunteer-helping-with-donation-box1.jpeg": {
+    "filename": "volunteer-helping-with-donation-box1.jpeg",
+    "src": "/images/volunteer-helping-with-donation-box1.jpeg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 313058,
+    "hasWebp": true
+  },
+  "volunteer-selecting-organizing-clothes-donations-charity.jpg": {
+    "filename": "volunteer-selecting-organizing-clothes-donations-charity.jpg",
+    "src": "/images/volunteer-selecting-organizing-clothes-donations-charity.jpg",
+    "mapped": true,
+    "width": 1600,
+    "height": 1067,
+    "aspectRatio": "1.50",
+    "format": "jpeg",
+    "sizeBytes": 279170,
+    "hasWebp": true
   }
 }

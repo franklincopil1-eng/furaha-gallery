@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MapPin, Calendar, Tag, Camera } from 'lucide-react';
+import { X, MapPin, Calendar, Tag, Camera, Play, Film } from 'lucide-react';
 
 export interface MediaItem {
   id: string;
@@ -11,6 +11,9 @@ export interface MediaItem {
   date: string;
   category: string;
   context: string;
+  isVideo?: boolean;
+  videoSrc?: string;
+  duration?: string;
 }
 
 interface MediaLightboxModalProps {
@@ -69,25 +72,43 @@ export const MediaLightboxModal: React.FC<MediaLightboxModalProps> = ({
             {/* Top Bar with Close Button */}
             <div className="p-4 bg-black/40 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#f7e4b7]">
-                <Camera className="w-4 h-4" />
-                <span>Field Documentation · Kenya</span>
+                {item.isVideo ? <Film className="w-4 h-4 text-[#ef802e]" /> : <Camera className="w-4 h-4" />}
+                <span>{item.isVideo ? 'Field Video Footage · Kenya' : 'Field Documentation · Kenya'}</span>
               </div>
               <button
                 onClick={onClose}
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                aria-label="Close image viewer"
+                aria-label="Close media viewer"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Main Image View */}
+            {/* Main Media View */}
             <div className="relative aspect-[16/10] w-full bg-black flex items-center justify-center overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.imageAlt}
-                className="w-full h-full object-contain object-center"
-              />
+              {item.isVideo && item.videoSrc ? (
+                <video
+                  key={item.videoSrc}
+                  controls
+                  autoPlay
+                  playsInline
+                  poster={item.image}
+                  className="w-full h-full object-contain"
+                >
+                  <source src={item.videoSrc} type="video/mp4" />
+                  <source src="/videos/community-washroom-transformation.mp4" type="video/mp4" />
+                  <source src="/westhill_sanitation.mp4" type="video/mp4" />
+                  <source src="/amani-sanitation.mp4" type="video/mp4" />
+                  <source src="/video.mp4" type="video/mp4" />
+                  Your browser does not support video playback.
+                </video>
+              ) : (
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  className="w-full h-full object-contain object-center"
+                />
+              )}
             </div>
 
             {/* Context & Metadata details */}
@@ -97,6 +118,12 @@ export const MediaLightboxModal: React.FC<MediaLightboxModalProps> = ({
                   <Tag className="w-3 h-3" />
                   {item.category}
                 </span>
+                {item.isVideo && (
+                  <span className="inline-flex items-center gap-1 bg-[#ef802e]/20 text-[#f7e4b7] font-semibold px-2.5 py-0.5 rounded-full border border-[#ef802e]/30">
+                    <Play className="w-3 h-3 fill-current text-[#ef802e]" />
+                    {item.duration || '0:27'} Video
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-1 bg-white/10 text-white/90 px-2.5 py-0.5 rounded-full">
                   <MapPin className="w-3 h-3 text-[#f7e4b7]" />
                   {item.location}

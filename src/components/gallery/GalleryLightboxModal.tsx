@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut, MapPin } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut, MapPin, Play, Film } from 'lucide-react';
 import { GalleryItem } from './galleryData';
 
 interface GalleryLightboxModalProps {
@@ -10,6 +10,15 @@ interface GalleryLightboxModalProps {
   onSelectNext: () => void;
   onSelectPrev: () => void;
 }
+
+const VIDEO_CHAPTERS = [
+  { time: 0, label: '0:00 Old Latrines' },
+  { time: 4, label: '0:04 The Need' },
+  { time: 7, label: '0:07 Materials Arrive' },
+  { time: 11, label: '0:11 Framing & Masonry' },
+  { time: 15, label: '0:15 Carpentry Works' },
+  { time: 19, label: '0:19 Clean Washrooms' },
+];
 
 export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
   item,
@@ -22,6 +31,7 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
   const touchStartX = useRef<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   // Reset zoom whenever active item changes
   useEffect(() => {
@@ -84,6 +94,13 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
     }
   };
 
+  const seekToChapter = (seconds: number) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = seconds;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-sm transition-opacity"
@@ -142,17 +159,44 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
       {/* Main Content Modal Container */}
       <div className="relative z-10 max-w-5xl w-full flex flex-col items-center">
         {/* Media */}
-        <div className="w-full flex items-center justify-center max-h-[75vh] overflow-auto">
+        <div className="w-full flex items-center justify-center max-h-[75vh] overflow-hidden">
           {isVideo ? (
-            <video
-              key={item.src}
-              src={item.src}
-              poster={item.poster}
-              controls
-              autoPlay
-              playsInline
-              className="max-h-[75vh] w-auto max-w-full rounded-xl shadow-2xl bg-black"
-            />
+            <div className="relative w-full max-w-4xl flex flex-col items-center">
+              <div className="relative w-full aspect-[16/9] bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10 flex items-center justify-center">
+                <video
+                  ref={videoRef}
+                  key={item.src}
+                  poster={item.poster}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full h-full object-contain"
+                >
+                  <source src={item.src} type="video/mp4" />
+                  <source src="/videos/community-washroom-transformation.mp4" type="video/mp4" />
+                  <source src="/westhill_sanitation.mp4" type="video/mp4" />
+                  <source src="/amani-sanitation.mp4" type="video/mp4" />
+                  <source src="/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              {/* Documentary chapter jump bar */}
+              <div className="mt-3 w-full flex items-center justify-center gap-1.5 overflow-x-auto py-1 px-2 no-scrollbar">
+                <span className="text-[11px] font-bold text-[#f7e4b7] uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
+                  <Film className="w-3 h-3 text-[#ef802e]" /> Chapters:
+                </span>
+                {VIDEO_CHAPTERS.map((ch) => (
+                  <button
+                    key={ch.label}
+                    onClick={() => seekToChapter(ch.time)}
+                    className="text-[11px] font-medium bg-white/10 hover:bg-[#893d2d] text-white/90 hover:text-white px-2.5 py-1 rounded-full whitespace-nowrap transition-colors cursor-pointer border border-white/10 shrink-0"
+                  >
+                    {ch.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           ) : (
             <div className="relative inline-block">
               <img
@@ -178,9 +222,17 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
 
         {/* Minimal Caption Footer */}
         <div className="mt-5 text-center text-white max-w-xl px-4 flex flex-col items-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#893d2d] text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
-            {item.categoryLabel}
-          </span>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#893d2d] text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+              {item.categoryLabel}
+            </span>
+            {isVideo && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/60 text-[#f7e4b7] text-[11px] font-semibold border border-white/15">
+                <Play className="w-3 h-3 fill-current text-[#ef802e]" />
+                {item.duration || '0:27'}
+              </span>
+            )}
+          </div>
           <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white tracking-[-1px] leading-snug">
             {item.title}
           </h3>

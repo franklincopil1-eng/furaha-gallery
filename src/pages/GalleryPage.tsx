@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { GalleryHero } from '../components/gallery/GalleryHero';
 import { CuratedFeaturedSection } from '../components/gallery/CuratedFeaturedSection';
+import { FeaturedVideoSection } from '../components/gallery/FeaturedVideoSection';
 import { MediaGrid } from '../components/gallery/MediaGrid';
 import { GalleryClosingCTA } from '../components/gallery/GalleryClosingCTA';
 import { GalleryLightboxModal } from '../components/gallery/GalleryLightboxModal';
 import {
   GALLERY_ITEMS,
   FEATURED_GALLERY_ITEMS,
+  FEATURED_VIDEO_ITEM,
   GalleryItem,
 } from '../components/gallery/galleryData';
 
@@ -56,7 +58,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       {/* SECTION 1 — Immersive Introduction */}
       <GalleryHero onScrollToGallery={handleScrollToGallery} />
 
-      {/* SECTION 2 — Curated Featured Moments */}
+      {/* SECTION 2 — Curated Featured Moments (Collage) */}
       <div id="gallery-featured">
         <CuratedFeaturedSection
           featuredItems={FEATURED_GALLERY_ITEMS}
@@ -64,7 +66,16 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         />
       </div>
 
-      {/* SECTION 3 & 4 — Explore by Impact & Full Curated Archive */}
+      {/* SECTION 3 — Field Video Documentary (Below the collage) */}
+      <div id="gallery-video">
+        <FeaturedVideoSection
+          videoItem={FEATURED_VIDEO_ITEM}
+          onOpenLightbox={(item) => setSelectedItem(item)}
+          onNavigateToDonate={onNavigateToDonate}
+        />
+      </div>
+
+      {/* SECTION 4 — Explore by Impact & Full Curated Archive */}
       <div id="gallery-collection">
         <MediaGrid
           items={GALLERY_ITEMS}

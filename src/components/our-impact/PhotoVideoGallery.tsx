@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
-import { Camera, MapPin, ZoomIn, Eye } from 'lucide-react';
+import { Camera, MapPin, ZoomIn, Eye, Play, Film } from 'lucide-react';
 import { MediaItem, MediaLightboxModal } from './MediaLightboxModal';
 
 export const mediaItemsData: MediaItem[] = [
+  {
+    id: 'media-video-washroom',
+    image: '/images/video_frame_new_bathrooms.jpg',
+    imageAlt: 'Community Washroom Renovation & Transformation field video in Kenya',
+    caption: 'Community Washroom Renovation & Transformation',
+    location: 'Kenya',
+    date: 'Field Video Documentation',
+    category: 'Facility Upgrades',
+    context:
+      'Field video footage documenting the transformation from makeshift pit latrines to clean, ceramic-tiled ventilated washrooms with handwashing facilities.',
+    isVideo: true,
+    videoSrc: '/videos/community-washroom-transformation.mp4',
+    duration: '0:27',
+  },
   {
     id: 'media-1',
     image: '/images/field-outreach-18.jpg',
@@ -62,15 +76,15 @@ export const PhotoVideoGallery: React.FC = () => {
             Field Evidence
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#201a18] tracking-tight mb-3">
-            Photographs from the ground
+            Photographs & Video from the Ground
           </h2>
           <p className="text-sm sm:text-base text-[#59524e] font-normal leading-relaxed">
-            Every image accurately describes what is known from genuine Furaha activities and visits in Kenya.
+            Every image and video accurately describes what is known from genuine Furaha activities, infrastructure projects, and community visits in Kenya.
           </p>
         </div>
 
         {/* Media Wall Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {mediaItemsData.map((item) => (
             <div
               key={item.id}
@@ -87,14 +101,38 @@ export const PhotoVideoGallery: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="inline-flex items-center gap-1.5 bg-white/90 text-[#201a18] text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
-                      <ZoomIn className="w-3.5 h-3.5 text-[#893d2d]" />
-                      <span>View details</span>
+                      {item.isVideo ? (
+                        <>
+                          <Play className="w-3.5 h-3.5 text-[#893d2d] fill-current" />
+                          <span>Play video</span>
+                        </>
+                      ) : (
+                        <>
+                          <ZoomIn className="w-3.5 h-3.5 text-[#893d2d]" />
+                          <span>View details</span>
+                        </>
+                      )}
                     </span>
                   </div>
 
-                  <div className="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
-                    {item.category}
-                  </div>
+                  {item.isVideo ? (
+                    <div className="absolute top-2.5 right-2.5 bg-black/75 backdrop-blur-md text-[#f7e4b7] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1 border border-white/20">
+                      <Play className="w-2.5 h-2.5 fill-current text-[#ef802e]" />
+                      <span>{item.duration || 'Video'}</span>
+                    </div>
+                  ) : (
+                    <div className="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                      {item.category}
+                    </div>
+                  )}
+
+                  {item.isVideo && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="w-10 h-10 rounded-full bg-[#893d2d]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform pl-0.5">
+                        <Play className="w-4 h-4 fill-current" />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-4 space-y-1.5">

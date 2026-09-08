@@ -1,0 +1,13 @@
+file '/app/applet/public/images/video_frame_old_bathrooms.jpg'
+duration 4
+file '/app/applet/public/images/video_frame_need.jpg'
+duration 3.5
+file '/app/applet/public/images/video_frame_materials.jpg'
+duration 3.5
+file '/app/applet/public/images/video_frame_construction.jpg'
+duration 4
+file '/app/applet/public/images/video_frame_carpentry.jpg'
+duration 3.5
+file '/app/applet/public/images/video_frame_new_bathrooms.jpg'
+duration 5
+file '/app/applet/public/images/video_frame_new_bathrooms.jpg'
