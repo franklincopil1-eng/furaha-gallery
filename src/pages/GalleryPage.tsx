@@ -63,6 +63,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         <CuratedFeaturedSection
           featuredItems={FEATURED_GALLERY_ITEMS}
           onOpenLightbox={(item) => setSelectedItem(item)}
+          onNavigateToDonate={onNavigateToDonate}
         />
       </div>
 

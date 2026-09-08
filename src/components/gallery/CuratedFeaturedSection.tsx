@@ -1,15 +1,17 @@
 import React from 'react';
-import { Play } from 'lucide-react';
-import { GalleryItem } from './galleryData';
+import { Play, MapPin, Heart } from 'lucide-react';
+import { GalleryItem, getCauseForCategory } from './galleryData';
 
 interface CuratedFeaturedSectionProps {
   featuredItems: GalleryItem[];
   onOpenLightbox: (item: GalleryItem) => void;
+  onNavigateToDonate?: (cause?: string) => void;
 }
 
 export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
   featuredItems,
   onOpenLightbox,
+  onNavigateToDonate,
 }) => {
   if (!featuredItems || featuredItems.length === 0) return null;
 
@@ -37,6 +39,40 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
           </div>
         </div>
       </>
+    );
+  };
+
+  const renderCardFooter = (item: GalleryItem, isMain = false) => {
+    const causeInfo = getCauseForCategory(item.category);
+    return (
+      <div className="flex items-center justify-between gap-2 mt-3 pt-2.5 border-t border-white/15">
+        <div className="flex items-center gap-1.5 text-[12px] text-white/80 font-light min-w-0">
+          <MapPin className="w-3.5 h-3.5 text-[#ef802e] shrink-0" />
+          <span className="truncate">{item.location || 'Kenya'}</span>
+        </div>
+
+        {onNavigateToDonate && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onNavigateToDonate(causeInfo.cause);
+            }}
+            className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white bg-[#893d2d] hover:bg-[#a64835] px-2.5 sm:px-3 py-1 rounded-full transition-all cursor-pointer border border-white/20 shadow-md hover:shadow-lg shrink-0 hover:scale-[1.03] active:scale-[0.97]"
+            title={`Support ${causeInfo.cause}`}
+          >
+            <Heart className="w-3 h-3 fill-current text-[#f7e4b7]" />
+            {isMain ? (
+              <>
+                <span className="hidden sm:inline">{causeInfo.label}</span>
+                <span className="inline sm:hidden">{causeInfo.shortLabel}</span>
+              </>
+            ) : (
+              <span>{causeInfo.shortLabel}</span>
+            )}
+          </button>
+        )}
+      </div>
     );
   };
 
@@ -94,6 +130,7 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                       {mainFeature.subtitle}
                     </p>
                   )}
+                  {renderCardFooter(mainFeature, true)}
                 </div>
               </div>
             </div>
@@ -127,6 +164,7 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                       {sideTop.subtitle}
                     </p>
                   )}
+                  {renderCardFooter(sideTop)}
                 </div>
               </div>
             </div>
@@ -160,6 +198,7 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                       {sideBottom.subtitle}
                     </p>
                   )}
+                  {renderCardFooter(sideBottom)}
                 </div>
               </div>
             </div>
@@ -193,6 +232,7 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                       {bottomRowLeft.subtitle}
                     </p>
                   )}
+                  {renderCardFooter(bottomRowLeft)}
                 </div>
               </div>
             </div>
@@ -226,6 +266,7 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                       {bottomRowRight.subtitle}
                     </p>
                   )}
+                  {renderCardFooter(bottomRowRight)}
                 </div>
               </div>
             </div>
