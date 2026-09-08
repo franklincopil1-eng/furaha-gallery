@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut, MapPin, Play, Film } from 'lucide-react';
-import { GalleryItem } from './galleryData';
+import { X, ChevronLeft, ChevronRight, Share2, Check, ZoomIn, ZoomOut, MapPin, Play, Film, Heart } from 'lucide-react';
+import { GalleryItem, getCauseForCategory } from './galleryData';
 
 interface GalleryLightboxModalProps {
   item: GalleryItem | null;
@@ -9,6 +9,7 @@ interface GalleryLightboxModalProps {
   onClose: () => void;
   onSelectNext: () => void;
   onSelectPrev: () => void;
+  onNavigateToDonate?: (cause?: string) => void;
 }
 
 const VIDEO_CHAPTERS = [
@@ -27,6 +28,7 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
   onClose,
   onSelectNext,
   onSelectPrev,
+  onNavigateToDonate,
 }) => {
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
@@ -248,6 +250,32 @@ export const GalleryLightboxModal: React.FC<GalleryLightboxModalProps> = ({
               <span>{item.location}</span>
             </div>
           )}
+
+          {/* Contextual Direct Support Action Bar */}
+          {onNavigateToDonate && (() => {
+            const causeInfo = getCauseForCategory(item.category);
+            return (
+              <div className="mt-4 pt-3.5 border-t border-white/15 w-full max-w-lg flex flex-col sm:flex-row items-center justify-between gap-3 bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 border border-white/15 shadow-lg">
+                <div className="text-left text-xs text-white/90">
+                  <span className="text-[#f7e4b7] font-bold block text-[11px] uppercase tracking-wider mb-0.5">
+                    Direct Field Impact
+                  </span>
+                  <span className="text-white/80 line-clamp-1">{causeInfo.impactNote}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    onNavigateToDonate(causeInfo.cause);
+                  }}
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-[#893d2d] hover:bg-[#a64835] text-white text-xs font-bold transition-all shadow-md cursor-pointer shrink-0 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <Heart className="w-3.5 h-3.5 fill-current" />
+                  <span>{causeInfo.label}</span>
+                </button>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>

@@ -80,6 +80,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         <MediaGrid
           items={GALLERY_ITEMS}
           onOpenLightbox={(item) => setSelectedItem(item)}
+          onNavigateToDonate={onNavigateToDonate}
         />
       </div>
 
@@ -97,6 +98,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         onClose={() => setSelectedItem(null)}
         onSelectNext={handleSelectNext}
         onSelectPrev={handleSelectPrev}
+        onNavigateToDonate={onNavigateToDonate}
       />
     </div>
   );

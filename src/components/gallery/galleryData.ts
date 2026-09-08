@@ -633,3 +633,65 @@ export const FEATURED_VIDEO_ITEM: GalleryItem =
   GALLERY_ITEMS.find((item) => item.id === 'video-community-washroom-renovation') ||
   GALLERY_ITEMS.find((item) => item.type === 'video') ||
   GALLERY_ITEMS[0];
+
+export interface CauseInfo {
+  label: string;
+  shortLabel: string;
+  cause: string;
+  impactNote: string;
+}
+
+export const getCauseForCategory = (category: string): CauseInfo => {
+  switch (category) {
+    case 'sanitation-repairs':
+      return {
+        label: 'Support Facility Upgrades',
+        shortLabel: 'Support Repairs',
+        cause: 'Sanitation & Facility Repairs',
+        impactNote: '100% goes directly into on-the-ground materials and construction in Kenya.',
+      };
+    case 'classroom-desks':
+      return {
+        label: 'Support Classroom Desks',
+        shortLabel: 'Support Desks',
+        cause: 'Classroom Desks & Spaces',
+        impactNote: '100% goes directly into student desks, boards, and classroom repairs.',
+      };
+    case 'school-uniforms':
+      return {
+        label: 'Fund School Uniforms',
+        shortLabel: 'Fund Uniforms',
+        cause: 'School Uniforms & Supplies',
+        impactNote: '100% goes directly into tailored uniforms, sweaters, and shoes.',
+      };
+    case 'books-study':
+      return {
+        label: 'Provide Study Books',
+        shortLabel: 'Provide Books',
+        cause: 'Books & Learning Supplies',
+        impactNote: '100% goes directly into textbooks, workbooks, and curriculum sets.',
+      };
+    case 'nutrition-community':
+      return {
+        label: 'Provide Student Meals',
+        shortLabel: 'Provide Meals',
+        cause: 'Nutrition & Daily Meals',
+        impactNote: '100% goes directly into daily lunches, grains, and kitchen supplies.',
+      };
+    case 'faith-discipleship':
+      return {
+        label: 'Support Youth Mentorship',
+        shortLabel: 'Support Mentors',
+        cause: 'Faith & Community Mentorship',
+        impactNote: '100% goes directly into community outreach, Bibles, and youth mentorship.',
+      };
+    default:
+      return {
+        label: 'Support This Program',
+        shortLabel: 'Support',
+        cause: 'Where Needed Most',
+        impactNote: '100% goes directly into on-the-ground programs in Kenya.',
+      };
+  }
+};
+
