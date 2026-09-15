@@ -30,12 +30,16 @@ export const ChildStory: React.FC<ChildStoryProps> = ({ onSponsorClick }) => {
             {/* Left: Dignified Kenyan Classroom Portrait */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/5] max-w-xs mx-auto">
-                <img
-                  src="/images/DSCF0817.jpg"
-                  alt="Student supported in community school program in Kenya"
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcSet="/images/DSCF0817.webp" type="image/webp" />
+                  <img
+                    src="/images/DSCF0817.jpg"
+                    alt="Classroom lesson in progress with students and teachers in Kenya"
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-[#893d2d] text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs">
                   Kenya
                 </div>
