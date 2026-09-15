@@ -11,34 +11,42 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
   const mediaItems = [
     {
       id: 1,
+      elementId: 'ground-gallery-education',
       title: 'Classroom & Learning Support',
       category: 'Education',
       location: 'West Hill · Kenya',
-      image: '/images/field-classroom-4.jpg',
+      image: '/images/education-books-students.jpg',
+      imageWebp: '/images/education-books-students.webp',
       caption: 'Educational support, textbooks, study materials, and classroom provisions for students in Kenya.',
     },
     {
       id: 2,
+      elementId: 'ground-gallery-nutrition',
       title: 'Food & Nutrition Support',
       category: 'Nutrition',
       location: 'Kenya',
-      image: '/images/group-people-volunteering-foodbank-poor-people.jpg',
+      image: '/images/Nutrition.png',
+      imageWebp: '/images/Nutrition.webp',
       caption: 'Organizing and distributing essential food supplies and meals for partner centers and families.',
     },
     {
       id: 3,
+      elementId: 'ground-gallery-facilities',
       title: 'Facility & Sanitation Infrastructure',
       category: 'Facilities',
       location: "Amani Children's Home · Kenya",
       image: '/images/video_frame_new_bathrooms.jpg',
+      imageWebp: '/images/video_frame_new_bathrooms.webp',
       caption: 'Completed washroom facilities, clean water infrastructure, and living environment improvements.',
     },
     {
       id: 4,
+      elementId: 'ground-gallery-discipleship',
       title: 'Christian Discipleship & Prayer',
       category: 'Ministry & Faith',
       location: 'Kenya',
-      image: '/images/field-outreach-15.jpg',
+      image: '/images/field-outreach-14.jpg',
+      imageWebp: '/images/field-outreach-14.webp',
       caption: 'Staff and community leaders gathered together in fellowship, prayer, and thanksgiving for children in Kenya.',
     },
   ];
@@ -65,16 +73,23 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
           {mediaItems.map((item) => (
             <div
               key={item.id}
-              className="bg-[#faf8f5] rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs flex flex-col justify-between"
+              id={item.elementId}
+              className="bg-[#faf8f5] rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow duration-200"
             >
               <div>
                 <div className="relative aspect-[16/11] bg-stone-100 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
+                  <picture>
+                    {item.imageWebp && (
+                      <source srcSet={item.imageWebp} type="image/webp" />
+                    )}
+                    <img
+                      id={`${item.elementId}-img`}
+                      src={item.image}
+                      alt={`${item.title} - ${item.location}`}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </picture>
                   <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-xs text-white text-[11px] font-normal px-2.5 py-0.5 rounded-md flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-[#f7e4b7]" />
                     <span>{item.location}</span>
@@ -109,6 +124,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
         {onNavigateToGallery && (
           <div className="mt-8 sm:mt-10 text-center">
             <button
+              id="explore-media-gallery-btn"
               onClick={onNavigateToGallery}
               className="inline-flex items-center gap-2 bg-[#893d2d] hover:bg-[#733123] text-white px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer"
             >

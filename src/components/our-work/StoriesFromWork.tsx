@@ -9,10 +9,12 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
   const spotlights = [
     {
       id: 1,
+      elementId: 'spotlight-education',
       title: 'School Attendance & Learning Supplies',
       location: 'West Hill · Kenya',
-      image: '/images/field-learning-2.jpg',
-      imageAlt: 'Students studying at desks with learning supplies in Kenya',
+      image: '/images/DSCF0817.jpg',
+      imageWebp: '/images/DSCF0817.webp',
+      imageAlt: 'Classroom lesson in progress with students and teachers in Kenya',
       icon: BookOpen,
       category: 'Education Support',
       description:
@@ -20,9 +22,11 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
     },
     {
       id: 2,
+      elementId: 'spotlight-nutrition',
       title: 'Daily Meal & Nutrition Provisions',
       location: 'Kenya',
       image: '/images/Nutrition.png',
+      imageWebp: '/images/Nutrition.webp',
       imageAlt: 'Food care packages, hot meals, and nutrition support in Kenya',
       icon: Utensils,
       category: 'Nutrition Support',
@@ -31,9 +35,11 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
     },
     {
       id: 3,
+      elementId: 'spotlight-residential',
       title: 'Residential Care & Safe Sanctuary',
       location: "Amani Children's Home · Kenya",
-      image: '/images/field-outreach-16.jpg',
+      image: '/images/field-community-6.jpg',
+      imageWebp: '/images/field-community-6.webp',
       imageAlt: 'Caregivers and children gathering in community fellowship at Amani',
       icon: Heart,
       category: 'Residential Care',
@@ -64,16 +70,23 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
           {spotlights.map((spotlight) => (
             <div
               key={spotlight.id}
+              id={spotlight.elementId}
               className="bg-white rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
                 <div className="relative aspect-[16/11] bg-stone-100 overflow-hidden">
-                  <img
-                    src={spotlight.image}
-                    alt={spotlight.imageAlt}
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
+                  <picture>
+                    {spotlight.imageWebp && (
+                      <source srcSet={spotlight.imageWebp} type="image/webp" />
+                    )}
+                    <img
+                      id={`${spotlight.elementId}-img`}
+                      src={spotlight.image}
+                      alt={spotlight.imageAlt}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </picture>
                   <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-xs text-white text-[11px] font-normal px-2 py-0.5 rounded-md flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-[#f7e4b7]" />
                     <span>{spotlight.location}</span>
@@ -95,6 +108,7 @@ export const StoriesFromWork: React.FC<StoriesFromWorkProps> = ({ onExploreImpac
 
               <div className="p-4 pt-0">
                 <button
+                  id={`${spotlight.elementId}-btn`}
                   onClick={onExploreImpact}
                   className="w-full inline-flex items-center justify-between text-xs font-semibold text-[#893d2d] hover:text-[#733123] py-2 px-3 rounded-lg bg-[#faf8f5] hover:bg-[#ebdcd0]/40 transition-colors cursor-pointer"
                 >

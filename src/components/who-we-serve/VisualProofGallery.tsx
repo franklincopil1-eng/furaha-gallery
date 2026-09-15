@@ -16,12 +16,12 @@ export const VisualProofGallery: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Amani Study Sessions & Reading',
+      title: 'Amani Textbooks & Learning Support',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/images/field-learning-1.jpg',
-      caption: 'Children and caregivers gathered for focused reading and tutoring at Amani.',
+      image: '/images/field-campus-7.jpg',
+      caption: 'Children at Amani proudly displaying newly received curriculum textbooks and study materials.',
     },
     {
       id: 3,
@@ -29,8 +29,8 @@ export const VisualProofGallery: React.FC = () => {
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Kenya',
-      image: '/images/field-activity-3.jpg',
-      caption: 'Interactive group lessons and educational exercises with dedicated local teachers.',
+      image: '/images/DSCF0817.jpg',
+      caption: 'Interactive group lessons and educational exercises with dedicated local teachers in the classroom.',
     },
     {
       id: 4,
@@ -43,21 +43,21 @@ export const VisualProofGallery: React.FC = () => {
     },
     {
       id: 5,
-      title: 'Dedicated Classroom Environments',
+      title: 'Student Dignity & Academic Attire',
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Kenya',
       image: '/images/field-classroom-4.jpg',
-      caption: 'Classroom settings with proper desks and revision books for students preparing for exams.',
+      caption: 'West Hill students dressed in neat school sweaters and uniforms, ready for their academic day.',
     },
     {
       id: 6,
-      title: 'Campus Life & Safe Grounds',
+      title: 'Campus Life & Community Fellowship',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
-      image: '/images/field-campus-7.jpg',
-      caption: 'Safe campus grounds, dormitory cottages, and caring supervision at Amani Children\'s Home.',
+      image: '/images/field-community-6.jpg',
+      caption: 'Children and caregivers gathered together in community fellowship and daily support at Amani.',
     },
   ];
 
@@ -66,7 +66,7 @@ export const VisualProofGallery: React.FC = () => {
     : galleryItems.filter((item) => item.category === activeFilter);
 
   return (
-    <section className="py-10 sm:py-14 bg-white border-y border-[#f0e6dc]">
+    <section id="visual-proof-gallery" className="py-10 sm:py-14 bg-white border-y border-[#f0e6dc]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -84,6 +84,7 @@ export const VisualProofGallery: React.FC = () => {
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-1.5 mt-5">
             <button
+              id="proof-filter-all"
               onClick={() => setActiveFilter('all')}
               className={`text-xs font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                 activeFilter === 'all'
@@ -94,6 +95,7 @@ export const VisualProofGallery: React.FC = () => {
               All
             </button>
             <button
+              id="proof-filter-amani"
               onClick={() => setActiveFilter('amani')}
               className={`text-xs font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                 activeFilter === 'amani'
@@ -104,6 +106,7 @@ export const VisualProofGallery: React.FC = () => {
               Amani Children's Home
             </button>
             <button
+              id="proof-filter-westhill"
               onClick={() => setActiveFilter('westhill')}
               className={`text-xs font-medium px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                 activeFilter === 'westhill'
@@ -125,6 +128,7 @@ export const VisualProofGallery: React.FC = () => {
               return (
                 <div
                   key={item.id}
+                  id={`proof-card-${item.id}`}
                   className="bg-[#faf8f5] rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs sm:col-span-2 p-5 sm:p-7 md:p-8"
                 >
                   <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-10">
@@ -137,6 +141,7 @@ export const VisualProofGallery: React.FC = () => {
                             type="image/webp"
                           />
                           <img
+                            id={`proof-img-${item.id}`}
                             src={item.image}
                             alt={item.title}
                             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -180,6 +185,7 @@ export const VisualProofGallery: React.FC = () => {
             return (
               <div
                 key={item.id}
+                id={`proof-card-${item.id}`}
                 className="bg-[#faf8f5] rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs flex flex-col group"
               >
                 <div className="relative aspect-[16/11] bg-stone-100 overflow-hidden">
@@ -189,6 +195,7 @@ export const VisualProofGallery: React.FC = () => {
                       type="image/webp"
                     />
                     <img
+                      id={`proof-img-${item.id}`}
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"

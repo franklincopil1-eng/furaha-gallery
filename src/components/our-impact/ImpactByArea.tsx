@@ -22,8 +22,8 @@ const archiveItems: FieldStory[] = [
       'Organized and delivered core learning supplies to students at Amani Children’s Home.',
     fullStory:
       'Educational backing forms the foundation of sustainable development. Furaha provides practical school tuition support and learning supplies so children stay in class consistently.',
-    image: '/images/field-learning-2.jpg',
-    imageAlt: 'Students with study books and learning materials in Kenya',
+    image: '/images/field-campus-7.jpg',
+    imageAlt: 'Students proudly holding new curriculum textbooks and learning supplies in Kenya',
     chips: ['Education', 'Tuition', 'Kenya'],
   },
   {
