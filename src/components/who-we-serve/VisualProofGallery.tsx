@@ -30,16 +30,16 @@ export const VisualProofGallery: React.FC = () => {
       categoryLabel: 'West Hill',
       location: 'Kenya',
       image: '/images/DSCF0817.jpg',
-      caption: 'Students seated at wooden desks participate in an active classroom lesson guided by local teachers alongside founder Maggie Mburu.',
+      caption: 'Students seated at wooden desks participate in an active classroom lesson guided by local teachers and educators.',
     },
     {
       id: 4,
-      title: 'Founder Maggie Mburu with Students',
+      title: 'Mentorship & Student Encouragement',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
       image: '/images/field-community-5.jpg',
-      caption: 'Founder Maggie Mburu meeting directly with students in Kenya, providing personal encouragement and on-ground mentorship.',
+      caption: 'Local leaders and field partners meeting directly with students in Kenya, providing personal encouragement and educational support.',
     },
     {
       id: 5,
@@ -162,10 +162,10 @@ export const VisualProofGallery: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Right Column: Leadership Narrative */}
+                    {/* Right Column: Community & Care Narrative */}
                     <div className="flex-1 flex flex-col justify-center text-center md:text-left">
                       <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-1.5">
-                        Kenya · Leadership & Care
+                        Kenya · Community Care &amp; Mentorship
                       </span>
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#201a18] tracking-tight mb-2.5">
                         {item.title}
@@ -174,7 +174,7 @@ export const VisualProofGallery: React.FC = () => {
                         {item.caption}
                       </p>
                       <p className="text-xs sm:text-sm text-[#717275] leading-relaxed max-w-xl">
-                        Regular, on-ground presence in Kenya ensures that every student&apos;s educational needs, hot daily meals, and personal spiritual mentorship are met with complete accountability and love.
+                        Dedicated on-ground teams and local partners in Kenya ensure that every student&apos;s educational needs, hot daily meals, and personal spiritual mentorship are met with complete accountability and love.
                       </p>
                     </div>
                   </div>

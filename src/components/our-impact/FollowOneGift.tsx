@@ -18,8 +18,8 @@ export const FollowOneGift: React.FC = () => {
       description:
         'Furaha coordinates with trusted on-ground leaders to assess real requirements and determine practical assistance.',
       icon: Users,
-      image: '/images/maggienew2.jpg',
-      imageAlt: 'Furaha founder Maggie Mburu coordinating community support in Kenya',
+      image: '/images/field-community-6.jpg',
+      imageAlt: 'Local school leaders and educators coordinating student support in Kenya',
     },
     {
       step: '03',
