@@ -1,5 +1,6 @@
 export { Hero } from './Hero';
 export { WelcomeActions } from './WelcomeActions';
+export { ElevatorPitchVideo } from './ElevatorPitchVideo';
 export { OurStory } from './OurStory';
 export { FounderSpotlight } from './FounderSpotlight';
 export { Causes } from './Causes';

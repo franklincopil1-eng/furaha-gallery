@@ -17,7 +17,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       location: 'West Hill · Kenya',
       image: '/images/education-books-students.jpg',
       imageWebp: '/images/education-books-students.webp',
-      caption: 'Educational support, textbooks, study materials, and classroom provisions for students in Kenya.',
+      caption: 'Textbooks, course supplies, and fee assistance for primary students.',
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       location: 'Kenya',
       image: '/images/Nutrition.png',
       imageWebp: '/images/Nutrition.webp',
-      caption: 'Organizing and distributing essential food supplies and meals for partner centers and families.',
+      caption: 'Warm lunches and staple food distributions across communities.',
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       location: "Amani Children's Home · Kenya",
       image: '/images/video_frame_new_bathrooms.jpg',
       imageWebp: '/images/video_frame_new_bathrooms.webp',
-      caption: 'Completed washroom facilities, clean water infrastructure, and living environment improvements.',
+      caption: 'Clean ventilated washrooms and campus structural repairs.',
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ export const OnTheGroundGallery: React.FC<OnTheGroundGalleryProps> = ({
       location: 'Kenya',
       image: '/images/field-outreach-14.jpg',
       imageWebp: '/images/field-outreach-14.webp',
-      caption: 'Staff and community leaders gathered together in fellowship, prayer, and thanksgiving for children in Kenya.',
+      caption: 'Weekly fellowship, prayer, and youth encouragement in Kibera.',
     },
   ];
 

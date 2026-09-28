@@ -31,9 +31,9 @@ export const ChildStory: React.FC<ChildStoryProps> = ({ onSponsorClick }) => {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/5] max-w-xs mx-auto">
                 <picture>
-                  <source srcSet="/images/DSCF0817.webp" type="image/webp" />
+                  <source srcSet="/images/classimage-1.webp" type="image/webp" />
                   <img
-                    src="/images/DSCF0817.jpg"
+                    src="/images/classimage-1.jpeg"
                     alt="Classroom lesson in progress with students and teachers in Kenya"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"

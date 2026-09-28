@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, Variants } from 'motion/react';
 import {
   Hero,
-  WelcomeActions,
+  ElevatorPitchVideo,
   OurStory,
   FounderSpotlight,
   Causes,
@@ -47,17 +47,16 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 2. Overlapping Content Sheet: Gradually scrolls up over the pinned hero image */}
       <div className="relative z-20 bg-[#fdfbf9] shadow-[0_-25px_60px_rgba(0,0,0,0.22)] rounded-t-[32px] sm:rounded-t-[44px] overflow-hidden -mt-8 sm:-mt-14 pt-4 sm:pt-8 border-t border-white/60">
-        {/* Welcome & 4 Feature Action Cards */}
+        {/* Elevator Pitch Video Presentation */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={sectionFadeVariants}
         >
-          <WelcomeActions
+          <ElevatorPitchVideo
             onOpenDonate={() => onOpenDonate()}
             onOpenVolunteer={onOpenVolunteer}
-            onOpenScholarship={onOpenScholarship}
           />
         </motion.div>
 

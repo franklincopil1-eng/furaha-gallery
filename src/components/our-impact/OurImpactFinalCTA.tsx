@@ -15,9 +15,9 @@ export const OurImpactFinalCTA: React.FC<OurImpactFinalCTAProps> = ({
       {/* Background authentic photograph with dark gradient overlay */}
       <div className="absolute inset-0 z-0">
         <picture className="w-full h-full block">
-          <source srcSet="/images/DSCF0817.webp" type="image/webp" />
+          <source srcSet="/images/classimage-1.webp" type="image/webp" />
           <img
-            src="/images/DSCF0817.jpg"
+            src="/images/classimage-1.jpeg"
             alt="Children and community members in Kenya"
             className="w-full h-full object-cover object-center opacity-25"
           />

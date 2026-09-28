@@ -16,7 +16,7 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 
-const videoPosterFrame = '/images/DSCF0817.jpg';
+const videoPosterFrame = '/images/classimage-1.jpeg';
 const videoOldLatrines = '/images/video_frame_old_bathrooms.jpg';
 const videoNeed = '/images/video_frame_need.jpg';
 const videoMaterials = '/images/video_frame_materials.jpg';

@@ -7,39 +7,35 @@ export const VisualProofGallery: React.FC = () => {
   const galleryItems = [
     {
       id: 1,
-      title: 'West Hill School Uniforms & Attendance',
+      title: 'School Uniforms & Attendance',
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Kenya',
       image: '/images/uniform.jpeg',
-      caption: 'Students in West Hill proudly dressed in matching school uniforms and backpacks, equipped for school attendance with dignity.',
     },
     {
       id: 2,
-      title: 'Amani Textbooks & Learning Materials',
+      title: 'Curriculum Textbooks & Learning Supplies',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
       image: '/images/field-campus-7.jpg',
-      caption: 'Primary school students at Amani gathered outdoors to showcase newly received curriculum textbooks and study supplies.',
     },
     {
       id: 3,
-      title: 'Classroom Lesson in Progress',
+      title: 'Classroom Learning in Progress',
       category: 'westhill',
       categoryLabel: 'West Hill',
       location: 'Kenya',
-      image: '/images/DSCF0817.jpg',
-      caption: 'Students seated at wooden desks participate in an active classroom lesson guided by local teachers and educators.',
+      image: '/images/classimage-1.jpeg',
     },
     {
       id: 4,
-      title: 'Mentorship & Student Encouragement',
+      title: 'Student Mentorship & Care',
       category: 'amani',
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
       image: '/images/field-community-5.jpg',
-      caption: 'Local leaders and field partners meeting directly with students in Kenya, providing personal encouragement and educational support.',
     },
     {
       id: 5,
@@ -48,7 +44,6 @@ export const VisualProofGallery: React.FC = () => {
       categoryLabel: 'West Hill',
       location: 'Kenya',
       image: '/images/field-classroom-4.jpg',
-      caption: 'Two West Hill students standing proudly in their neat school sweaters and plaid uniforms, ready for their academic day.',
     },
     {
       id: 6,
@@ -57,7 +52,6 @@ export const VisualProofGallery: React.FC = () => {
       categoryLabel: "Amani Children's Home",
       location: 'Kenya',
       image: '/images/Nutrition.png',
-      caption: 'Children seated together outdoors sharing a warm, nutritious meal of freshly prepared rice and stew.',
     },
   ];
 
@@ -170,11 +164,8 @@ export const VisualProofGallery: React.FC = () => {
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#201a18] tracking-tight mb-2.5">
                         {item.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-[#59524e] font-medium leading-relaxed mb-3">
-                        {item.caption}
-                      </p>
-                      <p className="text-xs sm:text-sm text-[#717275] leading-relaxed max-w-xl">
-                        Dedicated on-ground teams and local partners in Kenya ensure that every student&apos;s educational needs, hot daily meals, and personal spiritual mentorship are met with complete accountability and love.
+                      <p className="text-sm sm:text-base text-[#59524e] font-medium leading-relaxed max-w-xl">
+                        Dedicated on-ground teams and local partners in Kenya ensure that every student&apos;s educational needs, hot daily meals, and personal mentorship are met with accountability and love.
                       </p>
                     </div>
                   </div>
@@ -212,15 +203,10 @@ export const VisualProofGallery: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-[#201a18] tracking-tight mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-[#59524e] leading-relaxed">
-                      {item.caption}
-                    </p>
-                  </div>
+                <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-sm sm:text-base font-semibold text-[#201a18] tracking-tight">
+                    {item.title}
+                  </h3>
                 </div>
               </div>
             );
