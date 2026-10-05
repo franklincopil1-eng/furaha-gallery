@@ -45,9 +45,9 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
   const renderCardFooter = (item: GalleryItem, isMain = false) => {
     const causeInfo = getCauseForCategory(item.category);
     return (
-      <div className="flex items-center justify-between gap-2 mt-3 pt-2.5 border-t border-white/15">
-        <div className="flex items-center gap-1.5 text-[12px] text-white/80 font-light min-w-0">
-          <MapPin className="w-3.5 h-3.5 text-[#ef802e] shrink-0" />
+      <div className="flex items-center justify-between gap-2 mt-1.5 pt-1.5 sm:mt-2 sm:pt-2 border-t border-white/15">
+        <div className="flex items-center gap-1.5 text-[11px] sm:text-[12px] text-white/80 font-light min-w-0">
+          <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#ef802e] shrink-0" />
           <span className="truncate">{item.location || 'Kenya'}</span>
         </div>
 
@@ -58,10 +58,10 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
               e.stopPropagation();
               onNavigateToDonate(causeInfo.cause);
             }}
-            className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white bg-[#893d2d] hover:bg-[#a64835] px-2.5 sm:px-3 py-1 rounded-full transition-all cursor-pointer border border-white/20 shadow-md hover:shadow-lg shrink-0 hover:scale-[1.03] active:scale-[0.97]"
+            className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-white bg-[#893d2d] hover:bg-[#a64835] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all cursor-pointer border border-white/20 shadow-md shrink-0 active:scale-[0.97]"
             title={`Support ${causeInfo.cause}`}
           >
-            <Heart className="w-3 h-3 fill-current text-[#f7e4b7]" />
+            <Heart className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-current text-[#f7e4b7]" />
             {isMain ? (
               <>
                 <span className="hidden sm:inline">{causeInfo.label}</span>
@@ -114,19 +114,19 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
                 {renderPlayOverlay(mainFeature, true)}
-                {/* Subtle Gradient Scrim for Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-300 group-hover:from-black/85" />
+                {/* Subtle Bottom Gradient Scrim for Legibility */}
+                <div className="absolute inset-x-0 bottom-0 h-3/5 sm:h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300 group-hover:from-black/95 pointer-events-none" />
 
-                {/* Minimal Overlay Content */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-white z-10">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1.5 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                {/* Bottom Overlay Content */}
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 lg:p-7 flex flex-col justify-end text-white z-10">
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1">
                     {mainFeature.categoryLabel}
                   </span>
-                  <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-white tracking-[-1px] leading-tight">
+                  <h3 className="text-[20px] sm:text-[24px] lg:text-[28px] font-semibold text-white tracking-[-0.5px] sm:tracking-[-1px] leading-tight">
                     {mainFeature.title}
                   </h3>
                   {mainFeature.subtitle && (
-                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-1 line-clamp-2 max-w-lg">
+                    <p className="text-xs sm:text-sm lg:text-[15px] leading-relaxed font-light text-white/90 mt-1 line-clamp-2 max-w-lg">
                       {mainFeature.subtitle}
                     </p>
                   )}
@@ -150,17 +150,17 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                   className={`w-full h-full object-cover ${sideTop.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
                 {renderPlayOverlay(sideTop)}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300 group-hover:from-black/95 pointer-events-none" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 flex flex-col justify-end text-white z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-0.5">
                     {sideTop.categoryLabel}
                   </span>
-                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
+                  <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight leading-snug line-clamp-1">
                     {sideTop.title}
                   </h3>
                   {sideTop.subtitle && (
-                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
+                    <p className="text-xs font-light text-white/85 mt-0.5 hidden sm:line-clamp-1">
                       {sideTop.subtitle}
                     </p>
                   )}
@@ -184,17 +184,17 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                   className={`w-full h-full object-cover ${sideBottom.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
                 {renderPlayOverlay(sideBottom)}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300 group-hover:from-black/95 pointer-events-none" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 flex flex-col justify-end text-white z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-0.5">
                     {sideBottom.categoryLabel}
                   </span>
-                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
+                  <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight leading-snug line-clamp-1">
                     {sideBottom.title}
                   </h3>
                   {sideBottom.subtitle && (
-                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
+                    <p className="text-xs font-light text-white/85 mt-0.5 hidden sm:line-clamp-1">
                       {sideBottom.subtitle}
                     </p>
                   )}
@@ -218,17 +218,17 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                   className={`w-full h-full object-cover ${bottomRowLeft.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
                 {renderPlayOverlay(bottomRowLeft)}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300 group-hover:from-black/95 pointer-events-none" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 flex flex-col justify-end text-white z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-0.5">
                     {bottomRowLeft.categoryLabel}
                   </span>
-                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
+                  <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight leading-snug line-clamp-1">
                     {bottomRowLeft.title}
                   </h3>
                   {bottomRowLeft.subtitle && (
-                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
+                    <p className="text-xs font-light text-white/85 mt-0.5 hidden sm:line-clamp-1">
                       {bottomRowLeft.subtitle}
                     </p>
                   )}
@@ -252,17 +252,17 @@ export const CuratedFeaturedSection: React.FC<CuratedFeaturedSectionProps> = ({
                   className={`w-full h-full object-cover ${bottomRowRight.objectPosition || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
                 />
                 {renderPlayOverlay(bottomRowRight)}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300 group-hover:from-black/95 pointer-events-none" />
 
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-white z-10">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-1 transform transition-transform duration-300 group-hover:-translate-y-0.5">
+                <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 flex flex-col justify-end text-white z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#f7e4b7] mb-0.5">
                     {bottomRowRight.categoryLabel}
                   </span>
-                  <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold text-white tracking-[-1px] leading-snug">
+                  <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight leading-snug line-clamp-1">
                     {bottomRowRight.title}
                   </h3>
                   {bottomRowRight.subtitle && (
-                    <p className="text-[16px] leading-[1.65] font-light text-white/90 mt-0.5 line-clamp-1">
+                    <p className="text-xs font-light text-white/85 mt-0.5 hidden sm:line-clamp-1">
                       {bottomRowRight.subtitle}
                     </p>
                   )}

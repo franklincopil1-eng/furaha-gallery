@@ -109,7 +109,8 @@ export const FeaturedVideoSection: React.FC<FeaturedVideoSectionProps> = ({
                       alt={videoItem.title}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 group-hover:via-black/20 transition-colors" />
+                    {/* Subtle bottom gradient for caption legibility */}
+                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
 
                     {/* Top Badges */}
                     <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
@@ -123,21 +124,21 @@ export const FeaturedVideoSection: React.FC<FeaturedVideoSectionProps> = ({
                       </span>
                     </div>
 
-                    {/* Center Animated Play Button */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#893d2d] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#a64835] transition-all duration-300">
-                        <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
+                    {/* Center Animated Play Button - Clean, no text blocking center of image */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#893d2d] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#a64835] transition-all duration-300">
+                        <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-0.5" />
                       </div>
-                      <span className="mt-3 text-xs sm:text-sm font-semibold text-white/95 bg-black/50 px-3.5 py-1 rounded-full backdrop-blur-sm border border-white/20">
-                        Click to watch transformation video (0:27)
-                      </span>
                     </div>
 
-                    {/* Bottom overlay info */}
-                    <div className="absolute bottom-3 left-4 right-4 pointer-events-none">
-                      <p className="text-white text-xs sm:text-sm line-clamp-1 font-medium drop-shadow-md">
+                    {/* Bottom Caption & Play Prompt */}
+                    <div className="absolute bottom-3 left-4 right-4 pointer-events-none flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-white">
+                      <p className="text-xs sm:text-sm line-clamp-1 font-medium text-white/95 drop-shadow-md">
                         Makeshift Pit Latrines → Clean, Ventilated Ceramic Washrooms
                       </p>
+                      <span className="text-[11px] font-medium text-[#f7e4b7] shrink-0 drop-shadow-sm">
+                        Click to watch transformation (0:27)
+                      </span>
                     </div>
                   </div>
                 )}

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { WhoWeServeHero } from '../components/who-we-serve/WhoWeServeHero';
 import { WhoWeServeIntro } from '../components/who-we-serve/WhoWeServeIntro';
+import { ProjectHarmonizationTabs, HarmonizedProjectTab } from '../components/who-we-serve/ProjectHarmonizationTabs';
 import { HumanReality } from '../components/donation/HumanReality';
 import { WhereWeServeCommunities } from '../components/who-we-serve/WhereWeServeCommunities';
 import { ChildStory } from '../components/donation/ChildStory';
@@ -15,6 +16,8 @@ interface WhoWeServePageProps {
   onNavigateToSection: (sectionId: string) => void;
   onNavigateToOurWork?: () => void;
   onNavigateToOurImpact?: () => void;
+  targetCommunity?: HarmonizedProjectTab;
+  onSelectCommunityTab?: (tab: HarmonizedProjectTab) => void;
 }
 
 export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
@@ -23,14 +26,35 @@ export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
   onNavigateToSection,
   onNavigateToOurWork,
   onNavigateToOurImpact,
+  targetCommunity = 'all',
+  onSelectCommunityTab,
 }) => {
+  const [activeProjectTab, setActiveProjectTab] = useState<HarmonizedProjectTab>(targetCommunity);
+
+  useEffect(() => {
+    if (targetCommunity) {
+      setActiveProjectTab(targetCommunity);
+    }
+  }, [targetCommunity]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.title = 'Who We Serve in Kenya | Furaha Ministries';
   }, []);
 
+  const handleTabChange = (tab: HarmonizedProjectTab) => {
+    setActiveProjectTab(tab);
+    if (onSelectCommunityTab) {
+      onSelectCommunityTab(tab);
+    }
+    const el = document.getElementById('project-tabs-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollToCommunities = () => {
-    const el = document.getElementById('who-we-serve-intro') || document.getElementById('where-we-serve-section');
+    const el = document.getElementById('project-tabs-section') || document.getElementById('where-we-serve-section');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -44,30 +68,31 @@ export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
         onSecondaryCtaClick={scrollToCommunities}
         onNavigateToHome={onNavigateToHome}
         onSelectCommunity={(communityId) => {
-          const el = document.getElementById(`community-${communityId}`);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (communityId === 'west-hill' || communityId === 'amani' || communityId === 'cry-of-a-young-one') {
+            handleTabChange(communityId);
           } else {
             scrollToCommunities();
           }
         }}
       />
 
-      {/* 2. Introduction: Working directly with local partners */}
+      {/* 2. Dedicated Project Tabs & 2027 Harmonized Stories */}
+      <ProjectHarmonizationTabs
+        activeTab={activeProjectTab}
+        onTabChange={handleTabChange}
+        onDonateToCause={(cause) => onNavigateToDonate(cause)}
+      />
+
+      {/* 3. Introduction: Working directly with local partners */}
       <WhoWeServeIntro
-        onFirstCommunityClick={() => {
-          const el = document.getElementById('community-amani') || document.getElementById('amani-childrens-home') || document.getElementById('where-we-serve-section');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
+        onFirstCommunityClick={() => handleTabChange('amani')}
         onViewCommunitiesClick={scrollToCommunities}
       />
 
-      {/* 3. The Human Reality (What children need to stay in school) */}
+      {/* 4. The Human Reality (What children need to stay in school) */}
       <HumanReality />
 
-      {/* 4. Communities: Amani Children's Home, West Hill */}
+      {/* 6. Partner Communities Detailed Directory */}
       <WhereWeServeCommunities
         onSupportCommunity={(communityName) => onNavigateToDonate(communityName)}
         onExploreWork={() => {
@@ -80,18 +105,18 @@ export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
         }}
       />
 
-      {/* 5. Real Child Story (Grounding reality in Kenya) */}
-      <ChildStory onSponsorClick={() => onNavigateToDonate('Education')} />
+      {/* 7. Real Child Story (Grounding reality in Kenya) */}
+      <ChildStory onSponsorClick={() => onNavigateToDonate('West Hill School')} />
 
-      {/* 6. Photographs from the field */}
+      {/* 8. Photographs from the field */}
       <VisualProofGallery />
 
-      {/* 5. What Furaha does (Education, Nutrition, Mentorship, Faith) */}
+      {/* 9. What Furaha does (Education, Nutrition, Mentorship, Faith) */}
       <CommunityPillars
         onSponsorEducation={() => onNavigateToDonate('Education')}
       />
 
-      {/* 6. Accountability & Progress */}
+      {/* 10. Accountability & Progress */}
       <WorkInMotionImpact
         onExploreImpact={() => {
           if (onNavigateToOurImpact) {
@@ -102,7 +127,7 @@ export const WhoWeServePage: React.FC<WhoWeServePageProps> = ({
         }}
       />
 
-      {/* 7. Final Human Invitation CTA */}
+      {/* 11. Final Human Invitation CTA */}
       <WhoWeServeFinalCTA
         onDonate={() => onNavigateToDonate('Where Needed Most')}
         onOurWork={() => {

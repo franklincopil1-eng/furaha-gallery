@@ -26,6 +26,8 @@ export default function App() {
   const {
     currentPage,
     activeSection,
+    targetCommunity,
+    setTargetCommunity,
     selectedCauseForDonation,
     selectedFrequencyForDonation,
     selectedAmountForDonation,
@@ -92,6 +94,8 @@ export default function App() {
               onNavigateToSection={handleNavigateToSection}
               onNavigateToOurWork={handleNavigateToOurWork}
               onNavigateToOurImpact={handleNavigateToOurImpact}
+              targetCommunity={targetCommunity}
+              onSelectCommunityTab={setTargetCommunity}
             />
           </motion.div>
         ) : currentPage === 'our-work' ? (

@@ -23,6 +23,12 @@ export const DonationModal: React.FC<DonationModalProps> = ({
   );
   const [isSuccess, setIsSuccess] = useState(false);
 
+  React.useEffect(() => {
+    if (initialCause) {
+      setSelectedCause(initialCause);
+    }
+  }, [initialCause, isOpen]);
+
   if (!isOpen) return null;
 
   const donationOptions: DonationOption[] = [
@@ -234,9 +240,16 @@ export const DonationModal: React.FC<DonationModalProps> = ({
                   className="w-full bg-white border border-gray-300 rounded-xl p-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#893d2d]"
                 >
                   <option value="Where Needed Most">Where Needed Most (General Fund)</option>
-                  <option value="Nutrition">Nutrition & Daily Meal Program</option>
-                  <option value="Education">Education & School Scholarship Fund</option>
-                  <option value="Discipleship">Discipleship & Spiritual Mentorship</option>
+                  <optgroup label="2027 Supported Projects in Kenya">
+                    <option value="West Hill School">West Hill School (Tuition, Uniforms & Learning)</option>
+                    <option value="Amani Children's Home">Amani Children's Home (Living Care, Meals & Campus)</option>
+                    <option value="Cry of a Young One">Cry of a Young One (Nairobi Orphan Living & Schooling)</option>
+                  </optgroup>
+                  <optgroup label="Core Impact Pillars">
+                    <option value="Nutrition">Nutrition & Daily Meal Program</option>
+                    <option value="Education">Education & School Scholarship Fund</option>
+                    <option value="Discipleship">Discipleship & Spiritual Mentorship</option>
+                  </optgroup>
                 </select>
               </div>
 

@@ -20,6 +20,7 @@ interface DonationLandingPageProps {
 export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
   onBackToHome,
   onNavigateToSection,
+  initialCause = 'Where Needed Most',
   initialFrequency = 'monthly',
   initialAmount = 30,
 }) => {
@@ -97,6 +98,7 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
         <GivingOptions
           selectedTierId={selectedTierId}
           onTierSelect={handleTierSelected}
+          selectedCause={initialCause}
         />
 
         {/* 2. Where Support Goes */}

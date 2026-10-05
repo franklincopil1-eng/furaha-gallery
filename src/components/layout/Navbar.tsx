@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Menu, X, Heart } from 'lucide-react';
+import { Mail, Menu, X, Heart, ChevronDown, MapPin, ArrowRight } from 'lucide-react';
 import { FurahaLogo } from './FurahaLogo';
 
 interface NavbarProps {
   onOpenDonateModal: (cause?: string) => void;
   onNavigateToHome?: () => void;
-  onNavigateToWhoWeServe?: () => void;
+  onNavigateToWhoWeServe?: (communityId?: 'all' | 'west-hill' | 'amani' | 'cry-of-a-young-one') => void;
   onNavigateToOurWork?: () => void;
   onNavigateToOurImpact?: () => void;
   onNavigateToGallery?: () => void;
@@ -26,15 +26,42 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeSection,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [whoWeServeDropdownOpen, setWhoWeServeDropdownOpen] = useState(false);
+  const [mobileWhoWeServeExpanded, setMobileWhoWeServeExpanded] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scrollThreshold = 10;
+
+  const whoWeServeDropdownProjects = [
+    {
+      id: 'west-hill' as const,
+      name: 'West Hill School',
+      location: 'Central Kenya',
+      description: 'Tuition aid, uniforms, and learning guidance led by Teacher Salim',
+      metric: '120+ Students',
+    },
+    {
+      id: 'amani' as const,
+      name: "Amani Children's Home",
+      location: 'Kiambu County',
+      description: 'Permanent sanctuary, daily meals, and family-style living care',
+      metric: '45+ Residents',
+    },
+    {
+      id: 'cry-of-a-young-one' as const,
+      name: 'Cry of a Young One',
+      location: 'Nairobi / Huruma',
+      description: 'Apartment living assistance keeping 6 orphaned siblings together',
+      metric: '6 Siblings',
+    },
+  ];
 
   const navLinks = [
     { name: 'Home', href: '#top', id: 'home' },
     { name: 'Our Story', href: '#section_2', id: 'story' },
-    { name: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
+    { name: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve', hasDropdown: true },
     { name: 'Our Work', href: '#our-work', id: 'our-work' },
     { name: 'Our Impact', href: '#our-impact', id: 'our-impact' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
@@ -77,13 +104,37 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
+  const handleMouseEnterWhoWeServe = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setWhoWeServeDropdownOpen(true);
+  };
+
+  const handleMouseLeaveWhoWeServe = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setWhoWeServeDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleSelectWhoWeServeSubItem = (
+    e: React.MouseEvent,
+    id: 'all' | 'west-hill' | 'amani' | 'cry-of-a-young-one'
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setWhoWeServeDropdownOpen(false);
+    setMobileMenuOpen(false);
+    if (onNavigateToWhoWeServe) {
+      onNavigateToWhoWeServe(id);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, link: typeof navLinks[0]) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
     if (link.id === 'who-we-serve') {
       if (onNavigateToWhoWeServe) {
-        onNavigateToWhoWeServe();
+        onNavigateToWhoWeServe('all');
       }
       return;
     }
@@ -238,6 +289,104 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {navLinks.map((link) => {
                   const isActive = isLinkActive(link);
 
+                  if (link.id === 'who-we-serve') {
+                    return (
+                      <li
+                        key={link.name}
+                        className="nav-item relative"
+                        onMouseEnter={handleMouseEnterWhoWeServe}
+                        onMouseLeave={handleMouseLeaveWhoWeServe}
+                      >
+                        <button
+                          type="button"
+                          className={`px-2.5 xl:px-3 py-1.5 rounded-full text-[12.5px] xl:text-[13.5px] whitespace-nowrap transition-all cursor-pointer inline-flex items-center gap-1 ${
+                            isActive
+                              ? 'bg-[#893d2d] text-white font-semibold shadow-xs'
+                              : 'text-neutral-700 hover:text-[#893d2d] hover:bg-neutral-100/80 font-medium'
+                          }`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (onNavigateToWhoWeServe) onNavigateToWhoWeServe('all');
+                          }}
+                          aria-expanded={whoWeServeDropdownOpen}
+                          aria-haspopup="true"
+                        >
+                          <span>{link.name}</span>
+                          <ChevronDown
+                            className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                              whoWeServeDropdownOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+
+                        {/* Refined Editorial Dropdown Menu */}
+                        {whoWeServeDropdownOpen && (
+                          <div
+                            className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 w-88 sm:w-96"
+                            onMouseEnter={handleMouseEnterWhoWeServe}
+                            onMouseLeave={handleMouseLeaveWhoWeServe}
+                          >
+                            <div className="bg-white rounded-2xl border border-[#e5d8cc] shadow-[0_16px_40px_-8px_rgba(32,26,24,0.12)] p-2 backdrop-blur-md animate-in fade-in slide-in-from-top-1.5 duration-150">
+                              <div className="px-3.5 pt-2 pb-2 border-b border-[#f3eae0] flex items-center justify-between">
+                                <span className="text-[10.5px] font-bold tracking-widest text-[#893d2d] uppercase">
+                                  Supported Initiatives
+                                </span>
+                                <span className="text-[11px] text-[#7d7168] font-normal">
+                                  Kenya Field Partners
+                                </span>
+                              </div>
+
+                              <div className="space-y-0.5 pt-1">
+                                {whoWeServeDropdownProjects.map((item) => (
+                                  <button
+                                    key={item.id}
+                                    onClick={(e) => handleSelectWhoWeServeSubItem(e, item.id)}
+                                    className="w-full text-left p-3 rounded-xl hover:bg-[#faf6f2] transition-colors flex items-center justify-between group cursor-pointer"
+                                  >
+                                    <div className="space-y-0.5 pr-2">
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="text-xs sm:text-[13px] font-bold text-[#201a18] group-hover:text-[#893d2d] transition-colors">
+                                          {item.name}
+                                        </span>
+                                        <span className="text-[10px] text-[#b3a69b]">·</span>
+                                        <span className="text-[11px] text-[#7d7168] font-normal">{item.location}</span>
+                                      </div>
+                                      <p className="text-[11.5px] text-[#635a54] line-clamp-1 leading-snug">
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                    <div className="shrink-0 flex items-center gap-1.5 pl-1.5">
+                                      <span className="text-[10px] font-semibold text-[#893d2d] bg-[#f5ede6] px-2 py-0.5 rounded-md whitespace-nowrap">
+                                        {item.metric}
+                                      </span>
+                                      <ArrowRight className="w-3.5 h-3.5 text-[#cfc2b6] group-hover:text-[#893d2d] group-hover:translate-x-0.5 transition-all" />
+                                    </div>
+                                  </button>
+                                ))}
+                              </div>
+
+                              {/* Footer Action: All Communities */}
+                              <div className="mt-1 pt-1.5 border-t border-[#f3eae0]">
+                                <button
+                                  onClick={(e) => handleSelectWhoWeServeSubItem(e, 'all')}
+                                  className="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-[#faf6f2] transition-colors flex items-center justify-between text-xs font-semibold text-[#201a18] group cursor-pointer"
+                                >
+                                  <div className="flex items-center gap-2">
+                                    <MapPin className="w-3.5 h-3.5 text-[#893d2d]" />
+                                    <span className="group-hover:text-[#893d2d] transition-colors">
+                                      All Partner Communities & Directory
+                                    </span>
+                                  </div>
+                                  <ArrowRight className="w-3.5 h-3.5 text-[#cfc2b6] group-hover:text-[#893d2d] group-hover:translate-x-0.5 transition-all" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+                    );
+                  }
+
                   return (
                     <li key={link.name} className="nav-item">
                       <a
@@ -338,6 +487,69 @@ export const Navbar: React.FC<NavbarProps> = ({
               <ul className="navbar-nav flex flex-col space-y-0.5 sm:space-y-1 m-0 p-0 list-none">
                 {navLinks.map((link) => {
                   const isActive = isLinkActive(link);
+
+                  if (link.id === 'who-we-serve') {
+                    return (
+                      <li key={link.name} className="nav-item">
+                        <div className="flex items-center justify-between gap-1">
+                          <a
+                            className={`flex-1 px-3 py-2 rounded-xl text-[13px] sm:text-sm transition-all cursor-pointer ${
+                              isActive
+                                ? 'bg-[#893d2d] text-white font-semibold shadow-xs flex items-center justify-between'
+                                : 'text-neutral-700 hover:bg-neutral-100 hover:text-[#893d2d] font-medium'
+                            }`}
+                            href={link.href}
+                            onClick={(e) => handleNavClick(e, link)}
+                          >
+                            <span>{link.name}</span>
+                            {isActive && <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">Current</span>}
+                          </a>
+                          <button
+                            type="button"
+                            onClick={() => setMobileWhoWeServeExpanded(!mobileWhoWeServeExpanded)}
+                            className="p-2 text-neutral-600 hover:text-[#893d2d] rounded-lg transition-colors cursor-pointer"
+                            aria-label="Toggle supported projects submenu"
+                          >
+                            <ChevronDown
+                              className={`w-4 h-4 transition-transform duration-200 ${
+                                mobileWhoWeServeExpanded ? 'rotate-180 text-[#893d2d]' : ''
+                              }`}
+                            />
+                          </button>
+                        </div>
+
+                        {/* Expandable sub-items */}
+                        {mobileWhoWeServeExpanded && (
+                          <div className="mt-1.5 mb-2 ml-2 pl-3 py-1 space-y-1 border-l-2 border-[#e6d9cd] animate-in fade-in slide-in-from-top-1 duration-150">
+                            <div className="px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wider text-[#893d2d]">
+                              Supported Initiatives
+                            </div>
+                            {whoWeServeDropdownProjects.map((project) => (
+                              <button
+                                key={project.id}
+                                type="button"
+                                onClick={(e) => handleSelectWhoWeServeSubItem(e, project.id)}
+                                className="w-full text-left px-2.5 py-2 rounded-lg hover:bg-neutral-100 flex items-center justify-between transition-colors cursor-pointer text-xs font-semibold text-[#201a18]"
+                              >
+                                <span>{project.name}</span>
+                                <span className="text-[10px] text-[#7d7168] bg-[#f5ede6] px-1.5 py-0.5 rounded font-normal">
+                                  {project.metric}
+                                </span>
+                              </button>
+                            ))}
+                            <button
+                              type="button"
+                              onClick={(e) => handleSelectWhoWeServeSubItem(e, 'all')}
+                              className="w-full text-left px-2.5 py-2 rounded-lg hover:bg-neutral-100 flex items-center gap-2 transition-colors cursor-pointer text-xs font-semibold text-[#893d2d] pt-1.5 border-t border-[#f0e4d8]"
+                            >
+                              <MapPin className="w-3.5 h-3.5" />
+                              <span>All Partner Communities & Directory</span>
+                            </button>
+                          </div>
+                        )}
+                      </li>
+                    );
+                  }
 
                   return (
                     <li key={link.name} className="nav-item">

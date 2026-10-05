@@ -451,22 +451,33 @@ export const FieldJournalVideoExperience: React.FC = () => {
               {!isPlaying && !isEnded && (
                 <div 
                   onClick={togglePlay}
-                  className="absolute inset-0 bg-black/40 hover:bg-black/30 transition-colors flex flex-col items-center justify-center cursor-pointer p-4 text-center group"
+                  className="absolute inset-0 bg-black/30 hover:bg-black/20 transition-colors cursor-pointer group"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.08 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#893d2d] hover:bg-[#733123] text-white flex items-center justify-center shadow-2xl border border-white/20 transition-transform mb-4"
-                  >
-                    <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
-                  </motion.div>
-                  
-                  <span className="text-sm sm:text-base font-bold text-white tracking-wide block mb-1">
-                    Watch the Field Documentary Film
-                  </span>
-                  <span className="text-xs sm:text-sm text-[#e0deda] font-light max-w-md">
-                    Uncut record of the school sanitation and wash facility construction.
-                  </span>
+                  {/* Center Play Button - Clean, no text blocking the image */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-14 h-14 sm:w-18 sm:h-18 rounded-full bg-[#893d2d] group-hover:bg-[#733123] text-white flex items-center justify-center shadow-2xl border border-white/20 transition-transform"
+                    >
+                      <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-0.5" />
+                    </motion.div>
+                  </div>
+
+                  {/* Bottom Caption Bar */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 sm:p-5 flex flex-col sm:flex-row sm:items-end justify-between gap-1 text-left">
+                    <div>
+                      <span className="text-xs sm:text-sm font-bold text-white tracking-wide block">
+                        Watch the Field Documentary Film
+                      </span>
+                      <span className="text-[11px] sm:text-xs text-[#e0deda] font-light block line-clamp-1">
+                        Uncut record of the school sanitation and wash facility construction.
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-semibold text-[#f7e4b7] shrink-0">
+                      Click to play (0:27)
+                    </span>
+                  </div>
                 </div>
               )}
 

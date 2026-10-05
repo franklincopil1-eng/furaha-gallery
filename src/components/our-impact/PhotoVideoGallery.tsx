@@ -99,17 +99,17 @@ export const PhotoVideoGallery: React.FC = () => {
                     className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 bg-white/90 text-[#201a18] text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                  <div className="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pointer-events-none">
+                    <span className="inline-flex items-center gap-1.5 bg-white/95 text-[#201a18] text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-md">
                       {item.isVideo ? (
                         <>
-                          <Play className="w-3.5 h-3.5 text-[#893d2d] fill-current" />
+                          <Play className="w-3 h-3 text-[#893d2d] fill-current" />
                           <span>Play video</span>
                         </>
                       ) : (
                         <>
-                          <ZoomIn className="w-3.5 h-3.5 text-[#893d2d]" />
-                          <span>View details</span>
+                          <ZoomIn className="w-3 h-3 text-[#893d2d]" />
+                          <span>View photo</span>
                         </>
                       )}
                     </span>

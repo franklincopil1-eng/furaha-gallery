@@ -158,7 +158,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
                     willChange: isLiteMode ? undefined : 'transform',
                   }}
                 >
-                  <picture>
+                  {/* Mobile ambient background fill to seamlessly integrate the full uncropped image */}
+                  <img
+                    src={slide.url}
+                    alt=""
+                    aria-hidden="true"
+                    className="sm:hidden absolute inset-0 w-full h-full object-cover object-center blur-2xl opacity-40 scale-110 pointer-events-none"
+                  />
+
+                  <picture className="w-full h-full flex items-center justify-center relative z-1">
                     {slide.webpUrl && <source srcSet={slide.webpUrl} type="image/webp" />}
                     <img
                       src={slide.url}
@@ -166,7 +174,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src = slide.fallbackUrl;
                       }}
-                      className="carousel-image w-full h-full object-cover object-[center_22%] sm:object-center transition-all duration-500"
+                      className="carousel-image w-full h-full object-contain sm:object-cover object-center transition-all duration-500"
                       loading={idx === 0 ? 'eager' : 'lazy'}
                       decoding="async"
                       fetchPriority={idx === 0 ? 'high' : 'auto'}

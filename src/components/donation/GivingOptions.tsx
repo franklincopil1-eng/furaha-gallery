@@ -48,11 +48,13 @@ export const GIVING_TIERS: GivingTierData[] = [
 interface GivingOptionsProps {
   onTierSelect?: (tierId: string, amount: number, frequency: 'monthly' | 'annual' | 'once') => void;
   selectedTierId?: string;
+  selectedCause?: string;
 }
 
 export const GivingOptions: React.FC<GivingOptionsProps> = ({
   onTierSelect,
   selectedTierId = '30',
+  selectedCause,
 }) => {
   const [selectedTier, setSelectedTier] = useState<'15' | '30' | '300' | 'custom'>(
     (selectedTierId as any) || '30'
@@ -80,7 +82,7 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
     const url = getGivebutterCheckoutUrl({
       amount: tier.amount,
       frequency: tier.frequency === 'annual' ? 'once' : 'monthly',
-      cause: tier.title,
+      cause: selectedCause && selectedCause !== 'Where Needed Most' ? `${selectedCause} - ${tier.title}` : tier.title,
     });
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -90,7 +92,7 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
     const url = getGivebutterCheckoutUrl({
       amount: finalAmount,
       frequency: customFrequency,
-      cause: 'Child Education & Community Support',
+      cause: selectedCause || 'Child Education & Community Support',
     });
     window.open(url, '_blank', 'noopener,noreferrer');
   };

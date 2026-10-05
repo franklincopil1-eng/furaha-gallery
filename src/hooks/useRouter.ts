@@ -14,15 +14,25 @@ export function useRouter() {
   const [selectedCauseForDonation, setSelectedCauseForDonation] = useState<string>('Where Needed Most');
   const [selectedFrequencyForDonation, setSelectedFrequencyForDonation] = useState<'monthly' | 'annual' | 'once'>('monthly');
   const [selectedAmountForDonation, setSelectedAmountForDonation] = useState<number | undefined>(undefined);
+  const [targetCommunity, setTargetCommunity] = useState<'all' | 'west-hill' | 'amani' | 'cry-of-a-young-one'>('all');
 
-  // Handle URL hash routing (e.g. #donate, #who-we-serve, #our-work, #our-impact, #gallery, or #home)
+  // Handle URL hash routing (e.g. #donate, #who-we-serve, #who-we-serve/west-hill, etc.)
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash === '#donate') {
         setCurrentPage('donate');
-      } else if (hash === '#who-we-serve') {
+      } else if (hash.startsWith('#who-we-serve')) {
         setCurrentPage('who-we-serve');
+        if (hash === '#who-we-serve/west-hill') {
+          setTargetCommunity('west-hill');
+        } else if (hash === '#who-we-serve/amani') {
+          setTargetCommunity('amani');
+        } else if (hash === '#who-we-serve/cry-of-a-young-one') {
+          setTargetCommunity('cry-of-a-young-one');
+        } else {
+          setTargetCommunity('all');
+        }
       } else if (hash === '#our-work') {
         setCurrentPage('our-work');
       } else if (hash === '#our-impact') {
@@ -73,9 +83,11 @@ export function useRouter() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
-  const handleNavigateToWhoWeServe = () => {
+  const handleNavigateToWhoWeServe = (communityId?: 'all' | 'west-hill' | 'amani' | 'cry-of-a-young-one') => {
+    const target = communityId || 'all';
+    setTargetCommunity(target);
     setCurrentPage('who-we-serve');
-    window.location.hash = 'who-we-serve';
+    window.location.hash = target === 'all' ? 'who-we-serve' : `who-we-serve/${target}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
@@ -153,6 +165,8 @@ export function useRouter() {
   return {
     currentPage,
     activeSection,
+    targetCommunity,
+    setTargetCommunity,
     selectedCauseForDonation,
     selectedFrequencyForDonation,
     selectedAmountForDonation,
