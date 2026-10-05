@@ -14,7 +14,6 @@ export const ElevatorPitchVideo: React.FC<ElevatorPitchVideoProps> = ({
   onOpenVolunteer,
 }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [thumbLoaded, setThumbLoaded] = useState<boolean>(true);
 
   const scrollToStory = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -79,14 +78,17 @@ export const ElevatorPitchVideo: React.FC<ElevatorPitchVideoProps> = ({
                 }}
                 className="relative w-full h-full cursor-pointer focus:outline-hidden focus-visible:ring-4 focus-visible:ring-[#893d2d]/60 select-none group"
               >
-                {/* Thumbnail Image with fallback */}
+                {/* Thumbnail Image using uploaded custom thumbnail with fallback */}
                 <img
-                  src={
-                    thumbLoaded
-                      ? `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`
-                      : `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/hqdefault.jpg`
-                  }
-                  onError={() => setThumbLoaded(false)}
+                  src="/thumbnail.png"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (!img.src.includes('images/thumbnail.png')) {
+                      img.src = '/images/thumbnail.png';
+                    } else {
+                      img.src = `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`;
+                    }
+                  }}
                   alt="Furaha Ministries Mission Overview Video Preview"
                   className="w-full h-full object-cover"
                 />
