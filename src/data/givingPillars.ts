@@ -18,6 +18,8 @@ export interface GivingPillar {
   id: GivingPillarId;
   title: string;
   icon: LucideIcon;
+  /** One short line shown at the top of this area's giving pop-up. */
+  summary: string;
   items: string[];
   badgeColor: string;
   givebutterFundId: string;
@@ -29,6 +31,7 @@ export const GIVING_PILLARS: GivingPillar[] = [
   {
     id: 'education',
     title: 'Education',
+    summary: "Help a child stay in school.",
     icon: BookOpen,
     items: [
       'School fees & registration',
@@ -43,6 +46,7 @@ export const GIVING_PILLARS: GivingPillar[] = [
   {
     id: 'nutrition',
     title: 'Nutrition',
+    summary: "Help a child eat well, at school and at home.",
     icon: Utensils,
     items: [
       'School lunches',
@@ -55,6 +59,7 @@ export const GIVING_PILLARS: GivingPillar[] = [
   {
     id: 'care',
     title: 'Care & Mentorship',
+    summary: "Help a child feel known, guided and supported.",
     icon: HeartHandshake,
     items: [
       'Mentorship & encouragement',
@@ -68,6 +73,7 @@ export const GIVING_PILLARS: GivingPillar[] = [
   {
     id: 'discipleship',
     title: 'Discipleship',
+    summary: "Help a child come to know God's love.",
     icon: Compass,
     items: [
       'Bibles',

@@ -8,7 +8,8 @@ import { TrustSection } from '../components/donation/TrustSection';
 import { FounderSection } from '../components/donation/FounderSection';
 import { FinalDonationCTA } from '../components/donation/FinalDonationCTA';
 import { StickyMobileCTA } from '../components/donation/StickyMobileCTA';
-import { GivingPillarId, findPillarByCause } from '../data/givingPillars';
+import { PillarGiveModal } from '../components/donation/PillarGiveModal';
+import { GivingPillarId, findPillarByCause, findPillarById } from '../data/givingPillars';
 
 interface DonationLandingPageProps {
   onBackToHome: () => void;
@@ -40,6 +41,15 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
   useEffect(() => {
     setSelectedPillarId(findPillarByCause(initialCause)?.id ?? null);
   }, [initialCause]);
+
+  // Picking an area opens its giving pop-up, so the choice carries straight through to checkout.
+  const [isPillarModalOpen, setIsPillarModalOpen] = useState(false);
+  const modalPillar = findPillarById(selectedPillarId);
+
+  const openPillarGiving = (id: GivingPillarId) => {
+    setSelectedPillarId(id);
+    setIsPillarModalOpen(true);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -120,7 +130,7 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
         <ImpactBreakdown
           selectedPillarId={selectedPillarId}
           onSelectPillar={setSelectedPillarId}
-          onContinueToGive={scrollToGivingSection}
+          onOpenGiving={openPillarGiving}
         />
 
         {/* 3. The Journey of Your Gift (01 → 02 → 03 → 04) */}
@@ -152,10 +162,16 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
 
       {/* Mobile Sticky CTA for easy giving */}
       <StickyMobileCTA
-        onScrollToGiving={scrollToGivingSection}
         selectedAmount={currentAmount}
         selectedFrequency={currentFrequency}
+        selectedPillar={modalPillar}
+        hidden={isPillarModalOpen}
       />
+
+      {/* Giving pop-up for the area the donor picked */}
+      {isPillarModalOpen && modalPillar && (
+        <PillarGiveModal pillar={modalPillar} onClose={() => setIsPillarModalOpen(false)} />
+      )}
     </div>
   );
 };

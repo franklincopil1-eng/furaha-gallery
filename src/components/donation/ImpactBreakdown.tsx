@@ -1,17 +1,19 @@
 import React from 'react';
-import { Check, ArrowUp } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { GIVING_PILLARS, GivingPillarId, findPillarById } from '../../data/givingPillars';
 
 interface ImpactBreakdownProps {
   selectedPillarId: GivingPillarId | null;
-  onSelectPillar: (id: GivingPillarId | null) => void;
-  onContinueToGive: () => void;
+  /** First tap: selects (highlights) the area. */
+  onSelectPillar: (id: GivingPillarId) => void;
+  /** "Give to X" button: opens the giving pop-up for that area. */
+  onOpenGiving: (id: GivingPillarId) => void;
 }
 
 export const ImpactBreakdown: React.FC<ImpactBreakdownProps> = ({
   selectedPillarId,
   onSelectPillar,
-  onContinueToGive,
+  onOpenGiving,
 }) => {
   const selectedPillar = findPillarById(selectedPillarId);
 
@@ -50,7 +52,7 @@ export const ImpactBreakdown: React.FC<ImpactBreakdownProps> = ({
                 type="button"
                 role="radio"
                 aria-checked={isSelected}
-                onClick={() => onSelectPillar(isSelected ? null : pillar.id)}
+                onClick={() => (isSelected ? onOpenGiving(pillar.id) : onSelectPillar(pillar.id))}
                 className={`relative text-left rounded-2xl p-4 sm:p-5 flex flex-col transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#893d2d]/40 ${
                   isSelected
                     ? 'bg-white border-2 border-[#893d2d] shadow-md ring-2 ring-[#893d2d]/10'
@@ -84,6 +86,14 @@ export const ImpactBreakdown: React.FC<ImpactBreakdownProps> = ({
                     </li>
                   ))}
                 </ul>
+
+                {/* Once chosen, the next step appears right where the donor tapped */}
+                {isSelected && (
+                  <span className="mt-4 inline-flex items-center justify-center gap-1 w-full text-xs sm:text-sm font-bold text-white bg-[#893d2d] hover:bg-[#733123] px-4 py-2 rounded-full transition-colors">
+                    Give to {pillar.title}
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                )}
               </button>
             );
           })}
@@ -98,16 +108,16 @@ export const ImpactBreakdown: React.FC<ImpactBreakdownProps> = ({
               </p>
               <button
                 type="button"
-                onClick={onContinueToGive}
+                onClick={() => onOpenGiving(selectedPillar.id)}
                 className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-white bg-[#893d2d] hover:bg-[#733123] px-4 py-1.5 rounded-full transition-colors cursor-pointer"
               >
-                <ArrowUp className="w-3.5 h-3.5" />
-                <span>Choose your amount</span>
+                <span>Give to {selectedPillar.title}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           ) : (
             <p className="text-xs text-[#59524e] font-medium leading-relaxed">
-              Select one of the four areas above, then choose your amount.
+              Tap an area to give to it.
             </p>
           )}
         </div>

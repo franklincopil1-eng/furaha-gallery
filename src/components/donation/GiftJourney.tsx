@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Lock, HeartHandshake, BookOpen, MailCheck } from 'lucide-react';
+import { Lock, HeartHandshake, ListChecks, Sprout } from 'lucide-react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 
 export const GiftJourney: React.FC = () => {
@@ -13,30 +13,31 @@ export const GiftJourney: React.FC = () => {
 
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
+  // The donor chooses the area; Furaha carries the gift there. Keep each line short.
   const steps = [
     {
       num: '01',
-      title: 'You give',
-      desc: 'Your gift is securely processed through Givebutter.',
+      title: 'You give securely',
+      desc: 'Pay through Givebutter and get an emailed receipt.',
       icon: Lock,
     },
     {
       num: '02',
-      title: 'Furaha directs your support',
-      desc: 'Funds go directly toward school fees, meals, and student care in Kenya.',
-      icon: HeartHandshake,
+      title: 'You choose the area',
+      desc: 'Education, nutrition, care or discipleship. The choice is yours.',
+      icon: ListChecks,
     },
     {
       num: '03',
-      title: 'A child stays in school',
-      desc: 'Your support ensures learning continuity and stability for students.',
-      icon: BookOpen,
+      title: 'It meets real needs',
+      desc: 'School fees, meals, family care, Bibles and prayer.',
+      icon: HeartHandshake,
     },
     {
       num: '04',
-      title: 'You stay connected',
-      desc: 'Receive transparent updates on the ongoing work and community progress.',
-      icon: MailCheck,
+      title: 'Children grow in faith',
+      desc: "Children learn, eat well and come to know God's love.",
+      icon: Sprout,
     },
   ];
 
@@ -47,10 +48,10 @@ export const GiftJourney: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-1">
-            The Journey of Your Gift
+            After you give
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#201a18] tracking-tight">
-            What happens after you give?
+            Where your gift goes
           </h2>
         </div>
 
