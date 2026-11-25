@@ -20,11 +20,11 @@ export const WhoWeServeFinalCTA: React.FC<WhoWeServeFinalCTAProps> = ({
         </span>
 
         <h2 className="text-2xl sm:text-3xl font-bold text-[#201a18] tracking-tight mb-2 leading-tight">
-          Help make this work possible.
+          Help with this work
         </h2>
 
         <p className="text-xs sm:text-sm text-[#59524e] font-normal mb-6 max-w-md mx-auto leading-relaxed">
-          Your donation helps provide school fees, textbooks, meals, and mentorship for children in Kenya.
+          Your gift supports materials and activities.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 max-w-sm mx-auto mb-5">

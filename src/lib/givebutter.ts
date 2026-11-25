@@ -36,6 +36,8 @@ export function getGivebutterCheckoutUrl(options?: {
   amount?: number;
   frequency?: 'once' | 'monthly';
   cause?: string;
+  /** Givebutter fund ID for the pillar the donor chose (see src/data/givingPillars.ts). */
+  fundId?: string;
 }): string {
   const url = new URL(GIVEBUTTER_CAMPAIGN_URL);
   if (options?.amount && options.amount > 0) {
@@ -43,6 +45,10 @@ export function getGivebutterCheckoutUrl(options?: {
   }
   if (options?.frequency) {
     url.searchParams.set('frequency', options.frequency);
+  }
+  if (options?.fundId) {
+    // Givebutter pre-selects the matching fund, so the donor's chosen pillar is recorded.
+    url.searchParams.set('fund', options.fundId);
   }
   return url.toString();
 }

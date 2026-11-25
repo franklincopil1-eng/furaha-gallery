@@ -74,7 +74,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
       return;
     }
 
-    const duration = isLiteMode ? 8000 : 5500;
+    // 7s per photo gives visitors time to see the image and read its caption.
+    const duration = isLiteMode ? 9000 : 7000;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, duration);
@@ -145,7 +146,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDonateModal }) => {
             return (
               <div
                 key={idx}
-                className={`hero-carousel-item absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
+                className={`hero-carousel-item absolute inset-0 w-full h-full transition-opacity duration-[1200ms] ease-in-out ${
                   isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                 }`}
                 aria-hidden={!isActive}

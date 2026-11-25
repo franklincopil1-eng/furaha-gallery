@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { ArrowRight, Lock, Check } from 'lucide-react';
 import { getGivebutterCheckoutUrl, GIVEBUTTER_CAMPAIGN_URL } from '../../lib/givebutter';
+import { GivingPillarId, findPillarById } from '../../data/givingPillars';
 
-export const FinalDonationCTA: React.FC = () => {
+interface FinalDonationCTAProps {
+  /** The pillar the donor chose higher up the page, carried into checkout. */
+  selectedPillarId?: GivingPillarId | null;
+}
+
+export const FinalDonationCTA: React.FC<FinalDonationCTAProps> = ({ selectedPillarId = null }) => {
   const [selectedOption, setSelectedOption] = useState<'15' | '30' | '300' | 'custom'>('30');
   const [customValue, setCustomValue] = useState<number>(50);
 
@@ -33,6 +39,7 @@ export const FinalDonationCTA: React.FC = () => {
       amount: amt,
       frequency: freq,
       cause,
+      fundId: findPillarById(selectedPillarId)?.givebutterFundId || undefined,
     });
 
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -44,15 +51,15 @@ export const FinalDonationCTA: React.FC = () => {
         
         {/* Dignified Tag */}
         <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-2">
-          Your Opportunity to Help
+          Give
         </span>
 
         {/* Headlines */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#201a18] tracking-tight mb-2 leading-tight">
-          You don't have to change everything.
+          Help one child stay in school.
         </h2>
         <p className="text-base sm:text-lg text-[#59524e] font-medium mb-6 max-w-xl mx-auto">
-          You can help change what's possible for one child.
+          Pick an amount, monthly or once.
         </p>
 
         {/* Quick Selection Pills */}
@@ -67,7 +74,7 @@ export const FinalDonationCTA: React.FC = () => {
                 : 'bg-white/70 hover:bg-white border-[#ebdcd0]'
             }`}
           >
-            <div className="font-extrabold text-base text-[#201a18]">$15<span className="text-xs font-normal text-[#717275]">/mo</span></div>
+            <div className="font-extrabold text-base text-[#893d2d]">$15<span className="ml-1.5 align-middle inline-block px-2 py-0.5 rounded-full bg-[#893d2d] text-white text-[10px] font-extrabold uppercase tracking-wide">Monthly</span></div>
             <div className="text-[11px] text-[#59524e] mt-0.5 leading-tight">Help keep a child in school</div>
           </button>
 
@@ -80,7 +87,7 @@ export const FinalDonationCTA: React.FC = () => {
                 : 'bg-white/70 hover:bg-white border-[#ebdcd0]'
             }`}
           >
-            <div className="font-extrabold text-base text-[#201a18]">$30<span className="text-xs font-normal text-[#717275]">/mo</span></div>
+            <div className="font-extrabold text-base text-[#893d2d]">$30<span className="ml-1.5 align-middle inline-block px-2 py-0.5 rounded-full bg-[#893d2d] text-white text-[10px] font-extrabold uppercase tracking-wide">Monthly</span></div>
             <div className="text-[11px] text-[#59524e] mt-0.5 leading-tight">Education & everyday needs</div>
           </button>
 
@@ -93,7 +100,7 @@ export const FinalDonationCTA: React.FC = () => {
                 : 'bg-white/70 hover:bg-white border-[#ebdcd0]'
             }`}
           >
-            <div className="font-extrabold text-base text-[#201a18]">$300<span className="text-xs font-normal text-[#717275]">/yr</span></div>
+            <div className="font-extrabold text-base text-[#893d2d]">$300<span className="ml-1.5 align-middle inline-block px-2 py-0.5 rounded-full bg-[#b7791f] text-white text-[10px] font-extrabold uppercase tracking-wide">Yearly</span></div>
             <div className="text-[11px] text-[#59524e] mt-0.5 leading-tight">A year of education</div>
           </button>
 
@@ -127,7 +134,7 @@ export const FinalDonationCTA: React.FC = () => {
         {/* Trust & Reassurance Line */}
         <p className="text-xs text-[#717275] flex items-center justify-center gap-1.5">
           <Lock className="w-3.5 h-3.5" />
-          <span>Secure giving · One-time or monthly · Every gift matters</span>
+          <span>Payments are handled by Givebutter.</span>
         </p>
 
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Check, ArrowRight, Heart } from 'lucide-react';
 import { getGivebutterCheckoutUrl, GIVEBUTTER_CAMPAIGN_URL } from '../../lib/givebutter';
+import { GivingPillarId, findPillarById } from '../../data/givingPillars';
 
 export interface GivingTierData {
   id: '15' | '30' | '300';
@@ -20,17 +21,17 @@ export const GIVING_TIERS: GivingTierData[] = [
     frequency: 'monthly',
     title: 'Help keep a child in school',
     supportingCopy:
-      'A dependable monthly gift can help contribute toward essential education costs and help a child remain connected to school.',
+      'Towards one child’s school costs each month.',
     ctaText: 'Give $15/month →',
-    supportingNote: 'Monthly giving provides dependable support throughout the school year.',
+    supportingNote: 'A regular gift towards one child’s schooling.',
   },
   {
     id: '30',
     amount: 30,
     frequency: 'monthly',
-    title: "Support a child's education and everyday needs",
+    title: 'School costs and meals',
     supportingCopy:
-      'Help contribute toward education, nutrition, essential supplies and ongoing support.',
+      'Towards school fees, meals and supplies.',
     ctaText: 'Give $30/month →',
     isPopular: true,
   },
@@ -38,9 +39,9 @@ export const GIVING_TIERS: GivingTierData[] = [
     id: '300',
     amount: 300,
     frequency: 'annual',
-    title: 'Help provide a year of education',
+    title: 'A year of school costs',
     supportingCopy:
-      'A larger annual gift can help cover significant education costs across an academic year.',
+      'Towards a year of school costs.',
     ctaText: 'Give $300/year →',
   },
 ];
@@ -49,13 +50,22 @@ interface GivingOptionsProps {
   onTierSelect?: (tierId: string, amount: number, frequency: 'monthly' | 'annual' | 'once') => void;
   selectedTierId?: string;
   selectedCause?: string;
+  /** The pillar the donor chose in the four-pillar section (null = not chosen yet). */
+  selectedPillarId?: GivingPillarId | null;
+  /** Scrolls the donor down to the four pillars so they can choose or change one. */
+  onChoosePillar?: () => void;
 }
 
 export const GivingOptions: React.FC<GivingOptionsProps> = ({
   onTierSelect,
   selectedTierId = '30',
   selectedCause,
+  selectedPillarId = null,
+  onChoosePillar,
 }) => {
+  const selectedPillar = findPillarById(selectedPillarId);
+  const fundId = selectedPillar?.givebutterFundId || undefined;
+
   const [selectedTier, setSelectedTier] = useState<'15' | '30' | '300' | 'custom'>(
     (selectedTierId as any) || '30'
   );
@@ -83,6 +93,7 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
       amount: tier.amount,
       frequency: tier.frequency === 'annual' ? 'once' : 'monthly',
       cause: selectedCause && selectedCause !== 'Where Needed Most' ? `${selectedCause} - ${tier.title}` : tier.title,
+      fundId,
     });
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -93,6 +104,7 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
       amount: finalAmount,
       frequency: customFrequency,
       cause: selectedCause || 'Child Education & Community Support',
+      fundId,
     });
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -111,14 +123,42 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-[#893d2d] text-xs font-bold uppercase tracking-wider block mb-1">
-            The Giving Moment
+            Choose an amount
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#201a18] tracking-tight mb-1.5">
-            You can be part of this.
+            How much would you like to give?
           </h2>
           <p className="text-sm sm:text-base text-[#59524e] font-normal">
-            Choose what you'd like to make possible.
+            Monthly gifts help us plan for the school year.
           </p>
+
+          {/* Chosen pillar (picked in the four-pillar section just below) */}
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm" aria-live="polite">
+            {selectedPillar ? (
+              <>
+                <span className="text-[#59524e]">Your gift supports:</span>
+                <span className="inline-flex items-center gap-1.5 bg-white border border-[#893d2d] text-[#893d2d] font-bold px-3 py-1 rounded-full">
+                  <selectedPillar.icon className="w-3.5 h-3.5" />
+                  {selectedPillar.title}
+                </span>
+                {onChoosePillar && (
+                  <button type="button" onClick={onChoosePillar} className="text-[#893d2d] font-semibold underline underline-offset-2 cursor-pointer">
+                    Change
+                  </button>
+                )}
+              </>
+            ) : (
+              onChoosePillar && (
+                <button
+                  type="button"
+                  onClick={onChoosePillar}
+                  className="text-[#893d2d] font-semibold underline underline-offset-2 cursor-pointer"
+                >
+                  Choose an area for your gift: Education, Nutrition, Care & Mentorship or Discipleship ↓
+                </button>
+              )
+            )}
+          </div>
         </div>
 
         {/* Primary Giving Options (3 Columns) */}
@@ -148,12 +188,17 @@ export const GivingOptions: React.FC<GivingOptionsProps> = ({
 
                 <div>
                   {/* Amount & Frequency */}
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl sm:text-4xl font-black text-[#201a18] tracking-tight">
+                  {/* Frequency pill: red = monthly, gold = yearly, so the two are easy to tell apart */}
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span className="text-3xl sm:text-4xl font-black text-[#893d2d] tracking-tight">
                       ${tier.amount}
                     </span>
-                    <span className="text-xs font-semibold text-[#717275]">
-                      /{tier.frequency === 'annual' ? 'year' : 'month'}
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wide text-white shadow-sm ${
+                        tier.frequency === 'annual' ? 'bg-[#b7791f]' : 'bg-[#893d2d]'
+                      }`}
+                    >
+                      {tier.frequency === 'annual' ? 'Per year' : 'Per month'}
                     </span>
                   </div>
 

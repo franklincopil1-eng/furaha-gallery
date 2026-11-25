@@ -8,6 +8,7 @@ import { TrustSection } from '../components/donation/TrustSection';
 import { FounderSection } from '../components/donation/FounderSection';
 import { FinalDonationCTA } from '../components/donation/FinalDonationCTA';
 import { StickyMobileCTA } from '../components/donation/StickyMobileCTA';
+import { GivingPillarId, findPillarByCause } from '../data/givingPillars';
 
 interface DonationLandingPageProps {
   onBackToHome: () => void;
@@ -31,6 +32,14 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
   const [currentFrequency, setCurrentFrequency] = useState<'monthly' | 'annual' | 'once'>(
     initialFrequency
   );
+  // The pillar the donor chose. Pre-selected when they arrive from a "Support X" button elsewhere.
+  const [selectedPillarId, setSelectedPillarId] = useState<GivingPillarId | null>(
+    findPillarByCause(initialCause)?.id ?? null
+  );
+
+  useEffect(() => {
+    setSelectedPillarId(findPillarByCause(initialCause)?.id ?? null);
+  }, [initialCause]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -56,6 +65,10 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const scrollToPillars = () => {
+    document.getElementById('where-support-goes')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleTierSelected = (tierId: string, amount: number, freq: 'monthly' | 'annual' | 'once') => {
@@ -99,10 +112,16 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
           selectedTierId={selectedTierId}
           onTierSelect={handleTierSelected}
           selectedCause={initialCause}
+          selectedPillarId={selectedPillarId}
+          onChoosePillar={scrollToPillars}
         />
 
         {/* 2. Where Support Goes */}
-        <ImpactBreakdown />
+        <ImpactBreakdown
+          selectedPillarId={selectedPillarId}
+          onSelectPillar={setSelectedPillarId}
+          onContinueToGive={scrollToGivingSection}
+        />
 
         {/* 3. The Journey of Your Gift (01 → 02 → 03 → 04) */}
         <GiftJourney />
@@ -128,7 +147,7 @@ export const DonationLandingPage: React.FC<DonationLandingPageProps> = ({
         />
 
         {/* 7. Your Opportunity to Help (Final Call to Action) */}
-        <FinalDonationCTA />
+        <FinalDonationCTA selectedPillarId={selectedPillarId} />
       </main>
 
       {/* Mobile Sticky CTA for easy giving */}
